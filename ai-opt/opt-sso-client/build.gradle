@@ -1,0 +1,115 @@
+apply plugin: 'war'
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'maven-publish'
+
+repositories {
+	//mavenLocal()
+	//mavenCentral()
+	//maven{ url "http://223.202.119.155:18081/nexus/content/groups/public/"}
+	maven { url "http://10.1.228.199:18081/nexus/content/groups/public/" }
+}
+ext {
+	appName = "opt-sso-client"
+	moduleVersion = "1.0.3-SNAPSHOT"
+	builtBy = "gradle 2.4"
+	publishUserName = "runnerdev"
+	publishUserPassword = "runnerdev"
+	publishURL = "http://10.1.228.199:18081/nexus/content/repositories/snapshots/"
+	mavenPublicURL = "http://10.1.228.199:18081/nexus/content/groups/public/"
+}
+sourceCompatibility = 1.7
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+configurations.all { 
+	    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+	    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+	    exclude group: 'log4j', module: 'log4j'
+    	exclude group: "org.slf4j", module: "slf4j-log4j12"
+    	exclude group: "org.slf4j", module: "log4j-over-slf4j"
+ 	}
+
+group="com.ai.opt.sso.client"
+
+dependencies {
+	compile "org.jasig.cas.client:cas-client-core:3.3.3"
+	compile "javax.servlet:javax.servlet-api:3.1.0"
+	//uni session
+	compile 'com.ai.opt.uni.session:opt-uni-session:2.0-SNAPSHOT'
+	
+	//test for demo
+	compile "jstl:jstl:1.2"
+    compile "org.springframework:spring-web:4.1.7.RELEASE"
+    compile "org.springframework:spring-webmvc:4.1.7.RELEASE"
+    compile 'org.springframework:spring-context-support:4.1.7.RELEASE'
+    compile "com.fasterxml.jackson.core:jackson-databind:2.6.0"
+
+	testCompile(
+			"org.springframework:spring-test:3.2.6.RELEASE",
+			"junit:junit:4.11"
+		)
+}
+
+eclipse {
+	wtp {
+		facet {
+			facet name: 'java', version: '1.7'
+			facet name: 'jst.web', version: '3.0'
+			facet name: 'wst.jsdt.web', version: '1.0'
+		}
+	}
+}
+
+jar{
+	baseName appName
+	version moduleVersion
+	include "com/ai/opt/sso/client/filter/**"
+	destinationDir file("$buildDir/libs/")
+	manifest {
+		attributes 'packageName': baseName, 'Built-By': builtBy, 'create-date': new Date().format('yyyy-MM-dd HH:mm:ss')
+	}
+}
+
+publishing {
+    publications {
+        publishing.publications.create("${appName}", MavenPublication) {
+            groupId group
+            artifactId appName
+            version moduleVersion
+            artifact  jar
+            pom.withXml {
+				asNode().children().last() + {
+					delegate.dependencies {
+						delegate.dependency {
+							delegate.groupId("org.jasig.cas.client")
+							delegate.artifactId("cas-client-core")
+							delegate.version("3.3.3")
+							delegate.exclusions{
+                                delegate.exclusion{
+                                    delegate.groupId("org.slf4j")
+                                    delegate.artifactId("log4j-over-slf4j")
+                                }
+                            }
+						}
+					}
+				}
+
+            }
+        }
+    }
+    repositories {
+        maven {
+            url  publishURL
+            credentials {
+                username = publishUserName
+                password = publishUserPassword
+            }
+        }
+    }
+}
+
+
+
+war{
+	baseName  "sso-client"
+}

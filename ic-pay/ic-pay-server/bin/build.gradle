@@ -1,0 +1,101 @@
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'maven-publish'
+    
+    ext {
+        moduleVersion = "1.0-SNAPSHOT"
+        dvpBaseVersion = "1.0-SNAPSHOT"
+        builtBy = "gradle 3.5"
+        publishUserName = "centra_arch-publisher"
+        publishUserPassword = "centra_arch-publisher@123"
+        publishURL = "http://192.168.0.250:18081/nexus/content/repositories/snapshots/"
+        mavenPublicURL = "http://192.168.0.250:18081/nexus/content/groups/public/"
+    }
+	compileJava.dependsOn clean
+    sourceCompatibility = 1.8
+    
+   configurations.all {
+	    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+	    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+	    exclude group: 'log4j', module: 'log4j'
+	    exclude group: "org.slf4j", module: "slf4j-log4j12"
+	}
+    group="com.ifudata.ic.pay"
+}
+
+subprojects {
+    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+    repositories { maven { url mavenPublicURL } }
+    dependencies { compile "com.ifudata.centra:centra-base:${dvpBaseVersion}" }
+}
+
+project("pay-api") {
+    project.ext {
+        appName = "pay-api"
+        apiDir =  "src/main/java/com/ifudata/ic/pay/api/"
+    }
+
+    jar {
+        baseName appName
+        version moduleVersion
+        manifest {
+            attributes 'packageName': appName, 'Built-By': builtBy, 'create-date': new Date().format('yyyy-MM-dd HH:mm:ss')
+        }
+    }
+    publish.dependsOn build
+}
+
+project("pay-core") {
+    project.ext { appName = "pay-core" }
+    jar {
+        baseName appName
+        version moduleVersion
+        include "com/ifudata/ic/pay/*/**"
+        manifest {
+            attributes 'packageName': appName, 'Built-By': builtBy, 'create-date': new Date().format('yyyy-MM-dd HH:mm:ss')
+        }
+    }
+}
+
+jar {
+    baseName baseName
+    version moduleVersion
+    destinationDir file("$buildDir/m-libs/")
+    manifest {
+        attributes 'packageName': baseName, 'Built-By': builtBy, 'create-date': new Date().format('yyyy-MM-dd HH:mm:ss')
+    }
+}
+
+
+configure(subprojects) { subproject ->
+    task sourcesJar(type: Jar, dependsOn:classes) { from sourceSets.main.output }
+    artifacts { archives sourcesJar }
+}
+task copySubProjectsJar(type: Copy) {
+    subprojects.each { subproject ->
+        from subproject.jar
+        destinationDir file("$buildDir/libs/core-libs")
+    }
+}
+task copy3rdJars(type: Copy) {
+    subprojects.each { subproject ->
+        from subproject.configurations.runtime
+        exclude "pay-api-*.*"
+        destinationDir file("$buildDir/libs/3rd-libs")
+    }
+}
+
+task zipLibs(type: Zip) {
+    baseName "libs"
+    from "$buildDir/libs"
+}
+
+task zipConfig(type: Zip) {
+    baseName "config"
+    from "$buildDir/config"
+}
+
+build.dependsOn copySubProjectsJar,copy3rdJars
+
+

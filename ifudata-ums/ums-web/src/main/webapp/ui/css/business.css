@@ -1,0 +1,81 @@
+/**chenrui add 璁㈠崟璇︽儏浠樻淇℃伅*/
+.list-table{
+	width : 100%;
+}
+
+.text_khzl td {
+    color: #515151;
+    font-size: 12px;
+    padding: 0 0 14px 12px;
+}
+
+.query_input3 {
+
+    width: 76px;
+}
+
+.query_input1 {
+ 
+    width: 196px;
+}
+.txt-23{border: #c2cbcf 1px solid; line-height: 30px; width: 200px; height: 30px;font-size:16px; color:#504f4f; padding: 0px 5px;}
+
+.blank_wlan{
+
+	background-color : #FBE2E2;
+}
+
+.container_order { margin:10px 10px 10px 6px; }
+
+.mask {    
+	background: #000;    
+	filter: alpha(opacity=50); /* IE的透明度 */    
+	opacity: 0.5;  /* 透明度 */    
+	-moz-opacity:0.5;  
+	display: none;    
+	position: absolute;    
+	top: 0px;    
+	left: 0px;      
+	z-index: 100; /* 此处的图层要大于页面 */    
+}
+
+label.error {
+		background:url(../images/unchecked.gif) no-repeat 10px center;
+		padding-left: 30px;
+		font-weight: bold;
+		color: #f70303;
+		font-size: 12px;
+		vertical-align: middle;
+		line-height: 28px; 
+}
+
+/*套餐选择*/
+.propertyChoose dl{padding-top: 5px;zoom:1;overflow: hidden;}
+.propertyChoose dt{float: left;width: 120px;color:#999;line-height: 18px;font-family: "microsoft yahei", "arial"; font-size:12px; color:#504f4f; border-left:2px solid #2697d0; padding-left:10px; padding-top:5px;  padding-bottom:5px;}
+.propertyChoose dd{}
+
+.propertyChoose{}
+.propertyChoose dl{}
+.chooseColor dt{margin-top: 0px;}
+.chooseColor dd{height: auto; margin-left:0px;}
+.chooseVersion dt{margin-top: 8px;}
+.propertyChoose .item{ float: left; margin: 0px 8px 10px 0; background-color: #fff;}
+.propertyChoose .item a:link,.propertyChoose .item a:visited{ border: 1px solid #a9a9a9; padding: 4px 15px; display: block; float: left; white-space: nowrap; text-decoration: none; font-family: "microsoft yahei"; font-size:12px; color:#504f4f;}
+
+.propertyChoose .selected{position: relative; zoom: 1;}
+.propertyChoose .selected1{position: relative; zoom: 1;}
+.productGifts em{ font-size: 12px; font-style: normal; color: #E4393C;}
+.propertyChoose .item a:hover, .propertyChoose .item a:active, .propertyChoose .selected a:link, .propertyChoose .selected a:visited {border: 2px solid #2697d0; padding: 3px 14px; font-family: "microsoft yahei"; font-size:12px; color:#504f4f;}
+.propertyChoose .item a:hover, .propertyChoose .item a:active, .propertyChoose .selected1 a:link, .propertyChoose .selected1 a:visited {border: 2px solid #2697d0; padding: 3px 14px; font-family: "microsoft yahei"; font-size:12px; color:#504f4f;}
+.propertyChoose .selected b{position: absolute;bottom: 0;right: 0;width: 15px;height: 15px;overflow: hidden;background:url(../images/productDetail.png) no-repeat;}
+.propertyChoose .selected1 b{position: absolute;bottom: 0;right: 0;width: 15px;height: 15px;overflow: hidden;background:url(../images/img_bj.png) no-repeat;}
+.propertyChoose .disabled{cursor: default;}
+.propertyChoose .disabled a,.propertyChoose .disabled a:link,.propertyChoose .disabled a:visited{border: 1px dashed #CCC;padding: 1px;cursor: default;}
+.propertyChoose .chooseVersion .disabled a,
+.propertyChoose .chooseVersion .disabled a:link, 
+.propertyChoose .chooseVersion .disabled a:visited,
+.propertyChoose .chooseVersion .disabled a:hover, 
+.propertyChoose .chooseVersion .disabled a:active{border: 1px dashed #CCC;padding: 4px 6px;color: #999;}
+.chooseVersion .item a:link, .chooseVersion .item a:visited{float: left;padding: 4px 6px;background: white;}
+.chooseVersion .item a:hover, .chooseVersion .item a:active, .chooseVersion .selected a:link, .chooseVersion .selected a:visited{background: #fff;padding: 3px 5px;}
+/*套餐选择end*/

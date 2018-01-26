@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ai.opt.data.dao.mapper.interfaces.LoginLogMapper" >
+  <resultMap id="BaseResultMap" type="com.ai.opt.data.dao.mapper.bo.LoginLog" >
+    <result column="Id" property="id" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="login_date" property="loginDate" jdbcType="INTEGER" />
+    <result column="login_dateTime" property="loginDatetime" jdbcType="TIMESTAMP" />
+    <result column="system_source" property="systemSource" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    Id, user_id, login_date, login_dateTime, system_source
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ai.opt.data.dao.mapper.bo.LoginLogCriteria" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from login_log
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limitStart != null and limitStart>=0" >
+      limit #{limitStart} , #{limitEnd}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.ai.opt.data.dao.mapper.bo.LoginLogCriteria" >
+    delete from login_log
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ai.opt.data.dao.mapper.bo.LoginLog" >
+    insert into login_log (Id, user_id, login_date, 
+      login_dateTime, system_source)
+    values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}, #{loginDate,jdbcType=INTEGER}, 
+      #{loginDatetime,jdbcType=TIMESTAMP}, #{systemSource,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ai.opt.data.dao.mapper.bo.LoginLog" >
+    insert into login_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        Id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="loginDate != null" >
+        login_date,
+      </if>
+      <if test="loginDatetime != null" >
+        login_dateTime,
+      </if>
+      <if test="systemSource != null" >
+        system_source,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="loginDate != null" >
+        #{loginDate,jdbcType=INTEGER},
+      </if>
+      <if test="loginDatetime != null" >
+        #{loginDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="systemSource != null" >
+        #{systemSource,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ai.opt.data.dao.mapper.bo.LoginLogCriteria" resultType="java.lang.Integer" >
+    select count(*) from login_log
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update login_log
+    <set >
+      <if test="record.id != null" >
+        Id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.loginDate != null" >
+        login_date = #{record.loginDate,jdbcType=INTEGER},
+      </if>
+      <if test="record.loginDatetime != null" >
+        login_dateTime = #{record.loginDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.systemSource != null" >
+        system_source = #{record.systemSource,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update login_log
+    set Id = #{record.id,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      login_date = #{record.loginDate,jdbcType=INTEGER},
+      login_dateTime = #{record.loginDatetime,jdbcType=TIMESTAMP},
+      system_source = #{record.systemSource,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

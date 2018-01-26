@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ai.opt.sol.dao.mapper.interfaces.SolPrdlineVersionMapper" >
+  <resultMap id="BaseResultMap" type="com.ai.opt.sol.dao.mapper.bo.SolPrdlineVersion" >
+    <id column="PRDLINE_VERSION_ID" property="prdlineVersionId" jdbcType="VARCHAR" />
+    <result column="PRDLINE_ID" property="prdlineId" jdbcType="VARCHAR" />
+    <result column="PRDLINE_VERSION" property="prdlineVersion" jdbcType="VARCHAR" />
+    <result column="VERSION_REMARK" property="versionRemark" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    PRDLINE_VERSION_ID, PRDLINE_ID, PRDLINE_VERSION, VERSION_REMARK, CREATE_TIME
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ai.opt.sol.dao.mapper.bo.SolPrdlineVersionCriteria" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from sol_prdline_version
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limitStart != null and limitStart>=0" >
+      limit #{limitStart} , #{limitEnd}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from sol_prdline_version
+    where PRDLINE_VERSION_ID = #{prdlineVersionId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from sol_prdline_version
+    where PRDLINE_VERSION_ID = #{prdlineVersionId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ai.opt.sol.dao.mapper.bo.SolPrdlineVersionCriteria" >
+    delete from sol_prdline_version
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ai.opt.sol.dao.mapper.bo.SolPrdlineVersion" >
+    insert into sol_prdline_version (PRDLINE_VERSION_ID, PRDLINE_ID, PRDLINE_VERSION, 
+      VERSION_REMARK, CREATE_TIME)
+    values (#{prdlineVersionId,jdbcType=VARCHAR}, #{prdlineId,jdbcType=VARCHAR}, #{prdlineVersion,jdbcType=VARCHAR}, 
+      #{versionRemark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ai.opt.sol.dao.mapper.bo.SolPrdlineVersion" >
+    insert into sol_prdline_version
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="prdlineVersionId != null" >
+        PRDLINE_VERSION_ID,
+      </if>
+      <if test="prdlineId != null" >
+        PRDLINE_ID,
+      </if>
+      <if test="prdlineVersion != null" >
+        PRDLINE_VERSION,
+      </if>
+      <if test="versionRemark != null" >
+        VERSION_REMARK,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="prdlineVersionId != null" >
+        #{prdlineVersionId,jdbcType=VARCHAR},
+      </if>
+      <if test="prdlineId != null" >
+        #{prdlineId,jdbcType=VARCHAR},
+      </if>
+      <if test="prdlineVersion != null" >
+        #{prdlineVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="versionRemark != null" >
+        #{versionRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ai.opt.sol.dao.mapper.bo.SolPrdlineVersionCriteria" resultType="java.lang.Integer" >
+    select count(*) from sol_prdline_version
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update sol_prdline_version
+    <set >
+      <if test="record.prdlineVersionId != null" >
+        PRDLINE_VERSION_ID = #{record.prdlineVersionId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.prdlineId != null" >
+        PRDLINE_ID = #{record.prdlineId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.prdlineVersion != null" >
+        PRDLINE_VERSION = #{record.prdlineVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="record.versionRemark != null" >
+        VERSION_REMARK = #{record.versionRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update sol_prdline_version
+    set PRDLINE_VERSION_ID = #{record.prdlineVersionId,jdbcType=VARCHAR},
+      PRDLINE_ID = #{record.prdlineId,jdbcType=VARCHAR},
+      PRDLINE_VERSION = #{record.prdlineVersion,jdbcType=VARCHAR},
+      VERSION_REMARK = #{record.versionRemark,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ai.opt.sol.dao.mapper.bo.SolPrdlineVersion" >
+    update sol_prdline_version
+    <set >
+      <if test="prdlineId != null" >
+        PRDLINE_ID = #{prdlineId,jdbcType=VARCHAR},
+      </if>
+      <if test="prdlineVersion != null" >
+        PRDLINE_VERSION = #{prdlineVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="versionRemark != null" >
+        VERSION_REMARK = #{versionRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where PRDLINE_VERSION_ID = #{prdlineVersionId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ai.opt.sol.dao.mapper.bo.SolPrdlineVersion" >
+    update sol_prdline_version
+    set PRDLINE_ID = #{prdlineId,jdbcType=VARCHAR},
+      PRDLINE_VERSION = #{prdlineVersion,jdbcType=VARCHAR},
+      VERSION_REMARK = #{versionRemark,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where PRDLINE_VERSION_ID = #{prdlineVersionId,jdbcType=VARCHAR}
+  </update>
+</mapper>

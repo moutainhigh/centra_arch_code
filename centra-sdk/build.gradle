@@ -1,0 +1,366 @@
+group 'com.ifudata.centra'
+
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+
+sourceCompatibility = 1.8
+// gradle包装
+task wrapper(type: Wrapper) {
+    gradleVersion = gradleVersion // 声明使用的 Gradle 版本
+    scriptFile = 'g' // 默认 gradlew ，也太长了吧
+}
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+configurations.all { 
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+}
+ext {
+    appName="centra-sdk"
+    moduleVersion='1.0-SNAPSHOT'
+    gradleVersion = '3.5'
+    builtBy="gradle gradleVersion"
+    publishUserName = "centra_arch-publisher"
+    publishUserPassword = "centra_arch-publisher@123"
+	publishSnapShotsURL="http://192.168.0.250:18081/nexus/content/repositories/snapshots/"
+	publishReleaseURL="http://192.168.0.250:18081/nexus/content/repositories/releases/"
+    
+    centraBaseVersion="1.0-SNAPSHOT"
+    dubboxVersion="2.8.3.1"
+}
+
+repositories { 
+	maven { 
+		url "http://192.168.0.250:18081/nexus/content/groups/public/"
+	} 
+}
+
+dependencies {
+    compile "com.ifudata.centra:centra-base:${centraBaseVersion}"
+    compile "javax.validation:validation-api:1.0.0.GA"
+    compile 'com.alibaba:fastjson:1.2.6'
+    
+    compile ("org.springframework:spring-beans:4.1.7.RELEASE") {
+    	exclude group: 'org.springframework'
+    }
+    compile ("org.springframework:spring-context:4.1.7.RELEASE") {
+    	exclude group: 'org.springframework', module: 'spring-beans'
+    	exclude group: 'org.springframework', module: 'spring-core'
+    }
+    compile "org.springframework:spring-core:4.1.7.RELEASE"
+    compile ('org.springframework:spring-jdbc:4.1.7.RELEASE') {
+    	exclude group: 'org.springframework', module: 'spring-beans'
+    	exclude group: 'org.springframework', module: 'spring-core'
+    }
+    
+    compile ('com.baidu.disconf:disconf-client:2.6.36') {
+    	exclude group: 'org.apache.zookeeper', module:'zookeeper'
+    	exclude group: 'org.slf4j', module: 'slf4j-api'
+    }
+    
+    compile 'commons-beanutils:commons-beanutils:1.9.2'
+    compile 'javax.ws.rs:javax.ws.rs-api:2.0.1'
+
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.4'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.4'
+    compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.4'
+    //compile group: 'org.apache.logging.log4j', name: 'log4j-jcl', version: '2.4'
+    compile 'log4j:log4j:1.2.17'
+	compile "org.slf4j:slf4j-api:1.7.12"
+	compile "org.slf4j:slf4j-log4j12:1.7.12"
+
+    compile ("com.alibaba:dubbox:${dubboxVersion}") {
+        exclude group: 'org.springframework', module: 'spring'
+    }
+    compile ("com.101tec:zkclient:0.10") {
+        exclude group: 'org.apache.zookeeper', module: 'zookeeper'
+        exclude group: 'org.slf4j', module: 'slf4j-api'
+    }
+	
+	compile 'org.apache.zookeeper:zookeeper:3.4.9'
+
+    compile 'com.zaxxer:HikariCP:2.4.0'
+    //httpclient
+    compile 'org.apache.httpcomponents:httpclient:4.5'
+    //restful jars
+	compile ("org.jboss.resteasy:resteasy-jaxrs:3.0.11.Final") {
+        exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+    }
+	compile 'org.jboss.resteasy:resteasy-client:3.0.11.Final'
+	compile 'org.jboss.resteasy:resteasy-jackson-provider:3.0.11.Final'
+	compile 'org.apache.tomcat.embed:tomcat-embed-core:8.0.21'
+	compile 'org.apache.tomcat.embed:tomcat-embed-logging-juli:8.0.21'
+	//mysql
+	compile 'mysql:mysql-connector-java:5.1.36'
+	compile 'postgresql:postgresql:9.1-901-1.jdbc4'
+	
+	// kafka
+	compile ('org.apache.kafka:kafka-clients:0.10.2.0') {
+		exclude group: 'org.slf4j', module: 'slf4j-api'
+	}
+	//hadoop-hdfs
+	compile  ("org.apache.hadoop:hadoop-hdfs:2.7.3") {
+	    exclude group: 'javax.servlet', module: 'servlet-api'
+	}
+	compile ("org.apache.hadoop:hadoop-common:2.7.3") {
+	    exclude group: 'javax.servlet', module: 'servlet-api'
+	}
+
+    compile 'redis.clients:jedis:2.9.0'
+    compile 'org.elasticsearch:elasticsearch:2.3.3'
+    //apache mail
+    compile	'org.apache.commons:commons-email:1.4'
+    compile 'org.dom4j:dom4j:2.0.0'
+
+    //excel
+    compile 'net.sourceforge.jexcelapi:jxl:2.6.12'
+    compile 'org.apache.poi:poi:3.13'
+    compile 'org.apache.poi:poi-ooxml:3.13'
+    compile 'org.apache.poi:poi-ooxml-schemas:3.13'
+
+    testCompile "org.springframework:spring-test:4.1.7.RELEASE"
+    testCompile "junit:junit:4.12"
+    testCompile 'org.mybatis:mybatis:3.3.0'
+    testCompile 'org.mybatis:mybatis-spring:1.2.3'
+}
+
+jar {
+    baseName appName
+    version moduleVersion
+    manifest {
+        attributes 'packageName': baseName, 'Built-By': builtBy,'create-date': new Date().format('yyyy-MM-dd HH:mm:ss'), 'Manifest-Version': version
+    }
+    exclude "context/*"
+}
+
+publishing {
+    publications {
+        publishing.publications.create("${appName}", MavenPublication) {
+            groupId group
+            artifactId appName
+            version moduleVersion
+            artifact jar
+            pom.withXml {
+                asNode().children().last() + {
+                    delegate.dependencies {
+                        delegate.dependency{
+                            delegate.groupId("com.baidu.disconf")
+                            delegate.artifactId("disconf-client")
+                            delegate.version("2.6.36")
+                            delegate.exclusions{
+	                                delegate.exclusion{
+	                                    delegate.groupId("org.apache.zookeeper")
+	                                    delegate.artifactId("zookeeper")
+	                                }
+	                                delegate.exclusion{
+	                                    delegate.groupId("org.slf4j")
+	                                    delegate.artifactId("slf4j-api")
+	                                }
+	                            }
+                        }
+                        delegate.dependency{
+                            delegate.groupId("mysql")
+                            delegate.artifactId("mysql-connector-java")
+                            delegate.version("5.1.36")
+                        }
+                        delegate.dependency{
+                            delegate.groupId("redis.clients")
+                            delegate.artifactId("jedis")
+                            delegate.version("2.9.0")
+                        }
+                        delegate.dependency{
+                            delegate.groupId("org.elasticsearch")
+                            delegate.artifactId("elasticsearch")
+                            delegate.version("2.3.3")
+                        }
+                        delegate.dependency{
+                            delegate.groupId("org.apache.commons")
+                            delegate.artifactId("commons-email")
+                            delegate.version("1.4")
+                        }
+                        delegate.dependency{
+                            delegate.groupId("org.dom4j")
+                            delegate.artifactId("dom4j")
+                            delegate.version("2.0.0")
+                        }
+                         delegate.dependency{
+                            delegate.groupId("postgresql")
+                            delegate.artifactId("postgresql")
+                            delegate.version("9.1-901-1.jdbc4")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("com.ifudata.centra")
+                            delegate.artifactId("centra-base")
+                            delegate.version("${centraBaseVersion}")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("net.sourceforge.jexcelapi")
+                            delegate.artifactId("jxl")
+                            delegate.version("2.6.12")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("org.apache.poi")
+                            delegate.artifactId("poi")
+                            delegate.version("3.13")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("org.apache.poi")
+                            delegate.artifactId("poi-ooxml")
+                            delegate.version("3.13")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("org.apache.poi")
+                            delegate.artifactId("poi-ooxml-schemas")
+                            delegate.version("3.13")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("com.zaxxer")
+                            delegate.artifactId("HikariCP")
+                            delegate.version("2.4.0")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("org.springframework")
+                            delegate.artifactId("spring-context")
+                            delegate.version("4.1.7.RELEASE")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("org.springframework")
+                            delegate.artifactId("spring-tx")
+                            delegate.version("4.1.7.RELEASE")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("org.springframework")
+                            delegate.artifactId("spring-jdbc")
+                            delegate.version("4.1.7.RELEASE")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("javax.ws.rs")
+                            delegate.artifactId("javax.ws.rs-api")
+                            delegate.version("2.0.1")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("com.alibaba")
+                            delegate.artifactId("fastjson")
+                            delegate.version("1.2.6")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("org.aspectj")
+                            delegate.artifactId("aspectjrt")
+                            delegate.version("1.8.5")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("commons-beanutils")
+                            delegate.artifactId("commons-beanutils")
+                            delegate.version("1.9.2")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("org.apache.logging.log4j")
+                            delegate.artifactId("log4j-api")
+                            delegate.version("2.4")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("org.apache.logging.log4j")
+                            delegate.artifactId("log4j-core")
+                            delegate.version("2.4")
+                        }
+						delegate.dependency {
+                            delegate.groupId("org.slf4j")
+                            delegate.artifactId("slf4j-api")
+                            delegate.version("1.7.12")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("org.slf4j")
+                            delegate.artifactId("slf4j-log4j12")
+                            delegate.version("1.7.12")
+                        }
+						delegate.dependency {
+                            delegate.groupId("org.apache.logging.log4j")
+                            delegate.artifactId("log4j-slf4j-impl")
+                            delegate.version("2.4")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("com.alibaba")
+                            delegate.artifactId("dubbox")
+                            delegate.version("${dubboxVersion}")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("com.101tec")
+                            delegate.artifactId("zkclient")
+                            delegate.version("0.10")
+                            delegate.exclusions{
+	                                delegate.exclusion{
+	                                    delegate.groupId("org.apache.zookeeper")
+	                                    delegate.artifactId("zookeeper")
+	                                }
+	                                delegate.exclusion{
+	                                    delegate.groupId("org.slf4j")
+	                                    delegate.artifactId("slf4j-api")
+	                                }
+	                            }
+                        }
+                        delegate.dependency {
+                        	delegate.groupId("org.apache.zookeeper")
+                        	delegate.artifactId("zookeeper")
+                        	delegate.version("3.4.9")
+                        }
+                        delegate.dependency {
+                            delegate.groupId("javax.validation")
+                            delegate.artifactId("validation-api")
+                            delegate.version("1.1.0.Final")
+                        }
+                        //httpclient
+                        delegate.dependency {
+                            delegate.groupId("org.apache.httpcomponents")
+                            delegate.artifactId("httpclient")
+                            delegate.version("4.5")
+                        }
+                        delegate.dependency {
+                                delegate.groupId("org.jboss.resteasy")
+                                delegate.artifactId("resteasy-jaxrs")
+                                delegate.version("3.0.11.Final")
+                                delegate.exclusions{
+	                                delegate.exclusion{
+	                                    delegate.groupId("org.apache.httpcomponents")
+	                                    delegate.artifactId("httpclient")
+	                                }
+	                            }
+                        }    
+                    	delegate.dependency {
+                                delegate.groupId("org.jboss.resteasy")
+                                delegate.artifactId("resteasy-client")
+                                delegate.version("3.0.11.Final")
+                        } 
+                    	delegate.dependency {
+                                delegate.groupId("org.jboss.resteasy")
+                                delegate.artifactId("resteasy-jackson-provider")
+                                delegate.version("3.0.11.Final")
+                        }                        
+                    	delegate.dependency {
+                                delegate.groupId("org.apache.tomcat.embed")
+                                delegate.artifactId("tomcat-embed-core")
+                                delegate.version("8.0.21")
+                        }   
+                    	delegate.dependency {
+                                delegate.groupId("org.apache.tomcat.embed")
+                                delegate.artifactId("tomcat-embed-logging-juli")
+                                delegate.version("8.0.21")
+                        } 
+                    }
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            if(moduleVersion.endsWith('-SNAPSHOT')) {
+                url publishSnapShotsURL
+            } else {
+                url publishReleaseURL
+            }
+            credentials {
+                username = publishUserName
+                password = publishUserPassword
+            }
+        }
+    }
+}

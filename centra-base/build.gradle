@@ -1,0 +1,81 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
+
+group 'com.ifudata.centra'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+ext{
+    moduleName="centra-base";
+    publishUserName = "centra_arch-publisher"
+    publishUserPassword = "centra_arch-publisher@123"
+    publishSnapshotsURL="http://192.168.0.250:18081/nexus/content/repositories/snapshots/"
+    publishReleasesURL="http://192.168.0.250:18081/nexus/content/repositories/releases/"
+    builtBy="gradle 2.2"
+}
+
+repositories {
+    maven{ url "http://192.168.0.250:18081/nexus/content/groups/public/"  }
+}
+
+
+sourceSets {
+    main {
+        java {
+            srcDirs = [
+                    'src/main/java'
+            ]
+        }
+    }
+}
+
+jar {
+    baseName moduleName
+    version version
+    manifest {
+        attributes 'packageName': baseName, 'Built-By': builtBy,'create-date': new Date().format('yyyy-MM-dd HH:mm:ss'), 'Manifest-Version': version
+    }
+}
+
+task sourceJar(type: Jar) {
+    baseName moduleName
+    version version
+    classifier "sources"
+    from sourceSets.main.allJava
+    manifest {
+        attributes 'packageName': baseName, 'Built-By': builtBy,'create-date': new Date().format('yyyy-MM-dd HH:mm:ss'), 'Manifest-Version': version
+    }
+}
+
+publishing {
+    publications {
+        publishJar(MavenPublication) {
+            from components.java
+            groupId group
+            artifactId moduleName
+            version version
+            artifact(sourceJar) {
+                classifier "sources"
+            }
+            pom.withXml {
+            }
+        }
+    }
+    repositories {
+        maven {
+            if (version.endsWith("-SNAPSHOT")) {
+                url publishSnapshotsURL
+            } else {
+                url publishReleasesURL
+            }
+            credentials {
+                username = publishUserName
+                password = publishUserPassword
+            }
+        }
+    }
+}

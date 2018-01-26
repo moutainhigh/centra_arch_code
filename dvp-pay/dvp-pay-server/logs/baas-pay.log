@@ -1,0 +1,1078 @@
+2017-07-10 10:55:02,379 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 10:55:02,391 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 10:55:02,813 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 10:55:02,855 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@510f3d34,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 10:55:02,978 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 10:55:37,682 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 10:55:37,688 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 10:55:38,156 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 10:55:38,194 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@ba2f4ec,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 10:55:38,331 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 10:56:27,099 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 10:56:27,103 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 10:56:27,681 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 10:56:27,725 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@ba2f4ec,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 10:56:27,987 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 11:25:26,451 ERROR [main] appserver.CacheServiceStart (CacheServiceStart.java:18) - 开始刷新缓存......
+2017-07-10 11:25:27,228 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 11:25:27,230 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 11:25:27,674 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 11:25:27,684 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 11:25:28,708 ERROR [main] appserver.CacheServiceStart (CacheServiceStart.java:34) - 缓存刷新结束,请通过日志查看是否刷新成功.....
+2017-07-10 11:44:18,740 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 11:44:18,742 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 11:44:19,148 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 11:44:19,170 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@2aceadd4,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 11:44:19,298 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 11:52:24,929 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 11:52:24,932 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 11:52:25,401 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 11:52:25,457 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@5dda768f,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 11:52:25,583 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 11:52:47,732 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 11:52:47,759 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 11:52:48,181 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 11:52:48,216 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@5dda768f,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 11:52:48,351 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 12:00:10,605 ERROR [main] appserver.DubboServiceStart (DubboServiceStart.java:21) - 开始启动 Dubbo 服务---------------------------
+2017-07-10 12:00:10,705 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 12:00:10,707 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 12:00:11,190 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:dubbo.appname=dvp-pay-server
+dubbo.registry.protocol=zookeeper
+dubbo.registry.address=192.168.0.226:39181
+#dubbo.registry.address=127.0.0.1:2181
+dubbo.registry.file=../logs/dvp-pay-server-dubbo-registry.cache
+
+dubbo.protocol=dubbo
+dubbo.protocol.port=20880
+dubbo.provider.timeout=200000
+2017-07-10 12:00:11,224 ERROR [main] util.DubboPropUtil (DubboPropUtil.java:20) - 获取到的dubbo.properties的配置信息:{"dubbo.registry.address":"192.168.0.226:39181","dubbo.protocol.port":"20880","dubbo.appname":"dvp-pay-server","dubbo.protocol":"dubbo","dubbo.registry.file":"../logs/dvp-pay-server-dubbo-registry.cache","dubbo.registry.protocol":"zookeeper","dubbo.provider.timeout":"200000"}
+2017-07-10 12:00:11,487 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) - using logger: com.alibaba.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
+2017-07-10 12:00:12,132 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 12:00:12,146 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 12:00:13,524 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.provider.timeout to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:13,528 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:13,529 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:13,530 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:13,530 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.protocol.port to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:13,533 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:13,534 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:13,534 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:13,617 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV to local registry, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:13,621 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV to url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV&methods=createTradeRecord,modifyTradeRecord&pid=18944&side=provider&timestamp=1499659213542, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:13,622 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register dubbo service com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV&methods=createTradeRecord,modifyTradeRecord&pid=18944&side=provider&timestamp=1499659213542 to registry registry://192.168.0.226:39181/com.alibaba.dubbo.registry.RegistryService?application=dvp-pay-server&dubbo=2.8.3&file=../logs/dvp-pay-server-dubbo-registry.cache&pid=18944&registry=zookeeper&timestamp=1499659213536, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:13,825 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /192.168.0.103:20880, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:13,864 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Load registry store file ..\logs\dvp-pay-server-dubbo-registry.cache, data: {com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV=empty://192.168.0.66:20880/com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV&methods=queryTradeRecordsByBatchNo,querySingleTradeRecordByTradeOrderId,querySingleTradeRecordByMerchantOrderId&pid=3892&side=provider&timestamp=1499416864790, com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV=empty://192.168.0.66:20880/com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV&methods=queryTerminalOrgRels&pid=3892&side=provider&timestamp=1499416864338, com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV=empty://192.168.0.66:20880/com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV&methods=createTradeRecord,modifyTradeRecord&pid=3892&side=provider&timestamp=1499416863071, com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV=empty://192.168.0.66:20880/com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV&methods=getPartnerId,getTenantId&pid=3892&side=provider&timestamp=1499416863991, com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV=empty://192.168.0.66:20880/com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV&methods=createTenantConfig,queryTenantConfigByTenantId,createOrModifyTenantConfig,queryTenantConfigByConfigTypeId&pid=3892&side=provider&timestamp=1499416863779}, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:13,896 INFO  [ZkClient-EventThread-25-192.168.0.226:39181] zkclient.ZkEventThread (ZkEventThread.java:65) - Starting ZkClient event thread.
+2017-07-10 12:00:13,899 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:zookeeper.version=3.4.9-1757313, built on 08/23/2016 06:50 GMT
+2017-07-10 12:00:13,899 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:host.name=DESKTOP-U1BQGAC
+2017-07-10 12:00:13,899 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:java.version=1.8.0_121
+2017-07-10 12:00:13,900 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:java.vendor=Oracle Corporation
+2017-07-10 12:00:13,900 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:java.home=D:\Program Files\Java\jre
+2017-07-10 12:00:13,900 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:java.class.path=D:\WorkSpace\Project-zc\zc\pay\dvp-pay\dvp-pay-server\pay-core\bin;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\aopalliance\aopalliance\1.0\235ba8b489512805ac13a8f9ea77a1ca5ebe3e8\aopalliance-1.0.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.101tec\zkclient\0.10\c54d4b5a5e89af75a80b6d5857400165ce5188d0\zkclient-0.10.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.alibaba\dubbox\2.8.3.1\a490f1f56235fb346cc44741ba1fc3aaca1773a0\dubbox-2.8.3.1.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.alibaba\fastjson\1.2.7\a5c721e8ea1e18854272879d6ed2770d25feb342\fastjson-1.2.7.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.baidu.disconf\disconf-client\2.6.36\db7cdb35b4c1948b984f83198fdd268f9ac0407b\disconf-client-2.6.36.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.baidu.disconf\disconf-core\2.6.36\7e9d0d769591014a1eb06ea0d3c8dcaeb913b579\disconf-core-2.6.36.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.4\a60a5e993c98c864010053cb901b7eab25306568\gson-2.2.4.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\19.0-rc2\93e17f60bc524c2610b41c494bb829c11ca89436\guava-19.0-rc2.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.ifudata.dvp\dvp-base\1.0-SNAPSHOT\906cb71cea018170de06f5360bf389e54f838a77\dvp-base-1.0-SNAPSHOT.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.ifudata.dvp\dvp-redis-init\2.3-SNAPSHOT\e6a8c186753117d41f755275c9d133cf5d1c32ff\dvp-redis-init-2.3-SNAPSHOT.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.ifudata.dvp\dvp-redis\2.0-SNAPSHOT\328d1d7cc5698f1685653fd77469510c4020d4ab\dvp-redis-2.0-SNAPSHOT.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.ifudata.dvp\dvp-sdk\1.0-SNAPSHOT\dcd3e41f3812427cf824584802ff9aeea17b29e1\dvp-sdk-1.0-SNAPSHOT.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.zaxxer\HikariCP\2.4.0\a3b294b03eba5c835f7b9f5e515389286ae83305\HikariCP-2.4.0.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\commons-beanutils\commons-beanutils\1.9.2\7a87d845ad3a155297e8f67d9008f4c1e5656b71\commons-beanutils-1.9.2.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.9\9ce04e34240f674bc72680f8b843b1457383161a\commons-codec-1.9.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\commons-collections\commons-collections\3.2.1\761ea405b9b37ced573d2df0d1e3a4e0f9edc668\commons-collections-3.2.1.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\commons-io\commons-io\2.1\fd51f906669f49a4ffd06650666c3b8147a6106e\commons-io-2.1.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\commons-logging\commons-logging\1.2\4bfc12adfe4842bf07b657f0369c4cb522955686\commons-logging-1.2.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\dom4j\dom4j\1.6.1\5d3ccc056b6f056dbf0dddfdf43894b9065a8f94\dom4j-1.6.1.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\io.netty\netty\3.10.5.Final\9ca7d55d246092bddd29b867706e2f6c7db701a0\netty-3.10.5.Final.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\javax.activation\activation\1.1\e6cb541461c2834bdea3eb920f1884d1eb508b50\activation-1.1.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\javax.validation\validation-api\1.0.0.GA\b6bd7f9d78f6fdaa3c37dae18a4bd298915f328e\validation-api-1.0.0.GA.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\javax.ws.rs\javax.ws.rs-api\2.0.1\104e9c2b5583cfcfeac0402316221648d6d8ea6b\javax.ws.rs-api-2.0.1.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\jline\jline\0.9.94\99a18e9a44834afdebc467294e1138364c207402\jline-0.9.94.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\junit\junit\4.12\2973d150c0dc1fefe998f834810d68f278ea58ec\junit-4.12.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.36\6bb5861f44c21c775ee713a438e5bc493c095f7a\mysql-connector-java-5.1.36.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\net.jcip\jcip-annotations\1.0\afba4942caaeaf46aab0b976afd57cc7c181467e\jcip-annotations-1.0.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-lang3\3.4\5fe28b9518e58819180a43a850fbc0dd24b7c050\commons-lang3-3.4.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-pool2\2.4.2\e5f4f28f19d57716fbc3989d7a357ebf1e454fea\commons-pool2-2.4.2.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpclient\4.5.1\7e3cecc566df91338c6c67883b89ddd05a17db43\httpclient-4.5.1.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpcore\4.4.3\e876a79d561e5c6207b78d347e198c8c4531a5e5\httpcore-4.4.3.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-api\2.4\cc68e72d6d14098ba044123e10e048d203d3fd47\log4j-api-2.4.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-core\2.4\d99532ba3603f27bebf4cdd3653feb0e0b84cf6\log4j-core-2.4.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-slf4j-impl\2.4\10014efa6c4d7f7e6df464c82629a443f987e215\log4j-slf4j-impl-2.4.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-core\8.0.21\d28007b6c2d99e9c3c1473cfc0c88dfe6b13363f\tomcat-embed-core-8.0.21.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-logging-juli\8.0.21\a415ec80d6f084fef8c8124cad23b41a9d7d4457\tomcat-embed-logging-juli-8.0.21.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.zookeeper\zookeeper\3.4.9\cbd9135689d6622a411e1e9b0ce880b502be5277\zookeeper-3.4.9.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjrt\1.8.5\39a8ff2d1f79267907f5573c090b342b040b9682\aspectjrt-1.8.5.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjtools\1.7.4\23e0a79664fdb42bbf9116f639bc3c2c4012844f\aspectjtools-1.7.4.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.codehaus.jackson\jackson-core-asl\1.9.12\ecfc6f73a841c4c3c653b59651a3f9d5f1286469\jackson-core-asl-1.9.12.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.codehaus.jackson\jackson-jaxrs\1.9.12\8bc0bc2e095fd1b83af48b03f67f2ad16e829c01\jackson-jaxrs-1.9.12.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.codehaus.jackson\jackson-mapper-asl\1.9.12\8b290aae44213e2f6da00c07af59b0d442068f4d\jackson-mapper-asl-1.9.12.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.codehaus.jackson\jackson-xc\1.9.12\2ec470401d7ac760481c84e95be8c66f19f92d2e\jackson-xc-1.9.12.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-core\1.3\42a25dc3219429f0e5d060061f71acb49bf010a0\hamcrest-core-1.3.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.javassist\javassist\3.16.1-GA\315891b371395271977af518d4db5cee1a0bc9bf\javassist-3.16.1-GA.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.jboss.resteasy\jaxrs-api\3.0.11.Final\de61cbcc33c605a804987dcb4e6f4fc97325962b\jaxrs-api-3.0.11.Final.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.jboss.resteasy\resteasy-client\3.0.11.Final\6f34f38fcd208ccb4fb594b7d6c4fdd88039cc72\resteasy-client-3.0.11.Final.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.jboss.resteasy\resteasy-jackson-provider\3.0.11.Final\f488de7ea0687a551ba4b9987d70327df270407e\resteasy-jackson-provider-3.0.11.Final.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.jboss.resteasy\resteasy-jaxrs\3.0.11.Final\e38927a7ee37a43950d0ca58d63042d14ca93a5f\resteasy-jaxrs-3.0.11.Final.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.jboss.spec.javax.annotation\jboss-annotations-api_1.1_spec\1.0.1.Final\8f9335f966885529d1254793182ff3df1c515eb8\jboss-annotations-api_1.1_spec-1.0.1.Final.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.mybatis\mybatis-spring\1.2.3\18f0297b83960f280bacd68e87f9d374813e099e\mybatis-spring-1.2.3.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.mybatis\mybatis\3.3.0\7c0e3582a1518b6d8e4e37ce2fc49b7bb6f2040f\mybatis-3.3.0.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.reflections\reflections\0.9.9-RC1\b78b545f452a6b7d4fab2641dd0b0147a0f4fd5e\reflections-0.9.9-RC1.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.12\8e20852d05222dc286bf1c71d78d0531e177c317\slf4j-api-1.7.12.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.springframework\spring-aop\4.1.7.RELEASE\127f005bac8ec1fbbbc5bb1595d78c6179394a46\spring-aop-4.1.7.RELEASE.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.springframework\spring-beans\4.1.7.RELEASE\e52148e9671e2918a2172c9cf56b77bede2042ce\spring-beans-4.1.7.RELEASE.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.springframework\spring-context\4.1.7.RELEASE\8c6c02bcccfa23a74db59f7b7725e69e1af38f04\spring-context-4.1.7.RELEASE.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.springframework\spring-core\4.1.7.RELEASE\9f8e34eef228f44bda771c9dc62e9f1efa82c92d\spring-core-4.1.7.RELEASE.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.springframework\spring-expression\4.1.7.RELEASE\9bc3b81d05961f042ea4a45e84d60cdc59ea51f5\spring-expression-4.1.7.RELEASE.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.springframework\spring-jdbc\4.1.7.RELEASE\5e4c9931acaf2857efe5f1ad27e4791c0855b8b2\spring-jdbc-4.1.7.RELEASE.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.springframework\spring-test\4.1.7.RELEASE\5953f9c4cf1d4ddf323cd6caf60daf33f1abafc3\spring-test-4.1.7.RELEASE.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.springframework\spring-tx\4.1.7.RELEASE\3465a5d3b24006d51482cf45abd13e347f64582a\spring-tx-4.1.7.RELEASE.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\postgresql\postgresql\9.1-901-1.jdbc4\9bfabe48876ec38f6cbaa6931bad05c64a9ea942\postgresql-9.1-901-1.jdbc4.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\redis.clients\jedis\2.9.0\292bc9cc26553acd3cccc26f2f95620bf88a04c2\jedis-2.9.0.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\xml-apis\xml-apis\1.0.b2\3136ca936f64c9d68529f048c2618bd356bf85c9\xml-apis-1.0.b2.jar;D:\WorkSpace\Project-zc\zc\pay\dvp-pay\dvp-pay-server\pay-api\bin
+2017-07-10 12:00:13,900 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:java.library.path=D:\Program Files\Java\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:/Program Files/Java/jre/bin/server;D:/Program Files/Java/jre/bin;D:/Program Files/Java/jre/lib/amd64;C:\ProgramData\Oracle\Java\javapath;D:\Java\gradle-2.9\bin;D:\Program Files\Java\jdk1.8.0_121\bin;D:\Program Files\Java\jdk1.8.0_121\lib\dt.jar;D:\Program Files\Java\jdk1.8.0_121\lib\tools.jar;D:\Java\Tomcat\apache-tomcat-7.0.55\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\Java\TortoiseSVN\bin;C:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;C:\Users\yuansc\AppData\Local\Microsoft\WindowsApps;;D:\Java\Software\zc\eclipse;;.
+2017-07-10 12:00:13,901 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:java.io.tmpdir=C:\Users\yuansc\AppData\Local\Temp\
+2017-07-10 12:00:13,901 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:java.compiler=<NA>
+2017-07-10 12:00:13,902 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:os.name=Windows 10
+2017-07-10 12:00:13,902 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:os.arch=amd64
+2017-07-10 12:00:13,902 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:os.version=10.0
+2017-07-10 12:00:13,902 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:user.name=yuansc
+2017-07-10 12:00:13,902 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:user.home=C:\Users\yuansc
+2017-07-10 12:00:13,903 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:user.dir=D:\WorkSpace\Project-zc\zc\pay\dvp-pay\dvp-pay-server\pay-core
+2017-07-10 12:00:13,904 INFO  [main] zookeeper.ZooKeeper (ZooKeeper.java:438) - Initiating client connection, connectString=192.168.0.226:39181 sessionTimeout=60000 watcher=org.I0Itec.zkclient.ZkClient@32c0915e
+2017-07-10 12:00:13,927 INFO  [main] zkclient.ZkClient (ZkClient.java:936) - Waiting for keeper state SyncConnected
+2017-07-10 12:00:13,934 INFO  [main-SendThread(192.168.0.226:39181)] zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1032) - Opening socket connection to server 192.168.0.226/192.168.0.226:39181. Will not attempt to authenticate using SASL (unknown error)
+2017-07-10 12:00:13,955 INFO  [main-SendThread(192.168.0.226:39181)] zookeeper.ClientCnxn$SendThread (ClientCnxn.java:876) - Socket connection established to 192.168.0.226/192.168.0.226:39181, initiating session
+2017-07-10 12:00:13,975 INFO  [main-SendThread(192.168.0.226:39181)] zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1299) - Session establishment complete on server 192.168.0.226/192.168.0.226:39181, sessionid = 0x15d15bae25100c2, negotiated timeout = 40000
+2017-07-10 12:00:13,978 INFO  [main-EventThread] zkclient.ZkClient (ZkClient.java:713) - zookeeper state changed (SyncConnected)
+2017-07-10 12:00:13,980 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register: dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV&methods=createTradeRecord,modifyTradeRecord&pid=18944&side=provider&timestamp=1499659213542, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,049 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Subscribe: provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV&methods=createTradeRecord,modifyTradeRecord&pid=18944&side=provider&timestamp=1499659213542, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,139 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Notify urls for subscribe url provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV&methods=createTradeRecord,modifyTradeRecord&pid=18944&side=provider&timestamp=1499659213542, urls: [empty://192.168.0.103:20880/com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV&methods=createTradeRecord,modifyTradeRecord&pid=18944&side=provider&timestamp=1499659213542], dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,231 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.provider.timeout to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,235 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,236 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,237 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,239 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.protocol.port to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,240 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,241 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,242 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,294 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV to local registry, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,295 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV to url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV&methods=createTenantConfig,queryTenantConfigByTenantId,createOrModifyTenantConfig,queryTenantConfigByConfigTypeId&pid=18944&side=provider&timestamp=1499659214244, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,296 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register dubbo service com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV&methods=createTenantConfig,queryTenantConfigByTenantId,createOrModifyTenantConfig,queryTenantConfigByConfigTypeId&pid=18944&side=provider&timestamp=1499659214244 to registry registry://192.168.0.226:39181/com.alibaba.dubbo.registry.RegistryService?application=dvp-pay-server&dubbo=2.8.3&file=../logs/dvp-pay-server-dubbo-registry.cache&pid=18944&registry=zookeeper&timestamp=1499659214242, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,298 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register: dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV&methods=createTenantConfig,queryTenantConfigByTenantId,createOrModifyTenantConfig,queryTenantConfigByConfigTypeId&pid=18944&side=provider&timestamp=1499659214244, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,365 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Subscribe: provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV&methods=createTenantConfig,queryTenantConfigByTenantId,createOrModifyTenantConfig,queryTenantConfigByConfigTypeId&pid=18944&side=provider&timestamp=1499659214244, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,436 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Notify urls for subscribe url provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV&methods=createTenantConfig,queryTenantConfigByTenantId,createOrModifyTenantConfig,queryTenantConfigByConfigTypeId&pid=18944&side=provider&timestamp=1499659214244, urls: [empty://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV&methods=createTenantConfig,queryTenantConfigByTenantId,createOrModifyTenantConfig,queryTenantConfigByConfigTypeId&pid=18944&side=provider&timestamp=1499659214244], dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,444 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.provider.timeout to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,445 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,446 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,446 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,448 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.protocol.port to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,450 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,451 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,451 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,469 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV to local registry, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,470 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV to url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV&methods=getPartnerId,getTenantId&pid=18944&side=provider&timestamp=1499659214453, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,470 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register dubbo service com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV&methods=getPartnerId,getTenantId&pid=18944&side=provider&timestamp=1499659214453 to registry registry://192.168.0.226:39181/com.alibaba.dubbo.registry.RegistryService?application=dvp-pay-server&dubbo=2.8.3&file=../logs/dvp-pay-server-dubbo-registry.cache&pid=18944&registry=zookeeper&timestamp=1499659214453, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,471 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register: dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV&methods=getPartnerId,getTenantId&pid=18944&side=provider&timestamp=1499659214453, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,533 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Subscribe: provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV&methods=getPartnerId,getTenantId&pid=18944&side=provider&timestamp=1499659214453, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,604 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Notify urls for subscribe url provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV&methods=getPartnerId,getTenantId&pid=18944&side=provider&timestamp=1499659214453, urls: [empty://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV&methods=getPartnerId,getTenantId&pid=18944&side=provider&timestamp=1499659214453], dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,613 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.provider.timeout to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,613 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,614 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,615 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,615 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.protocol.port to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,624 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,625 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,625 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,662 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV to local registry, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,667 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV to url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV&methods=queryTerminalOrgRels&pid=18944&side=provider&timestamp=1499659214628, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,667 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register dubbo service com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV&methods=queryTerminalOrgRels&pid=18944&side=provider&timestamp=1499659214628 to registry registry://192.168.0.226:39181/com.alibaba.dubbo.registry.RegistryService?application=dvp-pay-server&dubbo=2.8.3&file=../logs/dvp-pay-server-dubbo-registry.cache&pid=18944&registry=zookeeper&timestamp=1499659214626, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,671 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register: dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV&methods=queryTerminalOrgRels&pid=18944&side=provider&timestamp=1499659214628, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,737 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Subscribe: provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV&methods=queryTerminalOrgRels&pid=18944&side=provider&timestamp=1499659214628, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,825 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Notify urls for subscribe url provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV&methods=queryTerminalOrgRels&pid=18944&side=provider&timestamp=1499659214628, urls: [empty://192.168.0.103:20880/com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV&methods=queryTerminalOrgRels&pid=18944&side=provider&timestamp=1499659214628], dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,845 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.provider.timeout to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,846 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,847 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,848 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,849 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.protocol.port to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,851 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,852 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,852 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,865 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV to local registry, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,865 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV to url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV&methods=queryTradeRecordsByBatchNo,querySingleTradeRecordByTradeOrderId,querySingleTradeRecordByMerchantOrderId&pid=18944&side=provider&timestamp=1499659214853, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,866 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register dubbo service com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV&methods=queryTradeRecordsByBatchNo,querySingleTradeRecordByTradeOrderId,querySingleTradeRecordByMerchantOrderId&pid=18944&side=provider&timestamp=1499659214853 to registry registry://192.168.0.226:39181/com.alibaba.dubbo.registry.RegistryService?application=dvp-pay-server&dubbo=2.8.3&file=../logs/dvp-pay-server-dubbo-registry.cache&pid=18944&registry=zookeeper&timestamp=1499659214852, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,867 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register: dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV&methods=queryTradeRecordsByBatchNo,querySingleTradeRecordByTradeOrderId,querySingleTradeRecordByMerchantOrderId&pid=18944&side=provider&timestamp=1499659214853, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,920 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Subscribe: provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV&methods=queryTradeRecordsByBatchNo,querySingleTradeRecordByTradeOrderId,querySingleTradeRecordByMerchantOrderId&pid=18944&side=provider&timestamp=1499659214853, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,979 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Notify urls for subscribe url provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV&methods=queryTradeRecordsByBatchNo,querySingleTradeRecordByTradeOrderId,querySingleTradeRecordByMerchantOrderId&pid=18944&side=provider&timestamp=1499659214853, urls: [empty://192.168.0.103:20880/com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV&methods=queryTradeRecordsByBatchNo,querySingleTradeRecordByTradeOrderId,querySingleTradeRecordByMerchantOrderId&pid=18944&side=provider&timestamp=1499659214853], dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 12:00:14,997 ERROR [main] appserver.DubboServiceStart (DubboServiceStart.java:36) -  Dubbo 服务启动完毕---------------------------
+2017-07-10 12:00:31,541 ERROR [main] appserver.CacheServiceStart (CacheServiceStart.java:18) - 开始刷新缓存......
+2017-07-10 12:00:32,261 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 12:00:32,264 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 12:00:32,777 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 12:00:32,789 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 12:00:33,957 ERROR [main] appserver.CacheServiceStart (CacheServiceStart.java:34) - 缓存刷新结束,请通过日志查看是否刷新成功.....
+2017-07-10 13:41:34,005 ERROR [main] appserver.DubboServiceStart (DubboServiceStart.java:21) - 开始启动 Dubbo 服务---------------------------
+2017-07-10 13:41:34,106 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 13:41:34,109 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 13:41:34,552 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:dubbo.appname=dvp-pay-server
+dubbo.registry.protocol=zookeeper
+dubbo.registry.address=192.168.0.226:39181
+#dubbo.registry.address=127.0.0.1:2181
+dubbo.registry.file=../logs/dvp-pay-server-dubbo-registry.cache
+
+dubbo.protocol=dubbo
+dubbo.protocol.port=20880
+dubbo.provider.timeout=200000
+2017-07-10 13:41:34,567 ERROR [main] util.DubboPropUtil (DubboPropUtil.java:20) - 获取到的dubbo.properties的配置信息:{"dubbo.registry.address":"192.168.0.226:39181","dubbo.protocol.port":"20880","dubbo.appname":"dvp-pay-server","dubbo.protocol":"dubbo","dubbo.registry.file":"../logs/dvp-pay-server-dubbo-registry.cache","dubbo.registry.protocol":"zookeeper","dubbo.provider.timeout":"200000"}
+2017-07-10 13:41:34,826 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) - using logger: com.alibaba.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
+2017-07-10 13:41:35,644 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 13:41:35,654 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 13:41:36,795 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.provider.timeout to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:36,797 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:36,798 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:36,799 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:36,800 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.protocol.port to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:36,803 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:36,804 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:36,805 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:36,911 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV to local registry, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:36,912 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV to url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV&methods=createTradeRecord,modifyTradeRecord&pid=1764&side=provider&timestamp=1499665296812, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:36,912 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register dubbo service com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV&methods=createTradeRecord,modifyTradeRecord&pid=1764&side=provider&timestamp=1499665296812 to registry registry://192.168.0.226:39181/com.alibaba.dubbo.registry.RegistryService?application=dvp-pay-server&dubbo=2.8.3&file=../logs/dvp-pay-server-dubbo-registry.cache&pid=1764&registry=zookeeper&timestamp=1499665296807, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,134 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Start NettyServer bind /0.0.0.0:20880, export /192.168.0.103:20880, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,158 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Load registry store file ..\logs\dvp-pay-server-dubbo-registry.cache, data: {com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV=empty://192.168.0.103:20880/com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV&methods=queryTradeRecordsByBatchNo,querySingleTradeRecordByTradeOrderId,querySingleTradeRecordByMerchantOrderId&pid=18944&side=provider&timestamp=1499659214853, com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV=empty://192.168.0.103:20880/com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV&methods=queryTerminalOrgRels&pid=18944&side=provider&timestamp=1499659214628, com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV=empty://192.168.0.103:20880/com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV&methods=createTradeRecord,modifyTradeRecord&pid=18944&side=provider&timestamp=1499659213542, com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV=empty://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV&methods=createTenantConfig,queryTenantConfigByTenantId,createOrModifyTenantConfig,queryTenantConfigByConfigTypeId&pid=18944&side=provider&timestamp=1499659214244, com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV=empty://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV&methods=getPartnerId,getTenantId&pid=18944&side=provider&timestamp=1499659214453}, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,190 INFO  [ZkClient-EventThread-25-192.168.0.226:39181] zkclient.ZkEventThread (ZkEventThread.java:65) - Starting ZkClient event thread.
+2017-07-10 13:41:37,197 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:zookeeper.version=3.4.9-1757313, built on 08/23/2016 06:50 GMT
+2017-07-10 13:41:37,199 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:host.name=DESKTOP-U1BQGAC
+2017-07-10 13:41:37,200 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:java.version=1.8.0_121
+2017-07-10 13:41:37,200 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:java.vendor=Oracle Corporation
+2017-07-10 13:41:37,201 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:java.home=D:\Program Files\Java\jre
+2017-07-10 13:41:37,201 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:java.class.path=D:\WorkSpace\Project-zc\zc\pay\dvp-pay\dvp-pay-server\pay-core\bin;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\aopalliance\aopalliance\1.0\235ba8b489512805ac13a8f9ea77a1ca5ebe3e8\aopalliance-1.0.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.101tec\zkclient\0.10\c54d4b5a5e89af75a80b6d5857400165ce5188d0\zkclient-0.10.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.alibaba\dubbox\2.8.3.1\a490f1f56235fb346cc44741ba1fc3aaca1773a0\dubbox-2.8.3.1.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.alibaba\fastjson\1.2.7\a5c721e8ea1e18854272879d6ed2770d25feb342\fastjson-1.2.7.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.baidu.disconf\disconf-client\2.6.36\db7cdb35b4c1948b984f83198fdd268f9ac0407b\disconf-client-2.6.36.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.baidu.disconf\disconf-core\2.6.36\7e9d0d769591014a1eb06ea0d3c8dcaeb913b579\disconf-core-2.6.36.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.4\a60a5e993c98c864010053cb901b7eab25306568\gson-2.2.4.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\19.0-rc2\93e17f60bc524c2610b41c494bb829c11ca89436\guava-19.0-rc2.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.ifudata.dvp\dvp-base\1.0-SNAPSHOT\906cb71cea018170de06f5360bf389e54f838a77\dvp-base-1.0-SNAPSHOT.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.ifudata.dvp\dvp-redis-init\2.3-SNAPSHOT\e6a8c186753117d41f755275c9d133cf5d1c32ff\dvp-redis-init-2.3-SNAPSHOT.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.ifudata.dvp\dvp-redis\2.0-SNAPSHOT\328d1d7cc5698f1685653fd77469510c4020d4ab\dvp-redis-2.0-SNAPSHOT.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.ifudata.dvp\dvp-sdk\1.0-SNAPSHOT\dcd3e41f3812427cf824584802ff9aeea17b29e1\dvp-sdk-1.0-SNAPSHOT.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\com.zaxxer\HikariCP\2.4.0\a3b294b03eba5c835f7b9f5e515389286ae83305\HikariCP-2.4.0.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\commons-beanutils\commons-beanutils\1.9.2\7a87d845ad3a155297e8f67d9008f4c1e5656b71\commons-beanutils-1.9.2.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.9\9ce04e34240f674bc72680f8b843b1457383161a\commons-codec-1.9.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\commons-collections\commons-collections\3.2.1\761ea405b9b37ced573d2df0d1e3a4e0f9edc668\commons-collections-3.2.1.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\commons-io\commons-io\2.1\fd51f906669f49a4ffd06650666c3b8147a6106e\commons-io-2.1.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\commons-logging\commons-logging\1.2\4bfc12adfe4842bf07b657f0369c4cb522955686\commons-logging-1.2.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\dom4j\dom4j\1.6.1\5d3ccc056b6f056dbf0dddfdf43894b9065a8f94\dom4j-1.6.1.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\io.netty\netty\3.10.5.Final\9ca7d55d246092bddd29b867706e2f6c7db701a0\netty-3.10.5.Final.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\javax.activation\activation\1.1\e6cb541461c2834bdea3eb920f1884d1eb508b50\activation-1.1.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\javax.validation\validation-api\1.0.0.GA\b6bd7f9d78f6fdaa3c37dae18a4bd298915f328e\validation-api-1.0.0.GA.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\javax.ws.rs\javax.ws.rs-api\2.0.1\104e9c2b5583cfcfeac0402316221648d6d8ea6b\javax.ws.rs-api-2.0.1.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\jline\jline\0.9.94\99a18e9a44834afdebc467294e1138364c207402\jline-0.9.94.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\junit\junit\4.12\2973d150c0dc1fefe998f834810d68f278ea58ec\junit-4.12.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.36\6bb5861f44c21c775ee713a438e5bc493c095f7a\mysql-connector-java-5.1.36.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\net.jcip\jcip-annotations\1.0\afba4942caaeaf46aab0b976afd57cc7c181467e\jcip-annotations-1.0.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-lang3\3.4\5fe28b9518e58819180a43a850fbc0dd24b7c050\commons-lang3-3.4.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-pool2\2.4.2\e5f4f28f19d57716fbc3989d7a357ebf1e454fea\commons-pool2-2.4.2.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpclient\4.5.1\7e3cecc566df91338c6c67883b89ddd05a17db43\httpclient-4.5.1.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpcore\4.4.3\e876a79d561e5c6207b78d347e198c8c4531a5e5\httpcore-4.4.3.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-api\2.4\cc68e72d6d14098ba044123e10e048d203d3fd47\log4j-api-2.4.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-core\2.4\d99532ba3603f27bebf4cdd3653feb0e0b84cf6\log4j-core-2.4.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-slf4j-impl\2.4\10014efa6c4d7f7e6df464c82629a443f987e215\log4j-slf4j-impl-2.4.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-core\8.0.21\d28007b6c2d99e9c3c1473cfc0c88dfe6b13363f\tomcat-embed-core-8.0.21.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-logging-juli\8.0.21\a415ec80d6f084fef8c8124cad23b41a9d7d4457\tomcat-embed-logging-juli-8.0.21.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.apache.zookeeper\zookeeper\3.4.9\cbd9135689d6622a411e1e9b0ce880b502be5277\zookeeper-3.4.9.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjrt\1.8.5\39a8ff2d1f79267907f5573c090b342b040b9682\aspectjrt-1.8.5.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjtools\1.7.4\23e0a79664fdb42bbf9116f639bc3c2c4012844f\aspectjtools-1.7.4.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.codehaus.jackson\jackson-core-asl\1.9.12\ecfc6f73a841c4c3c653b59651a3f9d5f1286469\jackson-core-asl-1.9.12.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.codehaus.jackson\jackson-jaxrs\1.9.12\8bc0bc2e095fd1b83af48b03f67f2ad16e829c01\jackson-jaxrs-1.9.12.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.codehaus.jackson\jackson-mapper-asl\1.9.12\8b290aae44213e2f6da00c07af59b0d442068f4d\jackson-mapper-asl-1.9.12.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.codehaus.jackson\jackson-xc\1.9.12\2ec470401d7ac760481c84e95be8c66f19f92d2e\jackson-xc-1.9.12.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-core\1.3\42a25dc3219429f0e5d060061f71acb49bf010a0\hamcrest-core-1.3.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.javassist\javassist\3.16.1-GA\315891b371395271977af518d4db5cee1a0bc9bf\javassist-3.16.1-GA.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.jboss.resteasy\jaxrs-api\3.0.11.Final\de61cbcc33c605a804987dcb4e6f4fc97325962b\jaxrs-api-3.0.11.Final.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.jboss.resteasy\resteasy-client\3.0.11.Final\6f34f38fcd208ccb4fb594b7d6c4fdd88039cc72\resteasy-client-3.0.11.Final.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.jboss.resteasy\resteasy-jackson-provider\3.0.11.Final\f488de7ea0687a551ba4b9987d70327df270407e\resteasy-jackson-provider-3.0.11.Final.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.jboss.resteasy\resteasy-jaxrs\3.0.11.Final\e38927a7ee37a43950d0ca58d63042d14ca93a5f\resteasy-jaxrs-3.0.11.Final.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.jboss.spec.javax.annotation\jboss-annotations-api_1.1_spec\1.0.1.Final\8f9335f966885529d1254793182ff3df1c515eb8\jboss-annotations-api_1.1_spec-1.0.1.Final.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.mybatis\mybatis-spring\1.2.3\18f0297b83960f280bacd68e87f9d374813e099e\mybatis-spring-1.2.3.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.mybatis\mybatis\3.3.0\7c0e3582a1518b6d8e4e37ce2fc49b7bb6f2040f\mybatis-3.3.0.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.reflections\reflections\0.9.9-RC1\b78b545f452a6b7d4fab2641dd0b0147a0f4fd5e\reflections-0.9.9-RC1.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.12\8e20852d05222dc286bf1c71d78d0531e177c317\slf4j-api-1.7.12.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.springframework\spring-aop\4.1.7.RELEASE\127f005bac8ec1fbbbc5bb1595d78c6179394a46\spring-aop-4.1.7.RELEASE.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.springframework\spring-beans\4.1.7.RELEASE\e52148e9671e2918a2172c9cf56b77bede2042ce\spring-beans-4.1.7.RELEASE.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.springframework\spring-context\4.1.7.RELEASE\8c6c02bcccfa23a74db59f7b7725e69e1af38f04\spring-context-4.1.7.RELEASE.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.springframework\spring-core\4.1.7.RELEASE\9f8e34eef228f44bda771c9dc62e9f1efa82c92d\spring-core-4.1.7.RELEASE.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.springframework\spring-expression\4.1.7.RELEASE\9bc3b81d05961f042ea4a45e84d60cdc59ea51f5\spring-expression-4.1.7.RELEASE.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.springframework\spring-jdbc\4.1.7.RELEASE\5e4c9931acaf2857efe5f1ad27e4791c0855b8b2\spring-jdbc-4.1.7.RELEASE.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.springframework\spring-test\4.1.7.RELEASE\5953f9c4cf1d4ddf323cd6caf60daf33f1abafc3\spring-test-4.1.7.RELEASE.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\org.springframework\spring-tx\4.1.7.RELEASE\3465a5d3b24006d51482cf45abd13e347f64582a\spring-tx-4.1.7.RELEASE.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\postgresql\postgresql\9.1-901-1.jdbc4\9bfabe48876ec38f6cbaa6931bad05c64a9ea942\postgresql-9.1-901-1.jdbc4.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\redis.clients\jedis\2.9.0\292bc9cc26553acd3cccc26f2f95620bf88a04c2\jedis-2.9.0.jar;C:\Users\yuansc\.gradle\caches\modules-2\files-2.1\xml-apis\xml-apis\1.0.b2\3136ca936f64c9d68529f048c2618bd356bf85c9\xml-apis-1.0.b2.jar;D:\WorkSpace\Project-zc\zc\pay\dvp-pay\dvp-pay-server\pay-api\bin
+2017-07-10 13:41:37,202 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:java.library.path=D:\Program Files\Java\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:/Program Files/Java/jre/bin/server;D:/Program Files/Java/jre/bin;D:/Program Files/Java/jre/lib/amd64;C:\ProgramData\Oracle\Java\javapath;D:\Java\gradle-2.9\bin;D:\Program Files\Java\jdk1.8.0_121\bin;D:\Program Files\Java\jdk1.8.0_121\lib\dt.jar;D:\Program Files\Java\jdk1.8.0_121\lib\tools.jar;D:\Java\Tomcat\apache-tomcat-7.0.55\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\Java\TortoiseSVN\bin;C:\Program Files (x86)\MySQL\MySQL Server 5.5\bin;C:\Users\yuansc\AppData\Local\Microsoft\WindowsApps;;D:\Java\Software\zc\eclipse;;.
+2017-07-10 13:41:37,202 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:java.io.tmpdir=C:\Users\yuansc\AppData\Local\Temp\
+2017-07-10 13:41:37,202 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:java.compiler=<NA>
+2017-07-10 13:41:37,203 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:os.name=Windows 10
+2017-07-10 13:41:37,203 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:os.arch=amd64
+2017-07-10 13:41:37,203 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:os.version=10.0
+2017-07-10 13:41:37,203 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:user.name=yuansc
+2017-07-10 13:41:37,204 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:user.home=C:\Users\yuansc
+2017-07-10 13:41:37,204 INFO  [main] zookeeper.Environment (Environment.java:100) - Client environment:user.dir=D:\WorkSpace\Project-zc\zc\pay\dvp-pay\dvp-pay-server\pay-core
+2017-07-10 13:41:37,205 INFO  [main] zookeeper.ZooKeeper (ZooKeeper.java:438) - Initiating client connection, connectString=192.168.0.226:39181 sessionTimeout=60000 watcher=org.I0Itec.zkclient.ZkClient@32c0915e
+2017-07-10 13:41:37,226 INFO  [main] zkclient.ZkClient (ZkClient.java:936) - Waiting for keeper state SyncConnected
+2017-07-10 13:41:37,229 INFO  [main-SendThread(192.168.0.226:39181)] zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1032) - Opening socket connection to server 192.168.0.226/192.168.0.226:39181. Will not attempt to authenticate using SASL (unknown error)
+2017-07-10 13:41:37,259 INFO  [main-SendThread(192.168.0.226:39181)] zookeeper.ClientCnxn$SendThread (ClientCnxn.java:876) - Socket connection established to 192.168.0.226/192.168.0.226:39181, initiating session
+2017-07-10 13:41:37,279 INFO  [main-SendThread(192.168.0.226:39181)] zookeeper.ClientCnxn$SendThread (ClientCnxn.java:1299) - Session establishment complete on server 192.168.0.226/192.168.0.226:39181, sessionid = 0x15d15bae25100c5, negotiated timeout = 40000
+2017-07-10 13:41:37,283 INFO  [main-EventThread] zkclient.ZkClient (ZkClient.java:713) - zookeeper state changed (SyncConnected)
+2017-07-10 13:41:37,285 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register: dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV&methods=createTradeRecord,modifyTradeRecord&pid=1764&side=provider&timestamp=1499665296812, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,353 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Subscribe: provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV&methods=createTradeRecord,modifyTradeRecord&pid=1764&side=provider&timestamp=1499665296812, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,454 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Notify urls for subscribe url provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV&methods=createTradeRecord,modifyTradeRecord&pid=1764&side=provider&timestamp=1499665296812, urls: [empty://192.168.0.103:20880/com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.paycenter.interfaces.IPayCenterSV&methods=createTradeRecord,modifyTradeRecord&pid=1764&side=provider&timestamp=1499665296812], dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,556 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.provider.timeout to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,557 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,557 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,558 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,559 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.protocol.port to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,561 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,562 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,562 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,601 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV to local registry, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,612 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV to url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV&methods=createTenantConfig,queryTenantConfigByTenantId,createOrModifyTenantConfig,queryTenantConfigByConfigTypeId&pid=1764&side=provider&timestamp=1499665297568, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,613 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register dubbo service com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV&methods=createTenantConfig,queryTenantConfigByTenantId,createOrModifyTenantConfig,queryTenantConfigByConfigTypeId&pid=1764&side=provider&timestamp=1499665297568 to registry registry://192.168.0.226:39181/com.alibaba.dubbo.registry.RegistryService?application=dvp-pay-server&dubbo=2.8.3&file=../logs/dvp-pay-server-dubbo-registry.cache&pid=1764&registry=zookeeper&timestamp=1499665297567, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,615 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register: dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV&methods=createTenantConfig,queryTenantConfigByTenantId,createOrModifyTenantConfig,queryTenantConfigByConfigTypeId&pid=1764&side=provider&timestamp=1499665297568, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,709 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Subscribe: provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV&methods=createTenantConfig,queryTenantConfigByTenantId,createOrModifyTenantConfig,queryTenantConfigByConfigTypeId&pid=1764&side=provider&timestamp=1499665297568, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,785 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Notify urls for subscribe url provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV&methods=createTenantConfig,queryTenantConfigByTenantId,createOrModifyTenantConfig,queryTenantConfigByConfigTypeId&pid=1764&side=provider&timestamp=1499665297568, urls: [empty://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantconfig.interfaces.ITenantConfigSV&methods=createTenantConfig,queryTenantConfigByTenantId,createOrModifyTenantConfig,queryTenantConfigByConfigTypeId&pid=1764&side=provider&timestamp=1499665297568], dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,793 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.provider.timeout to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,795 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,795 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,796 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,800 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.protocol.port to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,803 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,804 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,805 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,826 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV to local registry, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,826 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV to url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV&methods=getPartnerId,getTenantId&pid=1764&side=provider&timestamp=1499665297805, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,827 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register dubbo service com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV&methods=getPartnerId,getTenantId&pid=1764&side=provider&timestamp=1499665297805 to registry registry://192.168.0.226:39181/com.alibaba.dubbo.registry.RegistryService?application=dvp-pay-server&dubbo=2.8.3&file=../logs/dvp-pay-server-dubbo-registry.cache&pid=1764&registry=zookeeper&timestamp=1499665297805, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,828 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register: dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV&methods=getPartnerId,getTenantId&pid=1764&side=provider&timestamp=1499665297805, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,890 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Subscribe: provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV&methods=getPartnerId,getTenantId&pid=1764&side=provider&timestamp=1499665297805, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,964 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Notify urls for subscribe url provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV&methods=getPartnerId,getTenantId&pid=1764&side=provider&timestamp=1499665297805, urls: [empty://192.168.0.103:20880/com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV&methods=getPartnerId,getTenantId&pid=1764&side=provider&timestamp=1499665297805], dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,973 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.provider.timeout to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,974 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,974 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,975 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,975 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.protocol.port to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,976 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,977 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:37,981 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,007 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV to local registry, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,008 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV to url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV&methods=queryTerminalOrgRels&pid=1764&side=provider&timestamp=1499665297984, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,009 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register dubbo service com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV&methods=queryTerminalOrgRels&pid=1764&side=provider&timestamp=1499665297984 to registry registry://192.168.0.226:39181/com.alibaba.dubbo.registry.RegistryService?application=dvp-pay-server&dubbo=2.8.3&file=../logs/dvp-pay-server-dubbo-registry.cache&pid=1764&registry=zookeeper&timestamp=1499665297983, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,017 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register: dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV&methods=queryTerminalOrgRels&pid=1764&side=provider&timestamp=1499665297984, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,069 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Subscribe: provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV&methods=queryTerminalOrgRels&pid=1764&side=provider&timestamp=1499665297984, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,148 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Notify urls for subscribe url provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV&methods=queryTerminalOrgRels&pid=1764&side=provider&timestamp=1499665297984, urls: [empty://192.168.0.103:20880/com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV&methods=queryTerminalOrgRels&pid=1764&side=provider&timestamp=1499665297984], dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,166 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.provider.timeout to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,167 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,168 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,168 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,168 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.protocol.port to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,170 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.address to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,171 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.protocol to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,171 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Use System Property dubbo.registry.file to config dubbo, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,182 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV to local registry, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,182 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Export dubbo service com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV to url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV&methods=queryTradeRecordsByBatchNo,querySingleTradeRecordByTradeOrderId,querySingleTradeRecordByMerchantOrderId&pid=1764&side=provider&timestamp=1499665298171, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,182 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register dubbo service com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV url dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV&methods=queryTradeRecordsByBatchNo,querySingleTradeRecordByTradeOrderId,querySingleTradeRecordByMerchantOrderId&pid=1764&side=provider&timestamp=1499665298171 to registry registry://192.168.0.226:39181/com.alibaba.dubbo.registry.RegistryService?application=dvp-pay-server&dubbo=2.8.3&file=../logs/dvp-pay-server-dubbo-registry.cache&pid=1764&registry=zookeeper&timestamp=1499665298171, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,184 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Register: dubbo://192.168.0.103:20880/com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV?anyhost=true&application=dvp-pay-server&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV&methods=queryTradeRecordsByBatchNo,querySingleTradeRecordByTradeOrderId,querySingleTradeRecordByMerchantOrderId&pid=1764&side=provider&timestamp=1499665298171, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,228 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Subscribe: provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV&methods=queryTradeRecordsByBatchNo,querySingleTradeRecordByTradeOrderId,querySingleTradeRecordByMerchantOrderId&pid=1764&side=provider&timestamp=1499665298171, dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,329 INFO  [main] slf4j.Slf4jLogger (Slf4jLogger.java:42) -  [DUBBO] Notify urls for subscribe url provider://192.168.0.103:20880/com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV&methods=queryTradeRecordsByBatchNo,querySingleTradeRecordByTradeOrderId,querySingleTradeRecordByMerchantOrderId&pid=1764&side=provider&timestamp=1499665298171, urls: [empty://192.168.0.103:20880/com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV?anyhost=true&application=dvp-pay-server&category=configurators&check=false&default.retries=0&default.service.filter=DubboRequestTrackFilter&default.threads=300&default.timeout=200000&dubbo=2.8.3&generic=false&interface=com.ifudata.dvp.pay.api.tradequery.interfaces.ITradeQuerySV&methods=queryTradeRecordsByBatchNo,querySingleTradeRecordByTradeOrderId,querySingleTradeRecordByMerchantOrderId&pid=1764&side=provider&timestamp=1499665298171], dubbo version: 2.8.3, current host: 127.0.0.1
+2017-07-10 13:41:38,354 ERROR [main] appserver.DubboServiceStart (DubboServiceStart.java:36) -  Dubbo 服务启动完毕---------------------------
+2017-07-10 13:41:46,515 ERROR [main] appserver.CacheServiceStart (CacheServiceStart.java:18) - 开始刷新缓存......
+2017-07-10 13:41:47,262 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 13:41:47,267 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 13:41:47,799 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 13:41:47,815 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 13:41:49,055 ERROR [main] appserver.CacheServiceStart (CacheServiceStart.java:34) - 缓存刷新结束,请通过日志查看是否刷新成功.....
+2017-07-10 14:19:02,738 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:19:02,741 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:19:03,236 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:19:03,246 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:19:04,441 INFO  [Thread-2] pool.HikariPool (HikariPool.java:242) - Hikari pool HikariPool-0 is shutting down.
+2017-07-10 14:19:45,208 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:19:45,210 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:19:45,707 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:19:45,719 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:19:47,000 INFO  [Thread-2] pool.HikariPool (HikariPool.java:242) - Hikari pool HikariPool-0 is shutting down.
+2017-07-10 14:21:50,846 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:21:50,849 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:21:51,358 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:21:51,370 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:21:52,594 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 14:21:52,625 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@2cf92cc7,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 14:21:52,744 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 14:21:53,203 INFO  [Thread-2] pool.HikariPool (HikariPool.java:242) - Hikari pool HikariPool-0 is shutting down.
+2017-07-10 14:23:15,887 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:23:15,891 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:23:16,464 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:23:16,473 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:23:17,475 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 14:23:17,522 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@3f1c5af9,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 14:23:17,602 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 14:23:17,662 INFO  [Thread-2] pool.HikariPool (HikariPool.java:242) - Hikari pool HikariPool-0 is shutting down.
+2017-07-10 14:23:41,621 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:23:41,624 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:23:42,122 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:23:42,135 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:23:43,183 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 14:23:43,232 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@2b491fee,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 14:23:43,364 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 14:23:43,406 INFO  [Thread-2] pool.HikariPool (HikariPool.java:242) - Hikari pool HikariPool-0 is shutting down.
+2017-07-10 14:24:37,140 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:24:37,145 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:24:37,735 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:24:37,753 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:26:01,368 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 14:26:01,414 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@14b0e127,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 14:26:01,555 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 14:26:31,385 INFO  [Thread-2] pool.HikariPool (HikariPool.java:242) - Hikari pool HikariPool-0 is shutting down.
+2017-07-10 14:29:10,702 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:29:10,705 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:29:11,291 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:29:11,303 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:31:00,059 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 14:31:00,082 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@62db3891,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 14:31:00,201 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 14:31:09,567 INFO  [Thread-2] pool.HikariPool (HikariPool.java:242) - Hikari pool HikariPool-0 is shutting down.
+2017-07-10 14:32:26,696 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:32:26,699 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:32:27,171 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:32:27,182 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:32:28,299 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 14:32:28,332 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@64337702,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 14:32:28,518 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 14:33:44,321 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:33:44,325 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:33:44,846 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:33:44,860 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:34:40,318 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 14:34:40,365 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@8deb645,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 14:34:40,543 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 14:35:13,301 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:35:13,306 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:35:13,791 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:35:13,802 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:35:14,866 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 14:35:14,905 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@277f7dd3,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 14:35:15,006 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 14:35:38,623 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:35:38,627 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:35:39,105 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:35:39,118 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:35:54,820 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:35:54,822 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:35:55,533 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:35:55,546 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:35:56,719 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 14:35:56,792 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@2b491fee,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 14:35:56,965 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 14:35:57,038 INFO  [Thread-2] pool.HikariPool (HikariPool.java:242) - Hikari pool HikariPool-0 is shutting down.
+2017-07-10 14:37:14,688 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:37:14,693 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:37:15,213 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:37:15,226 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:37:26,244 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 14:37:26,296 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@150ede8b,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 14:37:26,455 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 14:38:14,440 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:38:14,444 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:38:15,000 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:38:15,015 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:38:23,214 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 14:38:23,263 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@54cf7c6a,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 14:38:23,406 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 14:41:43,107 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:41:43,110 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:41:43,596 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:41:43,608 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:41:44,915 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 14:41:44,956 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@2b491fee,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 14:41:45,073 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 14:49:50,979 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:49:50,983 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:49:51,510 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:49:51,522 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:49:52,729 INFO  [Thread-2] pool.HikariPool (HikariPool.java:242) - Hikari pool HikariPool-0 is shutting down.
+2017-07-10 14:50:19,059 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:50:19,063 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:50:19,677 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:50:19,687 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:50:20,727 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 14:50:20,782 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@2b491fee,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 14:50:20,904 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 14:50:41,982 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:50:41,986 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:50:42,551 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:50:42,566 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:54:29,755 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:54:29,759 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:54:30,331 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:54:30,344 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:54:31,589 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 14:54:31,613 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@119f1f2a,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 14:54:31,730 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 14:54:58,934 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:54:58,939 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:54:59,498 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:54:59,517 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:55:50,253 INFO  [main] base.ConfigLoader (ConfigLoader.java:40) - 加载的属性文件流:{}
+2017-07-10 14:55:50,256 INFO  [main] base.ConfigLoader (ConfigLoader.java:44) - 加载的属性文件prop:{"debug":"true","enable.remote.conf":"true","app":"dvp-pay-server","env":"rd","version":"1_0_0_0","ignore":"","conf_server_host":"http://192.168.0.225:8980","conf_server_url_retry_times":"1","conf_server_url_retry_sleep_seconds":"0"}
+2017-07-10 14:55:50,743 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql://192.168.0.223:3306/devpaydb?useUnicode=true&characterEncoding=UTF-8
+jdbc.username=devpaydb
+jdbc.password=OTPpay~!@#1
+jdbc.maxTotal=200
+jdbc.maxIdle=50
+jdbc.maxWaitMillis=1000
+jdbc.autoCommit=true
+jdbc.connectionTimeout=30000
+jdbc.idleTimeout=600000
+jdbc.maxLifetime=1800000
+jdbc.maximumPoolSize=10
+
+2017-07-10 14:55:50,754 INFO  [main] hikari.HikariDataSource (HikariDataSource.java:72) - Hikari pool HikariPool-0 is starting.
+2017-07-10 14:55:51,828 INFO  [main] util.ConfigTool (ConfigTool.java:160) - 获取到配置:redis.maxTotal=1024
+redis.maxIdle=200
+redis.numTestsPerEvictionRun=1024
+redis.timeBetweenEvictionRunsMillis=30000
+redis.minEvictableIdleTimeMillis=-1
+redis.softMinEvictableIdleTimeMillis=10000
+redis.maxWaitMillis=1300
+redis.testOnBorrow=true
+redis.testWhileIdle=true
+redis.testOnReturn=true
+redis.password=zcbd@123*M
+redis.blockWhenExhausted=false
+#redis\u7684\u5de5\u4f5c\u6a21\u5f0f sentinel|standalone
+redis.worktype=standalone
+redis.sentinel.masterName=mymaster
+redis.sentinel.sentinels=192.168.0.226:16379
+redis.standalone.server=192.168.0.226:16379
+redis.password=zcbd@123*M
+2017-07-10 14:55:51,896 INFO  [main] impl.RedisClient (RedisClient.java:102) - 链接redis服务:config=org.apache.commons.pool2.impl.GenericObjectPoolConfig@2b491fee,ip=192.168.0.226,port=16379,passwd=zcbd@123*M
+2017-07-10 14:55:52,014 INFO  [main] impl.RedisClient (RedisClient.java:109) - -----------------JedisPool使用主机信息:192.168.0.226:16379
+2017-07-10 14:55:52,077 INFO  [Thread-2] pool.HikariPool (HikariPool.java:242) - Hikari pool HikariPool-0 is shutting down.

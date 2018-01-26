@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+				http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+				http://www.springframework.org/schema/aop 
+				http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+				http://www.springframework.org/schema/context
+				http://www.springframework.org/schema/context/spring-context-3.0.xsd
+				http://www.springframework.org/schema/mvc 
+				http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+	<!-- 自动扫描的包名 -->
+	<context:component-scan base-package="com.ifudata.ums"/>
+	
+	<!-- 默认的注解映射的支持 -->
+	<mvc:annotation-driven />
+	<!-- 完成请求和注解POJO的映射 -->
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+	<!-- 对转向页面的路径解析prefix：前缀， suffix：后缀 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/jsp/" />
+		<property name="suffix" value=".jsp" /><!--可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑 -->
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+	</bean>
+	<!-- 拦截器 -->
+	<!-- <mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/demo/*"/>
+			<mvc:mapping path="/account/open/*"/>
+			<mvc:mapping path="/order/*"/>
+			<bean class="com.ifudata.crm.system.interceptor.LoginInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors> -->
+	<!-- 对静态资源文件的访问 -->
+	<mvc:default-servlet-handler />
+	<!-- 系统错误转发配置[并记录错误日志] -->
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="defaultErrorView" value="error"></property>   <!-- 默认为500，系统错误(error.jsp) -->
+		<property name="defaultStatusCode" value="500"></property>
+		<property name="statusCodes"><!-- 配置多个statusCode -->
+			<props>
+				<prop key="error">500</prop>  <!-- error.jsp -->
+				<prop key="error1">404</prop>    <!-- error1.jsp -->
+			</props>
+		</property>
+		<property name="exceptionMappings">
+			<props>
+				<!-- 这里你可以根据需要定义N多个错误异常转发 -->
+				<prop key="java.lang.Exception">common/error</prop>  <!-- 其他错误为'未定义错误'(unknowError.jsp) -->
+			</props>
+		</property>
+	</bean>
+</beans>

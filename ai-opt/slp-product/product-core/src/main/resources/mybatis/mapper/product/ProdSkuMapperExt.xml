@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ai.slp.product.dao.mapper.attach.ProdSkuMapperExt" >
+  <resultMap id="BaseResultMap" type="com.ai.slp.product.dao.mapper.bo.product.ProdSku" >
+    <id column="SKU_ID" property="skuId" jdbcType="VARCHAR" />
+    <result column="TENANT_ID" property="tenantId" jdbcType="VARCHAR" />
+    <result column="PROD_ID" property="prodId" jdbcType="VARCHAR" />
+    <result column="STORAGE_GROUP_ID" property="storageGroupId" jdbcType="VARCHAR" />
+    <result column="SKU_NAME" property="skuName" jdbcType="VARCHAR" />
+    <result column="IS_SALE_ATTR" property="isSaleAttr" jdbcType="CHAR" />
+    <result column="SALE_ATTRS" property="saleAttrs" jdbcType="VARCHAR" />
+    <result column="SERIAL_NUMBER" property="serialNumber" jdbcType="DECIMAL" />
+    <result column="STATE" property="state" jdbcType="VARCHAR" />
+    <result column="OPER_ID" property="operId" jdbcType="DECIMAL" />
+    <result column="OPER_TIME" property="operTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="skuInfoSes" type="com.ai.slp.product.dao.mapper.attach.ProdSkuInfoSes">
+    <result column="tenantid" property="tenantid" jdbcType="VARCHAR" />
+    <result column="skuid" property="skuid" jdbcType="VARCHAR" />
+    <result column="skuname" property="skuname" jdbcType="VARCHAR" />
+    <result column="productCatId" property="productcategoryid" jdbcType="VARCHAR" />
+    <result column="productid" property="productid" jdbcType="VARCHAR" />
+    <result column="productname" property="productname" jdbcType="VARCHAR" />
+    <result column="productsellpoint" property="productsellpoint" jdbcType="VARCHAR" />
+    <result column="basicOrgId" property="basicorgid" jdbcType="VARCHAR" />
+    <result column="rechageType" property="rechagetype" jdbcType="VARCHAR" />
+    <result column="saleNationwide" property="salenationwide" jdbcType="VARCHAR" />
+    <result column="uptime" property="prodUpTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    SKU_ID, TENANT_ID, PROD_ID, STORAGE_GROUP_ID, SKU_NAME, IS_SALE_ATTR, SALE_ATTRS, 
+    SERIAL_NUMBER, STATE, OPER_ID, OPER_TIME
+  </sql>
+  <select id="selectByProdId" resultMap="skuInfoSes" parameterType="java.lang.String">
+    SELECT
+      product.TENANT_ID as tenantid,sku.SKU_ID as skuid ,sku.SKU_NAME as skuname,
+      product.PROD_ID as productid,product.PROD_NAME as productname,
+      product.PRODUCT_CAT_ID as productCatId,product.PRODUCT_SELL_POINT as productsellpoint,
+      product.BASIC_ORG_ID as basicOrgId, product.UP_TIME AS uptime,
+      product.RECHARGE_TYPE AS rechageType, product.IS_SALE_NATIONWIDE as saleNationwide
+    FROM
+      prod_sku sku INNER JOIN product product
+      ON sku.PROD_ID = product.PROD_ID AND product.PROD_ID = #{prodId,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectActive" resultMap="skuInfoSes" parameterType="java.util.Map">
+    SELECT
+      product.TENANT_ID as tenantid, sku.SKU_ID as skuid ,sku.SKU_NAME as skuname,
+      product.PROD_ID as productid,product.PRODUCT_SELL_POINT as productsellpoint,
+      product.PROD_NAME as productname,product.PRODUCT_CAT_ID as productCatId,
+      product.BASIC_ORG_ID as basicOrgId, product.UP_TIME AS uptime,
+      product.RECHARGE_TYPE AS rechageType, product.IS_SALE_NATIONWIDE as saleNationwide
+    FROM
+      prod_sku sku INNER JOIN product product ON sku.PROD_ID = product.PROD_ID AND product.STATE = '5'
+    <if test="limitStart != null and limitStart>=0" >
+      limit #{limitStart,jdbcType=INTEGER} , #{limitEnd,jdbcType=INTEGER}
+    </if>
+  </select>
+</mapper>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ifudata.ums.dao.interfaces.SmsCommTaskMapper" >
+  <resultMap id="BaseResultMap" type="com.ifudata.ums.dao.mapper.bo.SmsCommTask" >
+    <id column="comm_task_serial" property="commTaskSerial" jdbcType="INTEGER" />
+    <result column="svc_type" property="svcType" jdbcType="VARCHAR" />
+    <result column="region_id" property="regionId" jdbcType="VARCHAR" />
+    <result column="device_number" property="deviceNumber" jdbcType="VARCHAR" />
+    <result column="run_status" property="runStatus" jdbcType="VARCHAR" />
+    <result column="message" property="message" jdbcType="VARCHAR" />
+    <result column="try_num" property="tryNum" jdbcType="INTEGER" />
+    <result column="sp_number" property="spNumber" jdbcType="VARCHAR" />
+    <result column="return_result" property="returnResult" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    comm_task_serial, svc_type, region_id, device_number, run_status, message, try_num, 
+    sp_number, return_result
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ifudata.ums.dao.mapper.bo.SmsCommTaskCriteria" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sms_comm_task
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limitStart != null and limitStart>=0" >
+      limit #{limitStart} , #{limitEnd}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from sms_comm_task
+    where comm_task_serial = #{commTaskSerial,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="Integer" >
+    delete from sms_comm_task
+    where comm_task_serial = #{commTaskSerial,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ifudata.ums.dao.mapper.bo.SmsCommTaskCriteria" >
+    delete from sms_comm_task
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ifudata.ums.dao.mapper.bo.SmsCommTask" >
+    insert into sms_comm_task (comm_task_serial, svc_type, region_id, 
+      device_number, run_status, message, 
+      try_num, sp_number, return_result
+      )
+    values (#{commTaskSerial,jdbcType=INTEGER}, #{svcType,jdbcType=VARCHAR}, #{regionId,jdbcType=VARCHAR}, 
+      #{deviceNumber,jdbcType=VARCHAR}, #{runStatus,jdbcType=VARCHAR}, #{message,jdbcType=VARCHAR}, 
+      #{tryNum,jdbcType=INTEGER}, #{spNumber,jdbcType=VARCHAR}, #{returnResult,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ifudata.ums.dao.mapper.bo.SmsCommTask" >
+    insert into sms_comm_task
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="commTaskSerial != null" >
+        comm_task_serial,
+      </if>
+      <if test="svcType != null" >
+        svc_type,
+      </if>
+      <if test="regionId != null" >
+        region_id,
+      </if>
+      <if test="deviceNumber != null" >
+        device_number,
+      </if>
+      <if test="runStatus != null" >
+        run_status,
+      </if>
+      <if test="message != null" >
+        message,
+      </if>
+      <if test="tryNum != null" >
+        try_num,
+      </if>
+      <if test="spNumber != null" >
+        sp_number,
+      </if>
+      <if test="returnResult != null" >
+        return_result,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="commTaskSerial != null" >
+        #{commTaskSerial,jdbcType=INTEGER},
+      </if>
+      <if test="svcType != null" >
+        #{svcType,jdbcType=VARCHAR},
+      </if>
+      <if test="regionId != null" >
+        #{regionId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceNumber != null" >
+        #{deviceNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="runStatus != null" >
+        #{runStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null" >
+        #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="tryNum != null" >
+        #{tryNum,jdbcType=INTEGER},
+      </if>
+      <if test="spNumber != null" >
+        #{spNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="returnResult != null" >
+        #{returnResult,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ifudata.ums.dao.mapper.bo.SmsCommTaskCriteria" resultType="java.lang.Integer" >
+    select count(*) from sms_comm_task
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update sms_comm_task
+    <set >
+      <if test="record.commTaskSerial != null" >
+        comm_task_serial = #{record.commTaskSerial,jdbcType=INTEGER},
+      </if>
+      <if test="record.svcType != null" >
+        svc_type = #{record.svcType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regionId != null" >
+        region_id = #{record.regionId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deviceNumber != null" >
+        device_number = #{record.deviceNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.runStatus != null" >
+        run_status = #{record.runStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.message != null" >
+        message = #{record.message,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tryNum != null" >
+        try_num = #{record.tryNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.spNumber != null" >
+        sp_number = #{record.spNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.returnResult != null" >
+        return_result = #{record.returnResult,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update sms_comm_task
+    set comm_task_serial = #{record.commTaskSerial,jdbcType=INTEGER},
+      svc_type = #{record.svcType,jdbcType=VARCHAR},
+      region_id = #{record.regionId,jdbcType=VARCHAR},
+      device_number = #{record.deviceNumber,jdbcType=VARCHAR},
+      run_status = #{record.runStatus,jdbcType=VARCHAR},
+      message = #{record.message,jdbcType=VARCHAR},
+      try_num = #{record.tryNum,jdbcType=INTEGER},
+      sp_number = #{record.spNumber,jdbcType=VARCHAR},
+      return_result = #{record.returnResult,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ifudata.ums.dao.mapper.bo.SmsCommTask" >
+    update sms_comm_task
+    <set >
+      <if test="svcType != null" >
+        svc_type = #{svcType,jdbcType=VARCHAR},
+      </if>
+      <if test="regionId != null" >
+        region_id = #{regionId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceNumber != null" >
+        device_number = #{deviceNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="runStatus != null" >
+        run_status = #{runStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null" >
+        message = #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="tryNum != null" >
+        try_num = #{tryNum,jdbcType=INTEGER},
+      </if>
+      <if test="spNumber != null" >
+        sp_number = #{spNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="returnResult != null" >
+        return_result = #{returnResult,jdbcType=INTEGER},
+      </if>
+    </set>
+    where comm_task_serial = #{commTaskSerial,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ifudata.ums.dao.mapper.bo.SmsCommTask" >
+    update sms_comm_task
+    set svc_type = #{svcType,jdbcType=VARCHAR},
+      region_id = #{regionId,jdbcType=VARCHAR},
+      device_number = #{deviceNumber,jdbcType=VARCHAR},
+      run_status = #{runStatus,jdbcType=VARCHAR},
+      message = #{message,jdbcType=VARCHAR},
+      try_num = #{tryNum,jdbcType=INTEGER},
+      sp_number = #{spNumber,jdbcType=VARCHAR},
+      return_result = #{returnResult,jdbcType=INTEGER}
+    where comm_task_serial = #{commTaskSerial,jdbcType=INTEGER}
+  </update>
+</mapper>

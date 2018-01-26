@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<bean id="dubboConfig"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="order" value="1" />
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="locations" value="classpath:dubbo.properties" />
+	</bean>
+
+	<!-- 消费方 -->
+	<dubbo:application name="${dubbo.appname}" />
+	<dubbo:registry protocol="${dubbo.registry.protocol}"
+		address="${dubbo.registry.address}" id="ycRegistry" />
+	<dubbo:consumer timeout="${dubbo.provider.timeout}" />
+
+<!-- IUcMembersSV -->
+	<dubbo:reference id="iUcMembersSV" registry="ycRegistry"
+		interface="com.ai.yc.ucenter.api.members.interfaces.IUcMembersSV" />
+		
+  	<dubbo:reference id="iUcMembersOperationSV" registry="ycRegistry"
+		interface="com.ai.yc.ucenter.api.members.interfaces.IUcMembersOperationSV" />
+
+	<!-- 积分查询 -->
+	<dubbo:reference id="iIntegralsSV"
+					 interface="com.ai.slp.balance.api.integrals.interfaces.IIntegralsSV"/>
+	<!--用户成长值-->
+	<dubbo:reference id="iYCUserGriwthValueSV"
+					 interface="com.ai.yc.user.api.usergriwthvalue.interfaces.IYCUserGriwthValueSV"/>
+	<!--用户成长值范围-->
+	<dubbo:reference id="iQuerySysConfigSV"
+					 interface="com.ai.yc.common.api.sysconfig.interfaces.IQuerySysConfigSV"/>
+	 <!-- 用户信息 -->
+	 <dubbo:reference id="iYCUcMembersServiceSV"
+	 interface="com.ai.yc.ucenter.api.members.interfaces.IYCUcMembersSV"/>
+	 
+</beans>

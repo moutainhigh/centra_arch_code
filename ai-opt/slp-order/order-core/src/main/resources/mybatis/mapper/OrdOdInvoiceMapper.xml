@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ai.slp.order.dao.mapper.interfaces.OrdOdInvoiceMapper" >
+  <resultMap id="BaseResultMap" type="com.ai.slp.order.dao.mapper.bo.OrdOdInvoice" >
+    <id column="ORDER_ID" property="orderId" jdbcType="BIGINT" />
+    <result column="TENANT_ID" property="tenantId" jdbcType="VARCHAR" />
+    <result column="INVOICE_TYPE" property="invoiceType" jdbcType="VARCHAR" />
+    <result column="INVOICE_TITLE" property="invoiceTitle" jdbcType="VARCHAR" />
+    <result column="INVOICE_CONTENT" property="invoiceContent" jdbcType="VARCHAR" />
+    <result column="INVOICE_STATUS" property="invoiceStatus" jdbcType="VARCHAR" />
+    <result column="INVOICE_ID" property="invoiceId" jdbcType="VARCHAR" />
+    <result column="INVOICE_NUM" property="invoiceNum" jdbcType="VARCHAR" />
+    <result column="INVOICE_KIND" property="invoiceKind" jdbcType="VARCHAR" />
+    <result column="INVOICE_TIME" property="invoiceTime" jdbcType="DATE" />
+    <result column="BUYER_TAXPAYER_NUMBER" property="buyerTaxpayerNumber" jdbcType="VARCHAR" />
+    <result column="BUYER_BANK_CODE" property="buyerBankCode" jdbcType="VARCHAR" />
+    <result column="BUYER_BANK_NAME" property="buyerBankName" jdbcType="VARCHAR" />
+    <result column="BUYER_BANK_ACCOUNT" property="buyerBankAccount" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ORDER_ID, TENANT_ID, INVOICE_TYPE, INVOICE_TITLE, INVOICE_CONTENT, INVOICE_STATUS, 
+    INVOICE_ID, INVOICE_NUM, INVOICE_KIND, INVOICE_TIME, BUYER_TAXPAYER_NUMBER, BUYER_BANK_CODE, 
+    BUYER_BANK_NAME, BUYER_BANK_ACCOUNT
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ai.slp.order.dao.mapper.bo.OrdOdInvoiceCriteria" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from ord_od_invoice
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limitStart != null and limitStart>=0" >
+      limit #{limitStart} , #{limitEnd}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="long" >
+    select 
+    <include refid="Base_Column_List" />
+    from ord_od_invoice
+    where ORDER_ID = #{orderId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="long" >
+    delete from ord_od_invoice
+    where ORDER_ID = #{orderId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ai.slp.order.dao.mapper.bo.OrdOdInvoiceCriteria" >
+    delete from ord_od_invoice
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ai.slp.order.dao.mapper.bo.OrdOdInvoice" >
+    insert into ord_od_invoice (ORDER_ID, TENANT_ID, INVOICE_TYPE, 
+      INVOICE_TITLE, INVOICE_CONTENT, INVOICE_STATUS, 
+      INVOICE_ID, INVOICE_NUM, INVOICE_KIND, 
+      INVOICE_TIME, BUYER_TAXPAYER_NUMBER, BUYER_BANK_CODE, 
+      BUYER_BANK_NAME, BUYER_BANK_ACCOUNT)
+    values (#{orderId,jdbcType=BIGINT}, #{tenantId,jdbcType=VARCHAR}, #{invoiceType,jdbcType=VARCHAR}, 
+      #{invoiceTitle,jdbcType=VARCHAR}, #{invoiceContent,jdbcType=VARCHAR}, #{invoiceStatus,jdbcType=VARCHAR}, 
+      #{invoiceId,jdbcType=VARCHAR}, #{invoiceNum,jdbcType=VARCHAR}, #{invoiceKind,jdbcType=VARCHAR}, 
+      #{invoiceTime,jdbcType=DATE}, #{buyerTaxpayerNumber,jdbcType=VARCHAR}, #{buyerBankCode,jdbcType=VARCHAR}, 
+      #{buyerBankName,jdbcType=VARCHAR}, #{buyerBankAccount,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ai.slp.order.dao.mapper.bo.OrdOdInvoice" >
+    insert delayed into ord_od_invoice
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      ORDER_ID,
+      <if test="tenantId != null" >
+        TENANT_ID,
+      </if>
+      <if test="invoiceType != null" >
+        INVOICE_TYPE,
+      </if>
+      <if test="invoiceTitle != null" >
+        INVOICE_TITLE,
+      </if>
+      <if test="invoiceContent != null" >
+        INVOICE_CONTENT,
+      </if>
+      <if test="invoiceStatus != null" >
+        INVOICE_STATUS,
+      </if>
+      <if test="invoiceId != null" >
+        INVOICE_ID,
+      </if>
+      <if test="invoiceNum != null" >
+        INVOICE_NUM,
+      </if>
+      <if test="invoiceKind != null" >
+        INVOICE_KIND,
+      </if>
+      <if test="invoiceTime != null" >
+        INVOICE_TIME,
+      </if>
+      <if test="buyerTaxpayerNumber != null" >
+        BUYER_TAXPAYER_NUMBER,
+      </if>
+      <if test="buyerBankCode != null" >
+        BUYER_BANK_CODE,
+      </if>
+      <if test="buyerBankName != null" >
+        BUYER_BANK_NAME,
+      </if>
+      <if test="buyerBankAccount != null" >
+        BUYER_BANK_ACCOUNT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{orderId,jdbcType=BIGINT},
+      <if test="tenantId != null" >
+        #{tenantId,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceType != null" >
+        #{invoiceType,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceTitle != null" >
+        #{invoiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceContent != null" >
+        #{invoiceContent,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceStatus != null" >
+        #{invoiceStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceId != null" >
+        #{invoiceId,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceNum != null" >
+        #{invoiceNum,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceKind != null" >
+        #{invoiceKind,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceTime != null" >
+        #{invoiceTime,jdbcType=DATE},
+      </if>
+      <if test="buyerTaxpayerNumber != null" >
+        #{buyerTaxpayerNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="buyerBankCode != null" >
+        #{buyerBankCode,jdbcType=VARCHAR},
+      </if>
+      <if test="buyerBankName != null" >
+        #{buyerBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="buyerBankAccount != null" >
+        #{buyerBankAccount,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ai.slp.order.dao.mapper.bo.OrdOdInvoiceCriteria" resultType="java.lang.Integer" >
+    select count(*) from ord_od_invoice
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update ord_od_invoice
+    <set >
+      <if test="record.orderId != null" >
+        ORDER_ID = #{record.orderId,jdbcType=BIGINT},
+      </if>
+      <if test="record.tenantId != null" >
+        TENANT_ID = #{record.tenantId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceType != null" >
+        INVOICE_TYPE = #{record.invoiceType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceTitle != null" >
+        INVOICE_TITLE = #{record.invoiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceContent != null" >
+        INVOICE_CONTENT = #{record.invoiceContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceStatus != null" >
+        INVOICE_STATUS = #{record.invoiceStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceId != null" >
+        INVOICE_ID = #{record.invoiceId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceNum != null" >
+        INVOICE_NUM = #{record.invoiceNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceKind != null" >
+        INVOICE_KIND = #{record.invoiceKind,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceTime != null" >
+        INVOICE_TIME = #{record.invoiceTime,jdbcType=DATE},
+      </if>
+      <if test="record.buyerTaxpayerNumber != null" >
+        BUYER_TAXPAYER_NUMBER = #{record.buyerTaxpayerNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buyerBankCode != null" >
+        BUYER_BANK_CODE = #{record.buyerBankCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buyerBankName != null" >
+        BUYER_BANK_NAME = #{record.buyerBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buyerBankAccount != null" >
+        BUYER_BANK_ACCOUNT = #{record.buyerBankAccount,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update ord_od_invoice
+    set ORDER_ID = #{record.orderId,jdbcType=BIGINT},
+      TENANT_ID = #{record.tenantId,jdbcType=VARCHAR},
+      INVOICE_TYPE = #{record.invoiceType,jdbcType=VARCHAR},
+      INVOICE_TITLE = #{record.invoiceTitle,jdbcType=VARCHAR},
+      INVOICE_CONTENT = #{record.invoiceContent,jdbcType=VARCHAR},
+      INVOICE_STATUS = #{record.invoiceStatus,jdbcType=VARCHAR},
+      INVOICE_ID = #{record.invoiceId,jdbcType=VARCHAR},
+      INVOICE_NUM = #{record.invoiceNum,jdbcType=VARCHAR},
+      INVOICE_KIND = #{record.invoiceKind,jdbcType=VARCHAR},
+      INVOICE_TIME = #{record.invoiceTime,jdbcType=DATE},
+      BUYER_TAXPAYER_NUMBER = #{record.buyerTaxpayerNumber,jdbcType=VARCHAR},
+      BUYER_BANK_CODE = #{record.buyerBankCode,jdbcType=VARCHAR},
+      BUYER_BANK_NAME = #{record.buyerBankName,jdbcType=VARCHAR},
+      BUYER_BANK_ACCOUNT = #{record.buyerBankAccount,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ai.slp.order.dao.mapper.bo.OrdOdInvoice" >
+    update ord_od_invoice
+    <set >
+      <if test="tenantId != null" >
+        TENANT_ID = #{tenantId,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceType != null" >
+        INVOICE_TYPE = #{invoiceType,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceTitle != null" >
+        INVOICE_TITLE = #{invoiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceContent != null" >
+        INVOICE_CONTENT = #{invoiceContent,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceStatus != null" >
+        INVOICE_STATUS = #{invoiceStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceId != null" >
+        INVOICE_ID = #{invoiceId,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceNum != null" >
+        INVOICE_NUM = #{invoiceNum,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceKind != null" >
+        INVOICE_KIND = #{invoiceKind,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceTime != null" >
+        INVOICE_TIME = #{invoiceTime,jdbcType=DATE},
+      </if>
+      <if test="buyerTaxpayerNumber != null" >
+        BUYER_TAXPAYER_NUMBER = #{buyerTaxpayerNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="buyerBankCode != null" >
+        BUYER_BANK_CODE = #{buyerBankCode,jdbcType=VARCHAR},
+      </if>
+      <if test="buyerBankName != null" >
+        BUYER_BANK_NAME = #{buyerBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="buyerBankAccount != null" >
+        BUYER_BANK_ACCOUNT = #{buyerBankAccount,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ORDER_ID = #{orderId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ai.slp.order.dao.mapper.bo.OrdOdInvoice" >
+    update ord_od_invoice
+    set TENANT_ID = #{tenantId,jdbcType=VARCHAR},
+      INVOICE_TYPE = #{invoiceType,jdbcType=VARCHAR},
+      INVOICE_TITLE = #{invoiceTitle,jdbcType=VARCHAR},
+      INVOICE_CONTENT = #{invoiceContent,jdbcType=VARCHAR},
+      INVOICE_STATUS = #{invoiceStatus,jdbcType=VARCHAR},
+      INVOICE_ID = #{invoiceId,jdbcType=VARCHAR},
+      INVOICE_NUM = #{invoiceNum,jdbcType=VARCHAR},
+      INVOICE_KIND = #{invoiceKind,jdbcType=VARCHAR},
+      INVOICE_TIME = #{invoiceTime,jdbcType=DATE},
+      BUYER_TAXPAYER_NUMBER = #{buyerTaxpayerNumber,jdbcType=VARCHAR},
+      BUYER_BANK_CODE = #{buyerBankCode,jdbcType=VARCHAR},
+      BUYER_BANK_NAME = #{buyerBankName,jdbcType=VARCHAR},
+      BUYER_BANK_ACCOUNT = #{buyerBankAccount,jdbcType=VARCHAR}
+    where ORDER_ID = #{orderId,jdbcType=BIGINT}
+  </update>
+</mapper>

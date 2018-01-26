@@ -1,0 +1,30 @@
+/* CSS Document */
+
+
+.bgcolour{ background:#36b258;}
+.bgcolour1{ background:#03a930;}
+.bordercolor{border-color:#2e95f3; border-style:solid;}
+.login_icon{background-image:url(../images/login_icon.png);	background-repeat:no-repeat;}
+.fontcolor{ color:#36b258;}
+.color{ color:#d53333;}
+
+/*黑蓝背景*/
+.black_blue{ background:#181f27;}
+
+/*第三方登录*/
+.wlogin{background-image:url(../images/wlogin.png);	background-repeat:no-repeat;}
+
+/*tab切换颜色*/
+.Menubox1 li.hover{ color:#36b258; height:36px; background:url(../images/tab.jpg) center bottom no-repeat; border-bottom:0;}
+
+
+/*输入框通用*/
+.sideline{ border:1px solid #e0e0e0; height:32px; padding:0px 10px 0 42px;}
+.sideline:hover{ border:1px solid #31b018;}
+.sideline_on{ border:1px solid #31b018;}
+.sideline_error{ border:1px solid #ff5354;}
+.input_txt{ position: absolute; padding-left:43px; padding-top:6px; font-weight:bold;}
+
+
+.login_but_on{ background:#ccc;}
+.login_but_on:hover{ background:#ccc;}

@@ -1,0 +1,72 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'maven-publish'
+
+//version = '2.0.0'
+
+sourceCompatibility = 1.7   // 设置 JDK 版本
+targetCompatibility = 1.7
+sourceSets.main.java.srcDir 'src'   // 设置 Java 源码所在目录
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+    exclude group: 'log4j', module: 'log4j'
+    exclude group: "org.slf4j", module: "slf4j-log4j12"
+    exclude group: "org.slf4j", module: "log4j-over-slf4j"
+}
+
+
+sourceSets {
+    main {
+        java { srcDirs = ['src/main/java'] }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+}
+repositories {
+     maven { url "http://10.1.228.199:18081/nexus/content/groups/public/" }   
+     //maven { url "https://maven.alfresco.com/nexus/content/groups/public/" }
+     //maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+     //maven { url "http://terracotta.org/download/" }
+     //maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'com.dangdang', name: 'elastic-job-lite-lifecycle', version:'2.0.0'
+    compile group: 'org.springframework', name: 'spring-context', version:'4.1.7.RELEASE'
+    compile group: 'org.springframework', name: 'spring-context-support', version:'4.1.7.RELEASE'
+    compile group: 'org.springframework', name: 'spring-web', version:'4.1.7.RELEASE'
+    compile group: 'org.springframework', name: 'spring-webmvc', version:'4.1.7.RELEASE'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version:'2.4.4'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version:'2.4.4'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version:'2.4.4'
+    compile group: 'org.freemarker', name: 'freemarker', version:'2.3.20'
+    compile group: 'opensymphony', name: 'sitemesh', version:'2.4.2'
+    compile group: 'commons-codec', name: 'commons-codec', version:'1.10'
+    compile group: 'org.slf4j', name: 'slf4j-api', version:'1.7.7'
+    compile group: 'org.slf4j', name: 'jcl-over-slf4j', version:'1.7.7'
+    compile group: 'org.slf4j', name: 'log4j-over-slf4j', version:'1.7.7'
+    compile(group: 'ch.qos.logback', name: 'logback-classic', version:'1.1.2') {
+		exclude(module: 'slf4j-api')
+    }
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+    testCompile group: 'org.unitils', name: 'unitils-core', version:'3.4.2'
+    //providedCompile group: 'javax', name: 'javaee-web-api', version:'7.0'
+}
+eclipse {
+	wtp {
+		facet {
+			facet name: 'java', version: '1.7'
+			facet name: 'jst.web', version: '3.0'
+			facet name: 'wst.jsdt.web', version: '1.0'
+		}
+	}
+}
+war {
+    baseName 'aijob-console'
+}
+

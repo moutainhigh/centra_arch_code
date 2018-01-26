@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ifudata.ums.dao.mapper.interfaces.UmsSendStatusMapper" >
+  <resultMap id="BaseResultMap" type="com.ifudata.ums.dao.mapper.bo.UmsSendStatus" >
+    <id column="RES_SEQ" property="resSeq" jdbcType="BIGINT" />
+    <result column="detail_id" property="detailId" jdbcType="BIGINT" />
+    <result column="batch_id" property="batchId" jdbcType="VARCHAR" />
+    <result column="corp_id" property="corpId" jdbcType="VARCHAR" />
+    <result column="src_name" property="srcName" jdbcType="VARCHAR" />
+    <result column="template_id" property="templateId" jdbcType="BIGINT" />
+    <result column="service_type" property="serviceType" jdbcType="VARCHAR" />
+    <result column="verify_id" property="verifyId" jdbcType="BIGINT" />
+    <result column="phone_num" property="phoneNum" jdbcType="VARCHAR" />
+    <result column="para_content" property="paraContent" jdbcType="VARCHAR" />
+    <result column="sms_content" property="smsContent" jdbcType="VARCHAR" />
+    <result column="transform_status" property="transformStatus" jdbcType="INTEGER" />
+    <result column="SEND_SEQ" property="sendSeq" jdbcType="VARCHAR" />
+    <result column="SEND_FLAG" property="sendFlag" jdbcType="INTEGER" />
+    <result column="report_flag" property="reportFlag" jdbcType="INTEGER" />
+    <result column="report_Rec_flag" property="reportRecFlag" jdbcType="INTEGER" />
+    <result column="report_Rec_result" property="reportRecResult" jdbcType="VARCHAR" />
+    <result column="Retry_times" property="retryTimes" jdbcType="INTEGER" />
+    <result column="Max_times" property="maxTimes" jdbcType="INTEGER" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="SEND_TIME" property="sendTime" jdbcType="TIMESTAMP" />
+    <result column="report_time" property="reportTime" jdbcType="TIMESTAMP" />
+    <result column="reserved" property="reserved" jdbcType="VARCHAR" />
+    <result column="Remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    RES_SEQ, detail_id, batch_id, corp_id, src_name, template_id, service_type, verify_id, 
+    phone_num, para_content, sms_content, transform_status, SEND_SEQ, SEND_FLAG, report_flag, 
+    report_Rec_flag, report_Rec_result, Retry_times, Max_times, CREATE_TIME, SEND_TIME, 
+    report_time, reserved, Remark
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ifudata.ums.dao.mapper.bo.UmsSendStatusCriteria" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from ums_send_status
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limitStart != null and limitStart>=0" >
+      limit #{limitStart} , #{limitEnd}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from ums_send_status
+    where RES_SEQ = #{resSeq,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="Long" >
+    delete from ums_send_status
+    where RES_SEQ = #{resSeq,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ifudata.ums.dao.mapper.bo.UmsSendStatusCriteria" >
+    delete from ums_send_status
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ifudata.ums.dao.mapper.bo.UmsSendStatus" >
+    insert into ums_send_status (RES_SEQ, detail_id, batch_id, 
+      corp_id, src_name, template_id, 
+      service_type, verify_id, phone_num, 
+      para_content, sms_content, transform_status, 
+      SEND_SEQ, SEND_FLAG, report_flag, 
+      report_Rec_flag, report_Rec_result, Retry_times, 
+      Max_times, CREATE_TIME, SEND_TIME, 
+      report_time, reserved, Remark
+      )
+    values (#{resSeq,jdbcType=BIGINT}, #{detailId,jdbcType=BIGINT}, #{batchId,jdbcType=VARCHAR}, 
+      #{corpId,jdbcType=VARCHAR}, #{srcName,jdbcType=VARCHAR}, #{templateId,jdbcType=BIGINT}, 
+      #{serviceType,jdbcType=VARCHAR}, #{verifyId,jdbcType=BIGINT}, #{phoneNum,jdbcType=VARCHAR}, 
+      #{paraContent,jdbcType=VARCHAR}, #{smsContent,jdbcType=VARCHAR}, #{transformStatus,jdbcType=INTEGER}, 
+      #{sendSeq,jdbcType=VARCHAR}, #{sendFlag,jdbcType=INTEGER}, #{reportFlag,jdbcType=INTEGER}, 
+      #{reportRecFlag,jdbcType=INTEGER}, #{reportRecResult,jdbcType=VARCHAR}, #{retryTimes,jdbcType=INTEGER}, 
+      #{maxTimes,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{sendTime,jdbcType=TIMESTAMP}, 
+      #{reportTime,jdbcType=TIMESTAMP}, #{reserved,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ifudata.ums.dao.mapper.bo.UmsSendStatus" >
+    insert into ums_send_status
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="resSeq != null" >
+        RES_SEQ,
+      </if>
+      <if test="detailId != null" >
+        detail_id,
+      </if>
+      <if test="batchId != null" >
+        batch_id,
+      </if>
+      <if test="corpId != null" >
+        corp_id,
+      </if>
+      <if test="srcName != null" >
+        src_name,
+      </if>
+      <if test="templateId != null" >
+        template_id,
+      </if>
+      <if test="serviceType != null" >
+        service_type,
+      </if>
+      <if test="verifyId != null" >
+        verify_id,
+      </if>
+      <if test="phoneNum != null" >
+        phone_num,
+      </if>
+      <if test="paraContent != null" >
+        para_content,
+      </if>
+      <if test="smsContent != null" >
+        sms_content,
+      </if>
+      <if test="transformStatus != null" >
+        transform_status,
+      </if>
+      <if test="sendSeq != null" >
+        SEND_SEQ,
+      </if>
+      <if test="sendFlag != null" >
+        SEND_FLAG,
+      </if>
+      <if test="reportFlag != null" >
+        report_flag,
+      </if>
+      <if test="reportRecFlag != null" >
+        report_Rec_flag,
+      </if>
+      <if test="reportRecResult != null" >
+        report_Rec_result,
+      </if>
+      <if test="retryTimes != null" >
+        Retry_times,
+      </if>
+      <if test="maxTimes != null" >
+        Max_times,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="sendTime != null" >
+        SEND_TIME,
+      </if>
+      <if test="reportTime != null" >
+        report_time,
+      </if>
+      <if test="reserved != null" >
+        reserved,
+      </if>
+      <if test="remark != null" >
+        Remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="resSeq != null" >
+        #{resSeq,jdbcType=BIGINT},
+      </if>
+      <if test="detailId != null" >
+        #{detailId,jdbcType=BIGINT},
+      </if>
+      <if test="batchId != null" >
+        #{batchId,jdbcType=VARCHAR},
+      </if>
+      <if test="corpId != null" >
+        #{corpId,jdbcType=VARCHAR},
+      </if>
+      <if test="srcName != null" >
+        #{srcName,jdbcType=VARCHAR},
+      </if>
+      <if test="templateId != null" >
+        #{templateId,jdbcType=BIGINT},
+      </if>
+      <if test="serviceType != null" >
+        #{serviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="verifyId != null" >
+        #{verifyId,jdbcType=BIGINT},
+      </if>
+      <if test="phoneNum != null" >
+        #{phoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="paraContent != null" >
+        #{paraContent,jdbcType=VARCHAR},
+      </if>
+      <if test="smsContent != null" >
+        #{smsContent,jdbcType=VARCHAR},
+      </if>
+      <if test="transformStatus != null" >
+        #{transformStatus,jdbcType=INTEGER},
+      </if>
+      <if test="sendSeq != null" >
+        #{sendSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="sendFlag != null" >
+        #{sendFlag,jdbcType=INTEGER},
+      </if>
+      <if test="reportFlag != null" >
+        #{reportFlag,jdbcType=INTEGER},
+      </if>
+      <if test="reportRecFlag != null" >
+        #{reportRecFlag,jdbcType=INTEGER},
+      </if>
+      <if test="reportRecResult != null" >
+        #{reportRecResult,jdbcType=VARCHAR},
+      </if>
+      <if test="retryTimes != null" >
+        #{retryTimes,jdbcType=INTEGER},
+      </if>
+      <if test="maxTimes != null" >
+        #{maxTimes,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendTime != null" >
+        #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reportTime != null" >
+        #{reportTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reserved != null" >
+        #{reserved,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ifudata.ums.dao.mapper.bo.UmsSendStatusCriteria" resultType="java.lang.Integer" >
+    select count(*) from ums_send_status
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update ums_send_status
+    <set >
+      <if test="record.resSeq != null" >
+        RES_SEQ = #{record.resSeq,jdbcType=BIGINT},
+      </if>
+      <if test="record.detailId != null" >
+        detail_id = #{record.detailId,jdbcType=BIGINT},
+      </if>
+      <if test="record.batchId != null" >
+        batch_id = #{record.batchId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.corpId != null" >
+        corp_id = #{record.corpId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.srcName != null" >
+        src_name = #{record.srcName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.templateId != null" >
+        template_id = #{record.templateId,jdbcType=BIGINT},
+      </if>
+      <if test="record.serviceType != null" >
+        service_type = #{record.serviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.verifyId != null" >
+        verify_id = #{record.verifyId,jdbcType=BIGINT},
+      </if>
+      <if test="record.phoneNum != null" >
+        phone_num = #{record.phoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.paraContent != null" >
+        para_content = #{record.paraContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.smsContent != null" >
+        sms_content = #{record.smsContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.transformStatus != null" >
+        transform_status = #{record.transformStatus,jdbcType=INTEGER},
+      </if>
+      <if test="record.sendSeq != null" >
+        SEND_SEQ = #{record.sendSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sendFlag != null" >
+        SEND_FLAG = #{record.sendFlag,jdbcType=INTEGER},
+      </if>
+      <if test="record.reportFlag != null" >
+        report_flag = #{record.reportFlag,jdbcType=INTEGER},
+      </if>
+      <if test="record.reportRecFlag != null" >
+        report_Rec_flag = #{record.reportRecFlag,jdbcType=INTEGER},
+      </if>
+      <if test="record.reportRecResult != null" >
+        report_Rec_result = #{record.reportRecResult,jdbcType=VARCHAR},
+      </if>
+      <if test="record.retryTimes != null" >
+        Retry_times = #{record.retryTimes,jdbcType=INTEGER},
+      </if>
+      <if test="record.maxTimes != null" >
+        Max_times = #{record.maxTimes,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null" >
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.sendTime != null" >
+        SEND_TIME = #{record.sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.reportTime != null" >
+        report_time = #{record.reportTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.reserved != null" >
+        reserved = #{record.reserved,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null" >
+        Remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update ums_send_status
+    set RES_SEQ = #{record.resSeq,jdbcType=BIGINT},
+      detail_id = #{record.detailId,jdbcType=BIGINT},
+      batch_id = #{record.batchId,jdbcType=VARCHAR},
+      corp_id = #{record.corpId,jdbcType=VARCHAR},
+      src_name = #{record.srcName,jdbcType=VARCHAR},
+      template_id = #{record.templateId,jdbcType=BIGINT},
+      service_type = #{record.serviceType,jdbcType=VARCHAR},
+      verify_id = #{record.verifyId,jdbcType=BIGINT},
+      phone_num = #{record.phoneNum,jdbcType=VARCHAR},
+      para_content = #{record.paraContent,jdbcType=VARCHAR},
+      sms_content = #{record.smsContent,jdbcType=VARCHAR},
+      transform_status = #{record.transformStatus,jdbcType=INTEGER},
+      SEND_SEQ = #{record.sendSeq,jdbcType=VARCHAR},
+      SEND_FLAG = #{record.sendFlag,jdbcType=INTEGER},
+      report_flag = #{record.reportFlag,jdbcType=INTEGER},
+      report_Rec_flag = #{record.reportRecFlag,jdbcType=INTEGER},
+      report_Rec_result = #{record.reportRecResult,jdbcType=VARCHAR},
+      Retry_times = #{record.retryTimes,jdbcType=INTEGER},
+      Max_times = #{record.maxTimes,jdbcType=INTEGER},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      SEND_TIME = #{record.sendTime,jdbcType=TIMESTAMP},
+      report_time = #{record.reportTime,jdbcType=TIMESTAMP},
+      reserved = #{record.reserved,jdbcType=VARCHAR},
+      Remark = #{record.remark,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ifudata.ums.dao.mapper.bo.UmsSendStatus" >
+    update ums_send_status
+    <set >
+      <if test="detailId != null" >
+        detail_id = #{detailId,jdbcType=BIGINT},
+      </if>
+      <if test="batchId != null" >
+        batch_id = #{batchId,jdbcType=VARCHAR},
+      </if>
+      <if test="corpId != null" >
+        corp_id = #{corpId,jdbcType=VARCHAR},
+      </if>
+      <if test="srcName != null" >
+        src_name = #{srcName,jdbcType=VARCHAR},
+      </if>
+      <if test="templateId != null" >
+        template_id = #{templateId,jdbcType=BIGINT},
+      </if>
+      <if test="serviceType != null" >
+        service_type = #{serviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="verifyId != null" >
+        verify_id = #{verifyId,jdbcType=BIGINT},
+      </if>
+      <if test="phoneNum != null" >
+        phone_num = #{phoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="paraContent != null" >
+        para_content = #{paraContent,jdbcType=VARCHAR},
+      </if>
+      <if test="smsContent != null" >
+        sms_content = #{smsContent,jdbcType=VARCHAR},
+      </if>
+      <if test="transformStatus != null" >
+        transform_status = #{transformStatus,jdbcType=INTEGER},
+      </if>
+      <if test="sendSeq != null" >
+        SEND_SEQ = #{sendSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="sendFlag != null" >
+        SEND_FLAG = #{sendFlag,jdbcType=INTEGER},
+      </if>
+      <if test="reportFlag != null" >
+        report_flag = #{reportFlag,jdbcType=INTEGER},
+      </if>
+      <if test="reportRecFlag != null" >
+        report_Rec_flag = #{reportRecFlag,jdbcType=INTEGER},
+      </if>
+      <if test="reportRecResult != null" >
+        report_Rec_result = #{reportRecResult,jdbcType=VARCHAR},
+      </if>
+      <if test="retryTimes != null" >
+        Retry_times = #{retryTimes,jdbcType=INTEGER},
+      </if>
+      <if test="maxTimes != null" >
+        Max_times = #{maxTimes,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendTime != null" >
+        SEND_TIME = #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reportTime != null" >
+        report_time = #{reportTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reserved != null" >
+        reserved = #{reserved,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        Remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where RES_SEQ = #{resSeq,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ifudata.ums.dao.mapper.bo.UmsSendStatus" >
+    update ums_send_status
+    set detail_id = #{detailId,jdbcType=BIGINT},
+      batch_id = #{batchId,jdbcType=VARCHAR},
+      corp_id = #{corpId,jdbcType=VARCHAR},
+      src_name = #{srcName,jdbcType=VARCHAR},
+      template_id = #{templateId,jdbcType=BIGINT},
+      service_type = #{serviceType,jdbcType=VARCHAR},
+      verify_id = #{verifyId,jdbcType=BIGINT},
+      phone_num = #{phoneNum,jdbcType=VARCHAR},
+      para_content = #{paraContent,jdbcType=VARCHAR},
+      sms_content = #{smsContent,jdbcType=VARCHAR},
+      transform_status = #{transformStatus,jdbcType=INTEGER},
+      SEND_SEQ = #{sendSeq,jdbcType=VARCHAR},
+      SEND_FLAG = #{sendFlag,jdbcType=INTEGER},
+      report_flag = #{reportFlag,jdbcType=INTEGER},
+      report_Rec_flag = #{reportRecFlag,jdbcType=INTEGER},
+      report_Rec_result = #{reportRecResult,jdbcType=VARCHAR},
+      Retry_times = #{retryTimes,jdbcType=INTEGER},
+      Max_times = #{maxTimes,jdbcType=INTEGER},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      SEND_TIME = #{sendTime,jdbcType=TIMESTAMP},
+      report_time = #{reportTime,jdbcType=TIMESTAMP},
+      reserved = #{reserved,jdbcType=VARCHAR},
+      Remark = #{remark,jdbcType=VARCHAR}
+    where RES_SEQ = #{resSeq,jdbcType=BIGINT}
+  </update>
+</mapper>

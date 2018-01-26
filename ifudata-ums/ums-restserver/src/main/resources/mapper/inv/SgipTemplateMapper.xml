@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ifudata.smsrest.db.interfaces.SgipTemplateMapper" >
+  <resultMap id="BaseResultMap" type="com.ifudata.smsrest.db.mapper.bo.SgipTemplate" >
+    <result column="TEMPLATE_ID" property="templateId" jdbcType="BIGINT" />
+    <result column="template_text" property="templateText" jdbcType="VARCHAR" />
+    <result column="sbegin_time" property="sbeginTime" jdbcType="VARCHAR" />
+    <result column="sclose_time" property="scloseTime" jdbcType="VARCHAR" />
+    <result column="Retry_times" property="retryTimes" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    TEMPLATE_ID, template_text, sbegin_time, sclose_time, Retry_times
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ifudata.smsrest.db.mapper.bo.SgipTemplateCriteria" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sgip_template
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limitStart != null and limitStart>=0" >
+      limit #{limitStart} , #{limitEnd}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.ifudata.smsrest.db.mapper.bo.SgipTemplateCriteria" >
+    delete from sgip_template
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ifudata.smsrest.db.mapper.bo.SgipTemplate" >
+    insert into sgip_template (TEMPLATE_ID, template_text, sbegin_time,
+    sclose_time, Retry_times)
+    values (#{templateId,jdbcType=BIGINT}, #{templateText,jdbcType=VARCHAR}, #{sbeginTime,jdbcType=VARCHAR},
+    #{scloseTime,jdbcType=VARCHAR}, #{retryTimes,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ifudata.smsrest.db.mapper.bo.SgipTemplate" >
+    insert into sgip_template
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="templateId != null" >
+        TEMPLATE_ID,
+      </if>
+      <if test="templateText != null" >
+        template_text,
+      </if>
+      <if test="sbeginTime != null" >
+        sbegin_time,
+      </if>
+      <if test="scloseTime != null" >
+        sclose_time,
+      </if>
+      <if test="retryTimes != null" >
+        Retry_times,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="templateId != null" >
+        #{templateId,jdbcType=BIGINT},
+      </if>
+      <if test="templateText != null" >
+        #{templateText,jdbcType=VARCHAR},
+      </if>
+      <if test="sbeginTime != null" >
+        #{sbeginTime,jdbcType=VARCHAR},
+      </if>
+      <if test="scloseTime != null" >
+        #{scloseTime,jdbcType=VARCHAR},
+      </if>
+      <if test="retryTimes != null" >
+        #{retryTimes,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ifudata.smsrest.db.mapper.bo.SgipTemplateCriteria" resultType="java.lang.Integer" >
+    select count(*) from sgip_template
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update sgip_template
+    <set >
+      <if test="record.templateId != null" >
+        TEMPLATE_ID = #{record.templateId,jdbcType=BIGINT},
+      </if>
+      <if test="record.templateText != null" >
+        template_text = #{record.templateText,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sbeginTime != null" >
+        sbegin_time = #{record.sbeginTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.scloseTime != null" >
+        sclose_time = #{record.scloseTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.retryTimes != null" >
+        Retry_times = #{record.retryTimes,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update sgip_template
+    set TEMPLATE_ID = #{record.templateId,jdbcType=BIGINT},
+    template_text = #{record.templateText,jdbcType=VARCHAR},
+    sbegin_time = #{record.sbeginTime,jdbcType=VARCHAR},
+    sclose_time = #{record.scloseTime,jdbcType=VARCHAR},
+    Retry_times = #{record.retryTimes,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

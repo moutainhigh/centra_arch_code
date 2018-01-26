@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ifudata.ums.dao.interfaces.SmsResultMapper" >
+  <resultMap id="BaseResultMap" type="com.ifudata.ums.dao.mapper.bo.SmsResult" >
+    <result column="RES_SEQ" property="resSeq" jdbcType="BIGINT" />
+    <result column="SRC_NAME" property="srcName" jdbcType="VARCHAR" />
+    <result column="TEMPLATE_ID" property="templateId" jdbcType="BIGINT" />
+    <result column="SERVICETYPE" property="servicetype" jdbcType="VARCHAR" />
+    <result column="VERIFYID" property="verifyid" jdbcType="BIGINT" />
+    <result column="PHONE" property="phone" jdbcType="VARCHAR" />
+    <result column="GSMCONTENT" property="gsmcontent" jdbcType="VARCHAR" />
+    <result column="CONTENT" property="content" jdbcType="VARCHAR" />
+    <result column="SEND_SEQ" property="sendSeq" jdbcType="VARCHAR" />
+    <result column="SEND_FLAG" property="sendFlag" jdbcType="INTEGER" />
+    <result column="REC_FLAG" property="recFlag" jdbcType="INTEGER" />
+    <result column="REC_RESULT" property="recResult" jdbcType="VARCHAR" />
+    <result column="RETRY_TIMES" property="retryTimes" jdbcType="INTEGER" />
+    <result column="MAX_TIMES" property="maxTimes" jdbcType="INTEGER" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="SEND_TIME" property="sendTime" jdbcType="TIMESTAMP" />
+    <result column="REC_TIME" property="recTime" jdbcType="TIMESTAMP" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    RES_SEQ, SRC_NAME, TEMPLATE_ID, SERVICETYPE, VERIFYID, PHONE, GSMCONTENT, CONTENT,
+    SEND_SEQ, SEND_FLAG, REC_FLAG, REC_RESULT, RETRY_TIMES, MAX_TIMES, CREATE_TIME, SEND_TIME,
+    REC_TIME, REMARK
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ifudata.ums.dao.mapper.bo.SmsResultCriteria" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sms_result
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limitStart != null and limitStart>=0" >
+      limit #{limitStart} , #{limitEnd}
+    </if>
+  </select>
+  <select id="selectByExampleTimeout" resultMap="BaseResultMap" parameterType="com.ifudata.ums.dao.mapper.bo.SmsResultCriteria" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sms_result_timeout
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limitStart != null and limitStart>=0" >
+      limit #{limitStart} , #{limitEnd}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.ifudata.ums.dao.mapper.bo.SmsResultCriteria" >
+    delete from sms_result
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <delete id="deleteByExampleTimeout" parameterType="com.ifudata.ums.dao.mapper.bo.SmsResultCriteria" >
+    delete from sms_result_timeout
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ifudata.ums.dao.mapper.bo.SmsResult" >
+    insert into sms_result (RES_SEQ, SRC_NAME, TEMPLATE_ID,
+    SERVICETYPE, VERIFYID, PHONE,
+    GSMCONTENT, CONTENT, SEND_SEQ,
+    SEND_FLAG, REC_FLAG, REC_RESULT,
+    RETRY_TIMES, MAX_TIMES, CREATE_TIME,
+    SEND_TIME, REC_TIME, REMARK
+    )
+    values (#{resSeq,jdbcType=BIGINT}, #{srcName,jdbcType=VARCHAR}, #{templateId,jdbcType=BIGINT},
+    #{servicetype,jdbcType=VARCHAR}, #{verifyid,jdbcType=BIGINT}, #{phone,jdbcType=VARCHAR},
+    #{gsmcontent,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{sendSeq,jdbcType=VARCHAR},
+    #{sendFlag,jdbcType=INTEGER}, #{recFlag,jdbcType=INTEGER}, #{recResult,jdbcType=VARCHAR},
+    #{retryTimes,jdbcType=INTEGER}, #{maxTimes,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
+    #{sendTime,jdbcType=TIMESTAMP}, #{recTime,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}
+    )
+  </insert>
+  <insert id="insertTimeout" parameterType="com.ifudata.ums.dao.mapper.bo.SmsResult" >
+    insert into sms_result_timeout (RES_SEQ, SRC_NAME, TEMPLATE_ID,
+    SERVICETYPE, VERIFYID, PHONE,
+    GSMCONTENT, CONTENT, SEND_SEQ,
+    SEND_FLAG, REC_FLAG, REC_RESULT,
+    RETRY_TIMES, MAX_TIMES, CREATE_TIME,
+    SEND_TIME, REC_TIME, REMARK
+    )
+    values (#{resSeq,jdbcType=BIGINT}, #{srcName,jdbcType=VARCHAR}, #{templateId,jdbcType=BIGINT},
+    #{servicetype,jdbcType=VARCHAR}, #{verifyid,jdbcType=BIGINT}, #{phone,jdbcType=VARCHAR},
+    #{gsmcontent,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{sendSeq,jdbcType=VARCHAR},
+    #{sendFlag,jdbcType=INTEGER}, #{recFlag,jdbcType=INTEGER}, #{recResult,jdbcType=VARCHAR},
+    #{retryTimes,jdbcType=INTEGER}, #{maxTimes,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
+    #{sendTime,jdbcType=TIMESTAMP}, #{recTime,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}
+    )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ifudata.ums.dao.mapper.bo.SmsResult" >
+    insert into sms_result
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="resSeq != null" >
+        RES_SEQ,
+      </if>
+      <if test="srcName != null" >
+        SRC_NAME,
+      </if>
+      <if test="templateId != null" >
+        TEMPLATE_ID,
+      </if>
+      <if test="servicetype != null" >
+        SERVICETYPE,
+      </if>
+      <if test="verifyid != null" >
+        VERIFYID,
+      </if>
+      <if test="phone != null" >
+        PHONE,
+      </if>
+      <if test="gsmcontent != null" >
+        GSMCONTENT,
+      </if>
+      <if test="content != null" >
+        CONTENT,
+      </if>
+      <if test="sendSeq != null" >
+        SEND_SEQ,
+      </if>
+      <if test="sendFlag != null" >
+        SEND_FLAG,
+      </if>
+      <if test="recFlag != null" >
+        REC_FLAG,
+      </if>
+      <if test="recResult != null" >
+        REC_RESULT,
+      </if>
+      <if test="retryTimes != null" >
+        RETRY_TIMES,
+      </if>
+      <if test="maxTimes != null" >
+        MAX_TIMES,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="sendTime != null" >
+        SEND_TIME,
+      </if>
+      <if test="recTime != null" >
+        REC_TIME,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="resSeq != null" >
+        #{resSeq,jdbcType=BIGINT},
+      </if>
+      <if test="srcName != null" >
+        #{srcName,jdbcType=VARCHAR},
+      </if>
+      <if test="templateId != null" >
+        #{templateId,jdbcType=BIGINT},
+      </if>
+      <if test="servicetype != null" >
+        #{servicetype,jdbcType=VARCHAR},
+      </if>
+      <if test="verifyid != null" >
+        #{verifyid,jdbcType=BIGINT},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="gsmcontent != null" >
+        #{gsmcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="sendSeq != null" >
+        #{sendSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="sendFlag != null" >
+        #{sendFlag,jdbcType=INTEGER},
+      </if>
+      <if test="recFlag != null" >
+        #{recFlag,jdbcType=INTEGER},
+      </if>
+      <if test="recResult != null" >
+        #{recResult,jdbcType=VARCHAR},
+      </if>
+      <if test="retryTimes != null" >
+        #{retryTimes,jdbcType=INTEGER},
+      </if>
+      <if test="maxTimes != null" >
+        #{maxTimes,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendTime != null" >
+        #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="recTime != null" >
+        #{recTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertSelectiveTimeout" parameterType="com.ifudata.ums.dao.mapper.bo.SmsResult" >
+      insert into sms_result_timeout
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="resSeq != null" >
+        RES_SEQ,
+      </if>
+      <if test="srcName != null" >
+        SRC_NAME,
+      </if>
+      <if test="templateId != null" >
+        TEMPLATE_ID,
+      </if>
+      <if test="servicetype != null" >
+        SERVICETYPE,
+      </if>
+      <if test="verifyid != null" >
+        VERIFYID,
+      </if>
+      <if test="phone != null" >
+        PHONE,
+      </if>
+      <if test="gsmcontent != null" >
+        GSMCONTENT,
+      </if>
+      <if test="content != null" >
+        CONTENT,
+      </if>
+      <if test="sendSeq != null" >
+        SEND_SEQ,
+      </if>
+      <if test="sendFlag != null" >
+        SEND_FLAG,
+      </if>
+      <if test="recFlag != null" >
+        REC_FLAG,
+      </if>
+      <if test="recResult != null" >
+        REC_RESULT,
+      </if>
+      <if test="retryTimes != null" >
+        RETRY_TIMES,
+      </if>
+      <if test="maxTimes != null" >
+        MAX_TIMES,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="sendTime != null" >
+        SEND_TIME,
+      </if>
+      <if test="recTime != null" >
+        REC_TIME,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="resSeq != null" >
+        #{resSeq,jdbcType=BIGINT},
+      </if>
+      <if test="srcName != null" >
+        #{srcName,jdbcType=VARCHAR},
+      </if>
+      <if test="templateId != null" >
+        #{templateId,jdbcType=BIGINT},
+      </if>
+      <if test="servicetype != null" >
+        #{servicetype,jdbcType=VARCHAR},
+      </if>
+      <if test="verifyid != null" >
+        #{verifyid,jdbcType=BIGINT},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="gsmcontent != null" >
+        #{gsmcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="sendSeq != null" >
+        #{sendSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="sendFlag != null" >
+        #{sendFlag,jdbcType=INTEGER},
+      </if>
+      <if test="recFlag != null" >
+        #{recFlag,jdbcType=INTEGER},
+      </if>
+      <if test="recResult != null" >
+        #{recResult,jdbcType=VARCHAR},
+      </if>
+      <if test="retryTimes != null" >
+        #{retryTimes,jdbcType=INTEGER},
+      </if>
+      <if test="maxTimes != null" >
+        #{maxTimes,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sendTime != null" >
+        #{sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="recTime != null" >
+        #{recTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>  
+  <select id="countByExample" parameterType="com.ifudata.ums.dao.mapper.bo.SmsResultCriteria" resultType="java.lang.Integer" >
+    select count(*) from sms_result
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <select id="countByExampleTimeout" parameterType="com.ifudata.ums.dao.mapper.bo.SmsResultCriteria" resultType="java.lang.Integer" >
+    select count(*) from sms_result_timeout
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update sms_result
+    <set >
+      <if test="record.resSeq != null" >
+        RES_SEQ = #{record.resSeq,jdbcType=BIGINT},
+      </if>
+      <if test="record.srcName != null" >
+        SRC_NAME = #{record.srcName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.templateId != null" >
+        TEMPLATE_ID = #{record.templateId,jdbcType=BIGINT},
+      </if>
+      <if test="record.servicetype != null" >
+        SERVICETYPE = #{record.servicetype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.verifyid != null" >
+        VERIFYID = #{record.verifyid,jdbcType=BIGINT},
+      </if>
+      <if test="record.phone != null" >
+        PHONE = #{record.phone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gsmcontent != null" >
+        GSMCONTENT = #{record.gsmcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.content != null" >
+        CONTENT = #{record.content,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sendSeq != null" >
+        SEND_SEQ = #{record.sendSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sendFlag != null" >
+        SEND_FLAG = #{record.sendFlag,jdbcType=INTEGER},
+      </if>
+      <if test="record.recFlag != null" >
+        REC_FLAG = #{record.recFlag,jdbcType=INTEGER},
+      </if>
+      <if test="record.recResult != null" >
+        REC_RESULT = #{record.recResult,jdbcType=VARCHAR},
+      </if>
+      <if test="record.retryTimes != null" >
+        RETRY_TIMES = #{record.retryTimes,jdbcType=INTEGER},
+      </if>
+      <if test="record.maxTimes != null" >
+        MAX_TIMES = #{record.maxTimes,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null" >
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.sendTime != null" >
+        SEND_TIME = #{record.sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.recTime != null" >
+        REC_TIME = #{record.recTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.remark != null" >
+        REMARK = #{record.remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleSelectiveTimeout" parameterType="map" >
+    update sms_result_timeout
+    <set >
+      <if test="record.resSeq != null" >
+        RES_SEQ = #{record.resSeq,jdbcType=BIGINT},
+      </if>
+      <if test="record.srcName != null" >
+        SRC_NAME = #{record.srcName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.templateId != null" >
+        TEMPLATE_ID = #{record.templateId,jdbcType=BIGINT},
+      </if>
+      <if test="record.servicetype != null" >
+        SERVICETYPE = #{record.servicetype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.verifyid != null" >
+        VERIFYID = #{record.verifyid,jdbcType=BIGINT},
+      </if>
+      <if test="record.phone != null" >
+        PHONE = #{record.phone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gsmcontent != null" >
+        GSMCONTENT = #{record.gsmcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.content != null" >
+        CONTENT = #{record.content,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sendSeq != null" >
+        SEND_SEQ = #{record.sendSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sendFlag != null" >
+        SEND_FLAG = #{record.sendFlag,jdbcType=INTEGER},
+      </if>
+      <if test="record.recFlag != null" >
+        REC_FLAG = #{record.recFlag,jdbcType=INTEGER},
+      </if>
+      <if test="record.recResult != null" >
+        REC_RESULT = #{record.recResult,jdbcType=VARCHAR},
+      </if>
+      <if test="record.retryTimes != null" >
+        RETRY_TIMES = #{record.retryTimes,jdbcType=INTEGER},
+      </if>
+      <if test="record.maxTimes != null" >
+        MAX_TIMES = #{record.maxTimes,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null" >
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.sendTime != null" >
+        SEND_TIME = #{record.sendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.recTime != null" >
+        REC_TIME = #{record.recTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.remark != null" >
+        REMARK = #{record.remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update sms_result
+    set RES_SEQ = #{record.resSeq,jdbcType=BIGINT},
+    SRC_NAME = #{record.srcName,jdbcType=VARCHAR},
+    TEMPLATE_ID = #{record.templateId,jdbcType=BIGINT},
+    SERVICETYPE = #{record.servicetype,jdbcType=VARCHAR},
+    VERIFYID = #{record.verifyid,jdbcType=BIGINT},
+    PHONE = #{record.phone,jdbcType=VARCHAR},
+    GSMCONTENT = #{record.gsmcontent,jdbcType=VARCHAR},
+    CONTENT = #{record.content,jdbcType=VARCHAR},
+    SEND_SEQ = #{record.sendSeq,jdbcType=VARCHAR},
+    SEND_FLAG = #{record.sendFlag,jdbcType=INTEGER},
+    REC_FLAG = #{record.recFlag,jdbcType=INTEGER},
+    REC_RESULT = #{record.recResult,jdbcType=VARCHAR},
+    RETRY_TIMES = #{record.retryTimes,jdbcType=INTEGER},
+    MAX_TIMES = #{record.maxTimes,jdbcType=INTEGER},
+    CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+    SEND_TIME = #{record.sendTime,jdbcType=TIMESTAMP},
+    REC_TIME = #{record.recTime,jdbcType=TIMESTAMP},
+    REMARK = #{record.remark,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleTimeout" parameterType="map" >
+    update sms_result_timeout
+    set RES_SEQ = #{record.resSeq,jdbcType=BIGINT},
+    SRC_NAME = #{record.srcName,jdbcType=VARCHAR},
+    TEMPLATE_ID = #{record.templateId,jdbcType=BIGINT},
+    SERVICETYPE = #{record.servicetype,jdbcType=VARCHAR},
+    VERIFYID = #{record.verifyid,jdbcType=BIGINT},
+    PHONE = #{record.phone,jdbcType=VARCHAR},
+    GSMCONTENT = #{record.gsmcontent,jdbcType=VARCHAR},
+    CONTENT = #{record.content,jdbcType=VARCHAR},
+    SEND_SEQ = #{record.sendSeq,jdbcType=VARCHAR},
+    SEND_FLAG = #{record.sendFlag,jdbcType=INTEGER},
+    REC_FLAG = #{record.recFlag,jdbcType=INTEGER},
+    REC_RESULT = #{record.recResult,jdbcType=VARCHAR},
+    RETRY_TIMES = #{record.retryTimes,jdbcType=INTEGER},
+    MAX_TIMES = #{record.maxTimes,jdbcType=INTEGER},
+    CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+    SEND_TIME = #{record.sendTime,jdbcType=TIMESTAMP},
+    REC_TIME = #{record.recTime,jdbcType=TIMESTAMP},
+    REMARK = #{record.remark,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>  
+  <insert id="insertToBackup" parameterType="map">
+    insert into his_sms_result_${currmonth} (RES_SEQ, SRC_NAME, TEMPLATE_ID,
+    SERVICETYPE, VERIFYID, PHONE,
+    GSMCONTENT, CONTENT, SEND_SEQ,
+    SEND_FLAG, REC_FLAG, REC_RESULT,
+    RETRY_TIMES, MAX_TIMES, CREATE_TIME,
+    SEND_TIME, REC_TIME, REMARK,BAK_TIME
+    ) values(
+    #{record.resSeq,jdbcType=BIGINT},
+    #{record.srcName,jdbcType=VARCHAR},
+    #{record.templateId,jdbcType=BIGINT},
+    #{record.servicetype,jdbcType=VARCHAR},
+    #{record.verifyid,jdbcType=BIGINT},
+    #{record.phone,jdbcType=VARCHAR},
+    #{record.gsmcontent,jdbcType=VARCHAR},
+    #{record.content,jdbcType=VARCHAR},
+    #{record.sendSeq,jdbcType=VARCHAR},
+    #{record.sendFlag,jdbcType=INTEGER},
+    #{record.recFlag,jdbcType=INTEGER},
+    #{record.recResult,jdbcType=VARCHAR},
+    #{record.retryTimes,jdbcType=INTEGER},
+    #{record.maxTimes,jdbcType=INTEGER},
+    #{record.createTime,jdbcType=TIMESTAMP},
+    #{record.sendTime,jdbcType=TIMESTAMP},
+    #{record.recTime,jdbcType=TIMESTAMP},
+    #{record.remark,jdbcType=VARCHAR},now())
+  </insert>
+ <insert id="insertToTimeout" parameterType="map">
+    insert into sms_result_timeout (RES_SEQ, SRC_NAME, TEMPLATE_ID,
+    SERVICETYPE, VERIFYID, PHONE,
+    GSMCONTENT, CONTENT, SEND_SEQ,
+    SEND_FLAG, REC_FLAG, REC_RESULT,
+    RETRY_TIMES, MAX_TIMES, CREATE_TIME,
+    SEND_TIME, REC_TIME, REMARK, BAK_TIME
+    ) values(
+    #{record.resSeq,jdbcType=BIGINT},
+    #{record.srcName,jdbcType=VARCHAR},
+    #{record.templateId,jdbcType=BIGINT},
+    #{record.servicetype,jdbcType=VARCHAR},
+    #{record.verifyid,jdbcType=BIGINT},
+    #{record.phone,jdbcType=VARCHAR},
+    #{record.gsmcontent,jdbcType=VARCHAR},
+    #{record.content,jdbcType=VARCHAR},
+    #{record.sendSeq,jdbcType=VARCHAR},
+    #{record.sendFlag,jdbcType=INTEGER},
+    #{record.recFlag,jdbcType=INTEGER},
+    #{record.recResult,jdbcType=VARCHAR},
+    #{record.retryTimes,jdbcType=INTEGER},
+    #{record.maxTimes,jdbcType=INTEGER},
+    #{record.createTime,jdbcType=TIMESTAMP},
+    #{record.sendTime,jdbcType=TIMESTAMP},
+    #{record.recTime,jdbcType=TIMESTAMP},
+    #{record.remark,jdbcType=VARCHAR},now())
+  </insert>
+</mapper>

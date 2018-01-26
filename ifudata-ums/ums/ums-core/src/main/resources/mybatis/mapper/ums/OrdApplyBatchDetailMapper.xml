@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ifudata.ums.dao.mapper.interfaces.OrdApplyBatchDetailMapper" >
+  <resultMap id="BaseResultMap" type="com.ifudata.ums.dao.mapper.bo.OrdApplyBatchDetail" >
+    <id column="detail_id" property="detailId" jdbcType="BIGINT" />
+    <result column="batch_id" property="batchId" jdbcType="BIGINT" />
+    <result column="busi_type" property="busiType" jdbcType="VARCHAR" />
+    <result column="apply_id" property="applyId" jdbcType="BIGINT" />
+    <result column="order_id" property="orderId" jdbcType="BIGINT" />
+    <result column="service_num" property="serviceNum" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="VARCHAR" />
+    <result column="state_chg_time" property="stateChgTime" jdbcType="TIMESTAMP" />
+    <result column="state_desc" property="stateDesc" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.ifudata.ums.dao.mapper.bo.OrdApplyBatchDetailWithBLOBs" extends="BaseResultMap" >
+    <result column="excel_body1" property="excelBody1" jdbcType="LONGVARCHAR" />
+    <result column="excel_body2" property="excelBody2" jdbcType="LONGVARCHAR" />
+    <result column="excel_body3" property="excelBody3" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    detail_id, batch_id, busi_type, apply_id, order_id, service_num, state, state_chg_time, 
+    state_desc, create_time
+  </sql>
+  <sql id="Blob_Column_List" >
+    excel_body1, excel_body2, excel_body3
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.ifudata.ums.dao.mapper.bo.OrdApplyBatchDetailCriteria" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from ord_apply_batch_detail
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ifudata.ums.dao.mapper.bo.OrdApplyBatchDetailCriteria" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from ord_apply_batch_detail
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limitStart != null and limitStart>=0" >
+      limit #{limitStart} , #{limitEnd}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from ord_apply_batch_detail
+    where detail_id = #{detailId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="Long" >
+    delete from ord_apply_batch_detail
+    where detail_id = #{detailId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ifudata.ums.dao.mapper.bo.OrdApplyBatchDetailCriteria" >
+    delete from ord_apply_batch_detail
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ifudata.ums.dao.mapper.bo.OrdApplyBatchDetailWithBLOBs" >
+    insert into ord_apply_batch_detail (detail_id, batch_id, busi_type, 
+      apply_id, order_id, service_num, 
+      state, state_chg_time, state_desc, 
+      create_time, excel_body1, excel_body2, 
+      excel_body3)
+    values (#{detailId,jdbcType=BIGINT}, #{batchId,jdbcType=BIGINT}, #{busiType,jdbcType=VARCHAR}, 
+      #{applyId,jdbcType=BIGINT}, #{orderId,jdbcType=BIGINT}, #{serviceNum,jdbcType=VARCHAR}, 
+      #{state,jdbcType=VARCHAR}, #{stateChgTime,jdbcType=TIMESTAMP}, #{stateDesc,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{excelBody1,jdbcType=LONGVARCHAR}, #{excelBody2,jdbcType=LONGVARCHAR}, 
+      #{excelBody3,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ifudata.ums.dao.mapper.bo.OrdApplyBatchDetailWithBLOBs" >
+    insert into ord_apply_batch_detail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="detailId != null" >
+        detail_id,
+      </if>
+      <if test="batchId != null" >
+        batch_id,
+      </if>
+      <if test="busiType != null" >
+        busi_type,
+      </if>
+      <if test="applyId != null" >
+        apply_id,
+      </if>
+      <if test="orderId != null" >
+        order_id,
+      </if>
+      <if test="serviceNum != null" >
+        service_num,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="stateChgTime != null" >
+        state_chg_time,
+      </if>
+      <if test="stateDesc != null" >
+        state_desc,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="excelBody1 != null" >
+        excel_body1,
+      </if>
+      <if test="excelBody2 != null" >
+        excel_body2,
+      </if>
+      <if test="excelBody3 != null" >
+        excel_body3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="detailId != null" >
+        #{detailId,jdbcType=BIGINT},
+      </if>
+      <if test="batchId != null" >
+        #{batchId,jdbcType=BIGINT},
+      </if>
+      <if test="busiType != null" >
+        #{busiType,jdbcType=VARCHAR},
+      </if>
+      <if test="applyId != null" >
+        #{applyId,jdbcType=BIGINT},
+      </if>
+      <if test="orderId != null" >
+        #{orderId,jdbcType=BIGINT},
+      </if>
+      <if test="serviceNum != null" >
+        #{serviceNum,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="stateChgTime != null" >
+        #{stateChgTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stateDesc != null" >
+        #{stateDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="excelBody1 != null" >
+        #{excelBody1,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="excelBody2 != null" >
+        #{excelBody2,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="excelBody3 != null" >
+        #{excelBody3,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ifudata.ums.dao.mapper.bo.OrdApplyBatchDetailCriteria" resultType="java.lang.Integer" >
+    select count(*) from ord_apply_batch_detail
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update ord_apply_batch_detail
+    <set >
+      <if test="record.detailId != null" >
+        detail_id = #{record.detailId,jdbcType=BIGINT},
+      </if>
+      <if test="record.batchId != null" >
+        batch_id = #{record.batchId,jdbcType=BIGINT},
+      </if>
+      <if test="record.busiType != null" >
+        busi_type = #{record.busiType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applyId != null" >
+        apply_id = #{record.applyId,jdbcType=BIGINT},
+      </if>
+      <if test="record.orderId != null" >
+        order_id = #{record.orderId,jdbcType=BIGINT},
+      </if>
+      <if test="record.serviceNum != null" >
+        service_num = #{record.serviceNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null" >
+        state = #{record.state,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stateChgTime != null" >
+        state_chg_time = #{record.stateChgTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.stateDesc != null" >
+        state_desc = #{record.stateDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.excelBody1 != null" >
+        excel_body1 = #{record.excelBody1,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.excelBody2 != null" >
+        excel_body2 = #{record.excelBody2,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.excelBody3 != null" >
+        excel_body3 = #{record.excelBody3,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update ord_apply_batch_detail
+    set detail_id = #{record.detailId,jdbcType=BIGINT},
+      batch_id = #{record.batchId,jdbcType=BIGINT},
+      busi_type = #{record.busiType,jdbcType=VARCHAR},
+      apply_id = #{record.applyId,jdbcType=BIGINT},
+      order_id = #{record.orderId,jdbcType=BIGINT},
+      service_num = #{record.serviceNum,jdbcType=VARCHAR},
+      state = #{record.state,jdbcType=VARCHAR},
+      state_chg_time = #{record.stateChgTime,jdbcType=TIMESTAMP},
+      state_desc = #{record.stateDesc,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      excel_body1 = #{record.excelBody1,jdbcType=LONGVARCHAR},
+      excel_body2 = #{record.excelBody2,jdbcType=LONGVARCHAR},
+      excel_body3 = #{record.excelBody3,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update ord_apply_batch_detail
+    set detail_id = #{record.detailId,jdbcType=BIGINT},
+      batch_id = #{record.batchId,jdbcType=BIGINT},
+      busi_type = #{record.busiType,jdbcType=VARCHAR},
+      apply_id = #{record.applyId,jdbcType=BIGINT},
+      order_id = #{record.orderId,jdbcType=BIGINT},
+      service_num = #{record.serviceNum,jdbcType=VARCHAR},
+      state = #{record.state,jdbcType=VARCHAR},
+      state_chg_time = #{record.stateChgTime,jdbcType=TIMESTAMP},
+      state_desc = #{record.stateDesc,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ifudata.ums.dao.mapper.bo.OrdApplyBatchDetailWithBLOBs" >
+    update ord_apply_batch_detail
+    <set >
+      <if test="batchId != null" >
+        batch_id = #{batchId,jdbcType=BIGINT},
+      </if>
+      <if test="busiType != null" >
+        busi_type = #{busiType,jdbcType=VARCHAR},
+      </if>
+      <if test="applyId != null" >
+        apply_id = #{applyId,jdbcType=BIGINT},
+      </if>
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=BIGINT},
+      </if>
+      <if test="serviceNum != null" >
+        service_num = #{serviceNum,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="stateChgTime != null" >
+        state_chg_time = #{stateChgTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stateDesc != null" >
+        state_desc = #{stateDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="excelBody1 != null" >
+        excel_body1 = #{excelBody1,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="excelBody2 != null" >
+        excel_body2 = #{excelBody2,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="excelBody3 != null" >
+        excel_body3 = #{excelBody3,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where detail_id = #{detailId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ifudata.ums.dao.mapper.bo.OrdApplyBatchDetailWithBLOBs" >
+    update ord_apply_batch_detail
+    set batch_id = #{batchId,jdbcType=BIGINT},
+      busi_type = #{busiType,jdbcType=VARCHAR},
+      apply_id = #{applyId,jdbcType=BIGINT},
+      order_id = #{orderId,jdbcType=BIGINT},
+      service_num = #{serviceNum,jdbcType=VARCHAR},
+      state = #{state,jdbcType=VARCHAR},
+      state_chg_time = #{stateChgTime,jdbcType=TIMESTAMP},
+      state_desc = #{stateDesc,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      excel_body1 = #{excelBody1,jdbcType=LONGVARCHAR},
+      excel_body2 = #{excelBody2,jdbcType=LONGVARCHAR},
+      excel_body3 = #{excelBody3,jdbcType=LONGVARCHAR}
+    where detail_id = #{detailId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ifudata.ums.dao.mapper.bo.OrdApplyBatchDetail" >
+    update ord_apply_batch_detail
+    set batch_id = #{batchId,jdbcType=BIGINT},
+      busi_type = #{busiType,jdbcType=VARCHAR},
+      apply_id = #{applyId,jdbcType=BIGINT},
+      order_id = #{orderId,jdbcType=BIGINT},
+      service_num = #{serviceNum,jdbcType=VARCHAR},
+      state = #{state,jdbcType=VARCHAR},
+      state_chg_time = #{stateChgTime,jdbcType=TIMESTAMP},
+      state_desc = #{stateDesc,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where detail_id = #{detailId,jdbcType=BIGINT}
+  </update>
+</mapper>

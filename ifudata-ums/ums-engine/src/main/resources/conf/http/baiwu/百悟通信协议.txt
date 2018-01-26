@@ -1,0 +1,29 @@
+********** 
+responseBody : 
+
+<?xml version="1.0" encoding="utf-8" ?>
+<message>
+	<result>0</result>
+	<result_describe>发送成功</result_describe>
+	<count>1</count>
+</message> 
+
+**********
+
+********** 
+此次状态报告返回结果为：
+
+<?xml version="1.0" encoding="GBK" ?>
+<reports>
+	<report>
+		<corp_id>gome1</corp_id>
+		<mobile>18610131984</mobile>
+		<seq>0</seq>
+		<msg_id>130005</msg_id>
+		<err>0</err>
+		<fail_describe>DELIVRD</fail_describe>
+		<report_time>2015-06-09 15:12:14</report_time>
+		<result>0</result>
+	</report>
+</reports>
+**********

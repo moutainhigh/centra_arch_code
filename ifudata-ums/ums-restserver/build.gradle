@@ -1,0 +1,29 @@
+dependencies {
+    compile 'org.mybatis:mybatis:3.3.0'
+    compile 'org.mybatis:mybatis-spring:1.2.3'
+    compile 'mysql:mysql-connector-java:5.1.36'
+    compile 'org.springframework:spring-tx:4.1.7.RELEASE'
+    compile 'org.springframework:spring-context:4.1.7.RELEASE'
+    compile 'org.springframework:spring-jdbc:4.1.7.RELEASE'
+    compile 'dom4j:dom4j:1.6.1'
+    compile 'commons-dbcp:commons-dbcp:1.1'
+    compile 'com.sun.jersey:jersey-core:1.19'
+    compile 'com.sun.jersey:jersey-json:1.19'
+    compile 'com.sun.jersey:jersey-client:1.19'
+    compile 'com.sun.jersey:jersey-server:1.19'
+    compile 'com.sun.jersey:jersey-grizzly2:1.19'
+
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+
+    compile 'org.apache.logging.log4j:log4j-core:2.3'
+    compile 'log4j:log4j:1.2.17'
+    compile 'org.slf4j:slf4j-log4j12:1.7.7'
+    compile 'org.slf4j:slf4j-api:1.7.12'
+    compile 'com.google.code.gson:gson:2.2.4'
+
+    compile 'commons-httpclient:commons-httpclient:3.1'
+    testCompile(
+            "org.springframework:spring-test:4.1.7.RELEASE",
+            "junit:junit:4.12"
+    )
+}

@@ -1,0 +1,86 @@
+apply plugin: 'war'
+apply plugin: 'eclipse'
+
+dependencies {
+    compile 'org.springframework:spring-webmvc:4.1.7.RELEASE'
+    compile 'com.google.code.gson:gson:1.7.2'
+    compile ('com.alibaba:dubbox:2.8.3.1'){
+        exclude group: 'org.springframework', module: 'spring'
+    }
+    compile 'org.apache.zookeeper:zookeeper:3.4.5'
+    compile 'com.github.sgroschupf:zkclient:0.1'
+    compile 'commons-lang:commons-lang:2.6'
+    compile 'commons-io:commons-io:1.4'
+    compile 'commons-collections:commons-collections:3.2.1'
+    compile 'commons-fileupload:commons-fileupload:1.3.1'
+    compile 'commons-beanutils:commons-beanutils:1.8.3'
+    compile 'org.json:json:20140107'
+    compile 'org.apache.cxf:cxf-api:2.7.10'
+    compile 'jstl:jstl:1.2'
+    compile "javax.servlet:javax.servlet-api:3.1.0"
+    compile "javax.servlet.jsp:javax.servlet.jsp-api:2.3.1"
+    compile "org.apache.poi:poi:3.7"
+    compile "org.apache.poi:poi-ooxml:3.7"
+    compile "org.apache.poi:poi-ooxml-schemas:3.7"
+    compile "org.apache.poi:poi-scratchpad:3.7"
+    compile "dom4j:dom4j:1.6.1"
+    compile "org.apache.xmlbeans:xmlbeans:2.6.0"
+    compile "org.apache.commons:commons-pool2:2.2"
+    //网付通
+    //compile 'OpenVendorV34_JDK1.4_NJCE:OpenVendorV34_JDK1.4_NJCE:1.4'
+    //compile 'bcprov-jdk14-139:bcprov-jdk14-139:1.4'
+    //compile 'crypt_bc:crypt_bc:1.4'
+    //compile 'gnete-bc-139:gnete-bc-139:1.4'
+    compile 'org.javassist:javassist:3.15.0-GA'
+    /*
+    compile "com.ifudata.ums.crm.utils:crm-utils-cache:1.0.ibss"
+    compile "com.ifudata.ums.crm.api:crm-dubbo-api-base:${versionSuffix}"
+    compile "com.ifudata.ums.crm.api:crm-dubbo-commons-areamaintain:${versionSuffix}"
+    compile "com.ifudata.ums.crm.api:crm-dubbo-commons-staffmaintain:${versionSuffix}"
+
+    //单点登录
+    compile "casClientCore:casClientCore:1.0"
+    compile "ums:sso-client:1.3.1"
+    compile "xerces:xercesImpl:2.0.2"
+    compile "com.ifudata.ums.crm.api:crm-dubbo-commons-rolemenumaintain:${versionSuffix}"
+
+    compile "com.ifudata.ums.redis.session:redis-session:1.2-Beta"
+
+    //compile "bdx.paas:ipaas:1.0-SNAPSHOT"
+    compile "bdx.paas:bdx-paas-ipaas:${ipaasVersion}"
+
+
+    //订单详情
+    compile "com.ifudata.ums.crm.api:crm-dubbo-orders-orderdetail:${versionSuffix}"
+    //地区查询
+    compile "com.ifudata.ums.crm.api:crm-dubbo-commons-areaquery:${versionSuffix}"
+    compile "com.ifudata.ums.crm.api:crm-dubbo-commons-postareaquery:${versionSuffix}"
+    //发展人信息查询
+    compile "com.ifudata.ums.crm.api:crm-dubbo-commons-developermaintain:${versionSuffix}"
+    //仓库列表查询
+    compile "com.ifudata.ums.crm.api:crm-dubbo-commons-chnlquery:${versionSuffix}"
+    //产品列表查询
+    compile "com.ifudata.ums.crm.api:crm-dubbo-products-productlistquery:${versionSuffix}"
+    //短信发送
+    compile "com.ifudata.ums.crm.api:crm-dubbo-commons-crmserial:${versionSuffix}"
+    //合约顺延
+    compile "com.ifudata.ums.crm.api:crm-dubbo-orders-orderchangetrade:${versionSuffix}"
+
+    //记录营业员的操作轨迹
+    compile "com.ifudata.ums.crm.api:crm-dubbo-commons-operoptlogmaintain:${versionSuffix}"
+    // ums短信
+    compile "com.ifudata.ums.crm.api:crm-dubbo-ums-applybatch:${versionSuffix}"
+
+     //compile "com.oracle:ojdbc14:10.2.0.5"
+    compile "com.ifudata.ums.uip:uip-dubbo-unionpay:1.0"
+    compile "com.ifudata.ums.uip:uip-dubbo-servicecustomer:1.0"
+*/
+    // ums短信
+    compile "com.ifudata.ums:applybatch:1.0-SNAPSHOT"
+
+    compile('com.ifudata.centra:centra-sdk:1.0-SNAPSHOT'){
+        exclude group:'org.jboss.netty', module:'netty'
+    }
+}
+
+war { baseName 'ums-web'}

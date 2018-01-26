@@ -1,0 +1,118 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'maven-publish'
+
+group 'com.ai.opt.uniframe'
+version '1.0-SNAPSHOT'
+
+ext {
+    publishUserName = "runnerdev"
+    publishUserPassword = "runnerdev"
+    publishURL = "http://10.1.228.199:18081/nexus/content/repositories/snapshots/"
+    builtBy = "gradle 2.2"
+}
+
+compileJava.dependsOn clean
+
+sourceCompatibility = 1.7
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+repositories {
+
+    maven { url "http://10.1.228.199:18081/nexus/content/groups/public/" }
+}
+
+dependencies {
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.6.0'
+    compile 'com.google.code.gson:gson:2.3.1'
+    compile "jstl:jstl:1.2"
+    compile "org.springframework:spring-web:4.1.7.RELEASE"
+    compile "org.springframework:spring-webmvc:4.1.7.RELEASE"
+    compile "javax.servlet:javax.servlet-api:3.1.0"
+    compile "javax.servlet.jsp:javax.servlet.jsp-api:2.3.1"
+    compile 'org.apache.commons:commons-lang3:3.4'
+	
+    compile 'org.sitemesh:sitemesh:3.0.1'
+	compile 'com.ai.opt.sdk:opt-sdk:2.1-SNAPSHOT'
+	compile 'com.ai.opt.xss.filter:opt-xss-firewall:1.0-SNAPSHOT'
+	compile 'com.ai.opt.uni.session:opt-uni-session:2.0-SNAPSHOT'
+	compile 'com.ai.opt.sso.client:opt-sso-client:1.0.2-SNAPSHOT'
+	
+}
+
+
+task templateWebJar(type: Jar) {
+    version version
+    baseName "opt-ued-template"
+    from fileTree(dir: 'src/main/webapp/template')  
+    destinationDir file("$buildDir/template")
+    manifest {
+        attributes 'packageName': "opt-ued-template", 'Built-By': builtBy, 'Built-date': new Date().format('yyyy-MM-dd HH:mm:ss'), 'Manifest-Version': version
+    }
+}
+task jscommonlibsJar(type: Jar) {
+    version version
+    baseName "opt-jscommon-libs"
+    from fileTree(dir: 'src/main/webapp/resources/spm_modules')  
+    destinationDir file("$buildDir/jscommonlibs")
+    manifest {
+        attributes 'packageName': "opt-jscommon-libs", 'Built-By': builtBy, 'Built-date': new Date().format('yyyy-MM-dd HH:mm:ss'), 'Manifest-Version': version
+    }
+}
+
+
+compileJava.dependsOn clean
+publish.dependsOn build
+
+
+publishing {
+    publications {
+        publishing.publications.create("templatePagePublish", MavenPublication) {
+            groupId group
+            artifactId "opt-ued-template"
+            version version
+            artifact templateWebJar
+            pom.withXml {
+            }
+        }
+        publishing.publications.create("jscommonlibsPublish", MavenPublication) {
+            groupId group
+            artifactId "opt-jscommon-libs"
+            version version
+            artifact jscommonlibsJar
+            pom.withXml {
+            }
+        }
+    }
+    repositories {
+        maven {
+            url publishURL
+            credentials {
+                username = publishUserName
+                password = publishUserPassword
+            }
+        }
+    }
+}
+
+
+eclipse {
+    wtp {
+        facet {
+            facet name: 'java', version: '1.7'
+            facet name: 'jst.web', version: '3.0'
+            facet name: 'wst.jsdt.web', version: '1.0'
+        }
+    }
+}
+
+war {
+    baseName 'uniframe'
+}

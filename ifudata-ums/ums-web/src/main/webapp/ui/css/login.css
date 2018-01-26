@@ -1,0 +1,75 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+html{
+	font-family:"微软雅黑",Helvetica,Arial,Verdana,sans-serif;
+}
+body, dl, dt, dd, ul, ol, li, pre, form, input, p, blockquote, th, td {
+	margin:0;
+	padding:0;
+	font-size:12px;
+}
+a,button{ cursor:pointer;}
+.left{ float:left}
+.right{ float:right}
+body {
+	background:#f5f5f5;
+	color:#000;
+	font-size:12px;
+	padding:0;
+	text-align:left;
+}
+.clear{ clear:both;}
+
+/*登陆页*/
+ 
+
+.loginBox{width:980px; margin:0 auto; overflow:hidden;}
+.logo{height:114px; line-height:114px; background: url(../images/logo.gif) no-repeat;}
+.logo span{ font-size:27px; color:#58a5f5; padding-left:260px; line-height:60px; font-family: "微软雅黑"; padding-top: 40px;}
+.loginCon{ background-color: #FFFFFF; padding:10px;border:1px solid #e4e4e4; overflow:hidden}
+.loginCon_left{float:left; padding-top:10px;}
+.loginCon_right{float:right;width:460px; }
+.loginTitle {font-family: "微软雅黑"; font-size:19px; color:#8e8b8b; background-image: url(../images/usertitle.gif); background-repeat: no-repeat; background-position: center bottom; height:50px; line-height:50px; text-align:center;}
+.loginFrom{ margin-top: 20px;}
+.fm-item{ position:relative;}
+.fm-label{ float: left; display: block; width: 100px; height: auto; padding: 25px 0; line-height: 22px; text-align: right; font-size:14px; color:#646262;}
+.userName{ width: 270px; font-size: 16px; height: 34px; line-height: 34px; background:url(../images/userName.png) 0 0 no-repeat; padding: 0px 5px 0px 50px; margin: 18px 0; border-top:1px solid #bababa;border-right:1px solid #dcdcdc;border-bottom:1px solid #dcdcdc;border-left:1px solid #bababa;}
+.password{ width: 270px; font-size: 16px; height: 34px; line-height: 34px; background:url(../images/password.png) 0 0 no-repeat; padding: 0px 5px 0px 50px; margin: 18px 0; border-top:1px solid #bababa;border-right:1px solid #dcdcdc;border-bottom:1px solid #dcdcdc;border-left:1px solid #bababa;}
+.seccode .fm-input{ width:150px; font-size: 16px; height: 34px; line-height: 34px; background:url(../images/code.png) 0 0 no-repeat; padding: 0px 5px 0px 50px; margin: 18px 0; border-top:1px solid #bababa;border-right:1px solid #dcdcdc;border-bottom:1px solid #dcdcdc;border-left:1px solid #bababa;}
+.automatic{height:30px;overflow:hidden;padding-left:110px;margin-bottom:10px;}
+.automatic label{float:left;cursor:pointer;line-height:24px;}
+.automatic label input{float:left;*margin-top: -4px; padding-top:6px;}
+.automatic label var{float:left;padding-left:9px; color:#8e8b8b; font-size:14px;}
+.automatic a{float:left; padding-left:40px; color:#8e8b8b;text-decoration:none; font-size:14px;}
+.automatic span a{ padding-top:3px}
+.loginBut{ padding:10px 0px 30px 100px;}
+.loginBut .formSubmit{
+	width:329px;
+	height:48px;
+	background:url(../images/loginBut.png) no-repeat;
+	background-position: 0 0;
+	border:none;
+	overflow:hidden;
+	line-height:48px;
+	font-size:27px;
+	font-family:"微软雅黑";
+	letter-spacing: 30px;
+	padding-left:30px;
+	color:#fff;
+	cursor:pointer;display:block;
+}
+.loginBut .formSubmit:hover{background-position: 0 -48px;}
+
+/**悬浮框***/
+.hx_kuang{ width:195px; height:28px; background:url(../images/h_x.png) no-repeat;overflow:auto; overflow-x:hidden; }
+.hx_kuang p{ width:175px; float:left; padding:2px 0 0 10px; line-height:18px; color:#ff0000; font-size:11px;}
+
+.zx_kuang{ width:188px; height:auto;}
+.zx_kuang_A{background:url(../images/zx_k.png) no-repeat; width:188px; height:7px;}
+.zx_kuang_B{ width:186px; border:1px solid #c8cacb; background:#eff4f6; height:auto; padding-bottom:10px; border-top:none;}
+.zx_kuang_B p{ width:170px;  padding:5px 0 0 8px; color:#ff0000;font-size:12px; line-height18px; font-size:11px;}
+
+.zx_xiak{ width:188PX; height:auto;}
+.zx_xiak_A{ width:186px;background:#eff4f6; border:1px solid #c8cacb; height:auto; padding-bottom:10px; border-bottom:none;}
+.zx_xiak_A p{ width:170px;  padding:5px 0 0 8px; color:#ff0000;font-size:12px; line-height:18px; font-size:11px;}
+.zx_xiak_B{ width:188px; background:url(../images/z_h1.png) no-repeat; height:7px;}

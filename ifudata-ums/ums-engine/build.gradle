@@ -1,0 +1,80 @@
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+    exclude group: 'log4j', module: 'log4j'
+    exclude group: "org.slf4j", module: "slf4j-log4j12"
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.0.RELEASE")
+    }
+}
+
+ext{
+    moduleName='ums-engine'
+    builtBy = "gradle 3.5"
+    mainClassName='com.ifudata.ums.simplesender.simpleSmsSender'
+}
+
+dependencies {
+
+    compile 'org.mybatis:mybatis:3.3.0'
+    compile 'org.mybatis:mybatis-spring:1.2.3'
+    compile 'mysql:mysql-connector-java:5.1.36'
+    compile 'org.springframework:spring-tx:4.1.7.RELEASE'
+    compile 'org.springframework:spring-jdbc:4.1.7.RELEASE'
+    compile 'org.springframework:spring-context:4.1.7.RELEASE'
+    compile 'org.apache.storm:storm-core:0.9.3'
+
+    compile 'com.sun.jersey:jersey-core:1.19'
+    compile 'com.sun.jersey:jersey-json:1.19'
+    compile 'com.sun.jersey:jersey-client:1.19'
+    compile 'com.sun.jersey:jersey-server:1.19'
+    compile 'com.sun.jersey:jersey-grizzly2:1.19'
+    compile 'commons-dbcp:commons-dbcp:1.4'
+    compile 'commons-httpclient:commons-httpclient:3.1'
+
+    compile 'org.apache.logging.log4j:log4j-core:2.3'
+    compile 'log4j:log4j:1.2.17'
+    compile 'org.slf4j:slf4j-log4j12:1.6.4'
+    compile 'org.slf4j:slf4j-nop:1.6.4'
+    compile 'org.slf4j:slf4j-api:1.6.4'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.alibaba:fastjson:1.2.2'
+
+    compile 'org.dom4j:dom4j:2.0.0'
+
+    compile fileTree(dir: 'lib', include: ['*.jar'])
+
+    testCompile(
+            "org.springframework:spring-test:4.1.7.RELEASE",
+            "junit:junit:4.12"
+    )
+}
+
+jar {
+    baseName moduleName
+    version version
+    from {
+        (configurations.runtime).collect {
+            it.isDirectory()?it:zipTree(it)
+        }
+    }
+        exclude "*.properties"
+        exclude "conf*"
+        exclude "mapper*"
+
+    manifest {
+        attributes 'packageName': baseName, 'Built-By': builtBy,'create-date': new Date().format('yyyy-MM-dd HH:mm:ss'), 'Manifest-Version': version,'Main-Class':'com.ifudata.ums.simplesender.simpleSmsSender'
+    }
+    destinationDir file("$buildDir/libs")
+}
+

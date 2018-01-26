@@ -1,0 +1,67 @@
+allprojects{
+    group 'com.ifudata.ums'
+    version '1.0-SNAPSHOT'
+
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
+
+    sourceCompatibility = 1.7
+
+    ext {
+        centraBaseVersion= "1.0-SNAPSHOT"
+        moduleVersion = "1.0-SNAPSHOT"
+        builtBy = "gradle 3.1"
+        publishUserName = "centra_arch-publisher"
+        publishUserPassword = "centra_arch-publisher@123"
+        publishURL = "http://192.168.0.250:18081/nexus/content/repositories/snapshots/"
+        mavenPublicURL = "http://192.168.0.250:18081/nexus/content/groups/public/"
+    }
+
+    /*编译编码UTF-8*/
+    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+        resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+    }
+
+    repositories {
+        maven {
+            url 'http://192.168.0.250:18081/nexus/content/groups/public/'
+        }
+    }
+}
+
+task copySubProjectsJar(type: Copy) {
+    subprojects.each { subproject ->
+        from subproject.jar
+        destinationDir file("$buildDir/libs/core-libs")
+    }
+}
+task copy3rdJars(type: Copy) {
+    subprojects.each { subproject ->
+        from subproject.configurations.runtime
+        exclude "ums-api-*.*"
+        destinationDir file("$buildDir/libs/3rd-libs")
+    }
+}
+
+task copySubProjectsConfig(type: Copy) {
+    subprojects.each { subproject ->
+        from subproject.fileTree(dir: 'src/main/resources')
+        destinationDir file("$buildDir/config")
+    }
+}
+
+task zipLibs(type: Zip) {
+    baseName "libs"
+    from "$buildDir/libs"
+}
+
+task zipConfig(type: Zip) {
+    baseName "config"
+    from "$buildDir/config"
+}
+
+
+build.dependsOn copySubProjectsJar,copy3rdJars,copySubProjectsConfig

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans     
+           http://www.springframework.org/schema/beans/spring-beans-4.1.xsd 
+           http://code.alibabatech.com/schema/dubbo
+           http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+
+	<bean id="dubboConfig"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="order" value="1" />
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		<!-- <property name="locations" value="classpath:dubbo/dubbo.properties" 
+			/> -->
+	</bean>
+	<!-- <bean id="dubboConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+		<property name="order" value="1" /> <property name="ignoreUnresolvablePlaceholders" 
+		value="true" /> <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" 
+		/> </bean> -->
+
+	<!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
+	<dubbo:application name="${dubbo.appname}" />
+	<dubbo:registry protocol="${dubbo.registry.protocol}"
+		address="${dubbo.registry.address}" file="${dubbo.registry.file.web}" />
+
+	<dubbo:protocol name="${dubbo.protocol}" port="${dubbo.protocol.port}" />
+	
+<!-- 	<dubbo:provider filter="DubboRequestTrackFilter"
+		timeout="${dubbo.provider.timeout}" retries="0" threads="300" /> -->
+
+	<dubbo:monitor protocol="false" />
+
+	<!-- <dubbo:protocol name="${default.dubbo.protocol}" port="${default.dubbo.protocol.port}" 
+		/> -->
+
+	<dubbo:consumer check="false" retries="0" />
+
+	<!-- 终端与支付机构的关系服务 -->
+	<dubbo:reference id="iTerminalOrgRelQuerySV"
+		interface="com.ifudata.ic.pay.api.terminalorgrelquery.interfaces.ITerminalOrgRelQuerySV" />
+
+	<!-- 合作方信息查询服务 -->
+	<dubbo:reference id="iTenantInfoQuerySV"
+		interface="com.ifudata.ic.pay.api.tenantinfoquery.interfaces.ITenantInfoQuerySV" />
+
+	<!-- 支付平台流水综合服务 -->
+	<dubbo:reference id="iPayCenterSV"
+		interface="com.ifudata.ic.pay.api.paycenter.interfaces.IPayCenterSV" />
+
+	<!-- 支付中心交易记录查询服务 -->
+	<dubbo:reference id="iTradeQuerySV"
+		interface="com.ifudata.ic.pay.api.tradequery.interfaces.ITradeQuerySV" />
+	<!-- 支付中心租户配置维护服务 -->
+	<dubbo:reference id="iTenantConfigSV"
+		interface="com.ifudata.ic.pay.api.tenantconfig.interfaces.ITenantConfigSV" />
+	<!-- 租户查询服务 -->
+	<!-- <dubbo:reference id="IGnTenantQuerySV" interface="com.ai.runner.center.common.api.tenant.interfaces.IGnTenantQuerySV" 
+		/> -->
+</beans>   

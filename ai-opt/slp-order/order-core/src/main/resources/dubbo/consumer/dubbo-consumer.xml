@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans     
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
+           http://code.alibabatech.com/schema/dubbo
+           http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<!-- 相关配置 -->
+	<bean id="dubboConfig"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="order" value="1" />
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		<property name="locations" value="classpath:dubbo/dubbo.properties" />
+	</bean>
+	
+	<!-- dubbo应用名称 -->
+	<dubbo:application name="consumer-of-${dubbo.appname}" />
+
+	<dubbo:registry protocol="${dubbo.registry.protocol}"
+		address="${dubbo.registry.address}" />
+
+	<!-- <dubbo:monitor protocol="registry" /> -->
+	<!-- 消费者超时时间 -->
+	<dubbo:consumer timeout="${dubbo.consumer.timeout}" />
+	<!-- 商品销售相关服务 -->
+	<dubbo:reference id="iStorageNumSV" loadbalance="roundrobin"
+		interface="com.ai.slp.product.api.storageserver.interfaces.IStorageNumSV" />
+	<dubbo:reference id="iSupplyProductServiceSV" loadbalance="roundrobin"
+		interface="com.ai.slp.route.api.supplyproduct.interfaces.ISupplyProductServiceSV" />
+	<!-- 商品 -->
+	<dubbo:reference id="iProductServerSV" loadbalance="roundrobin"
+		interface="com.ai.slp.product.api.product.interfaces.IProductServerSV" />
+	<!-- 缓存 -->
+	<dubbo:reference id="iCacheSV" loadbalance="roundrobin"
+		interface="com.ai.platform.common.api.cache.interfaces.ICacheSV" />
+	<!-- 订单取消 -->
+	<dubbo:reference id="iOrderCancelSV" loadbalance="roundrobin"
+		interface="com.ai.slp.order.api.ordercancel.interfaces.IOrderCancelSV" />
+
+		
+	<!-- 仓库 -->	
+	<dubbo:reference id="iRouteManageSV" loadbalance="roundrobin"
+		interface="com.ai.slp.route.api.routemanage.interfaces.IRouteManageSV" />
+	<!-- 订单查询 -->
+	<!-- <dubbo:reference id="iOrderListSV" loadbalance="roundrobin"
+		interface="com.ai.slp.order.api.orderlist.interfaces.IOrderListSV" /> -->
+</beans>

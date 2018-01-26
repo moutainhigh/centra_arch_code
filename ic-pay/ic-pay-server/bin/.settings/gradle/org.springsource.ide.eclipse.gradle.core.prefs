@@ -1,0 +1,5 @@
+#org.springsource.ide.eclipse.gradle.core.preferences.GradleProjectPreferences
+#Fri Jul 14 11:01:25 CST 2017
+build.family.org.gradle.tooling.model.eclipse.HierarchicalEclipseProject=;pay-api;pay-core;
+org.springsource.ide.eclipse.gradle.linkedresources=
+org.springsource.ide.eclipse.gradle.rootprojectloc=

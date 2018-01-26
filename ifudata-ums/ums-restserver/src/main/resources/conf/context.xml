@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<httpServer context="/">
+	<handler context="/sendmsg">
+		<handler-class>com.ifudata.smsrest.main.SubmitProc</handler-class>
+		<url-pattern>/SubmitProc</url-pattern>
+	</handler>
+	<handler context="/sendmsgbatch">
+		<handler-class>com.ifudata.smsrest.main.SendMsgBatchProc</handler-class>
+		<url-pattern>/SendMsgBatch</url-pattern>
+	</handler>	
+	<handler context="/msgreport">
+		<handler-class>com.ifudata.smsrest.main.ReportProc</handler-class>
+		<url-pattern>/ReportProc</url-pattern>
+	</handler>
+	<handler context="/recmsg">
+		<handler-class>com.ifudata.smsrest.main.DeliverProc</handler-class>
+		<url-pattern>/DeliverProc</url-pattern>
+	</handler>
+	<handler context="/fullobjstatus">
+		<handler-class>com.ifudata.smsrest.main.FullOjectStatusProc</handler-class>
+		<url-pattern>/FullOjectStatusProc</url-pattern>
+	</handler>
+</httpServer>	

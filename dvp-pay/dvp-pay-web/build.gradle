@@ -1,0 +1,100 @@
+apply plugin: 'war'
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'eclipse-wtp'
+
+/*编译编码UTF-8*/
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+repositories {
+	maven { url "http://192.168.0.250:18081/nexus/content/groups/public/" }
+}
+ext {
+    profile=project.hasProperty('profile')? (project['profile']==""?"aic-dev":project['profile']) : "aic-dev"
+	versionSuffix="1.0-SNAPSHOT"
+}
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+    exclude group: 'log4j', module: 'log4j'
+    exclude group: "org.slf4j", module: "slf4j-log4j12"
+}
+
+dependencies {
+    compile fileTree(dir:'lib',include:'**/*.jar')
+    //基础包
+    compile 'org.springframework:spring-core:4.1.7.RELEASE'
+    compile 'org.springframework:spring-beans:4.1.7.RELEASE'
+    compile 'org.springframework:spring-context:4.1.7.RELEASE'
+    compile 'org.springframework:spring-context-support:4.1.7.RELEASE'
+    compile 'org.springframework:spring-web:4.1.7.RELEASE'
+    compile 'org.springframework:spring-webmvc:4.1.7.RELEASE'
+    compile ('com.ifudata.dvp:dvp-sdk:1.0-SNAPSHOT') {
+		exclude group: 'org.dom4j', module: 'dom4j'
+	}
+    compile 'org.apache.cxf:cxf-api:2.7.10'
+    compile 'org.apache.httpcomponents:httpclient:4.3.1'
+    compile 'org.json:json:20140107'
+    compile "jstl:jstl:1.2"
+    compile 'commons-digester:commons-digester:2.1'
+	compile "javax.servlet:javax.servlet-api:3.1.0"
+	compile "javax.servlet.jsp:javax.servlet.jsp-api:2.3.1"
+        
+//    compile "dom4j:dom4j:1.6.1"
+    compile "jdom:jdom:1.0"
+    compile "org.apache.xmlbeans:xmlbeans:2.6.0"
+    compile "com.thoughtworks.xstream:xstream:1.4.1"
+    
+    //支付宝
+    compile 'commons-codec:commons-codec:1.6'
+    compile 'commons-httpclient:commons-httpclient:3.1'
+    compile 'commons-logging:commons-logging:1.1.3'
+    compile 'jaxen:jaxen:1.1.6'
+    compile "alipay:alipay-sdk:1.5"
+    
+    //中国银联
+    //compile 'fakepath:upacp_sdk:1.0.1'
+    compile 'org.bouncycastle:bcprov-jdk16:1.46'
+    
+    //兴业银行
+    compile 'com.cib.cap4i.appsvr:appsvr.base:0.0.1'
+    compile 'com.cib.cap4i.appsvr:appsvr.client:0.0.1'
+    
+    //支付中心
+    compile "com.ifudata.dvp.pay:terminalorgrelquery:1.0-SNAPSHOT"
+    compile "com.ifudata.dvp.pay:paycenter:1.0-SNAPSHOT"
+    compile "com.ifudata.dvp.pay:tradequery:1.0-SNAPSHOT"
+    compile "com.ifudata.dvp.pay:tenantinfoquery:1.0-SNAPSHOT"
+    compile "com.ifudata.dvp.pay:tenantconfig:1.0-SNAPSHOT"
+    //compile "com.ifudata.dvp.commons:tenant:1.0-SNAPSHOT"
+    
+	compile 'com.ifudata.dvp:dvp-sdk:1.0-SNAPSHOT'
+    //集成单点登录
+	//compile 'com.ifudata.dvp.xss.filter:dvp-xss-firewall:1.0-SNAPSHOT'
+	//compile 'com.ifudata.dvp.uni.session:dvp-uni-session:2.0-SNAPSHOT'
+	//compile 'com.ifudata.dvp.sso.client:dvp-sso-client:1.0.2-SNAPSHOT'
+    //junit
+    compile "junit:junit:4.12"
+    // log4j
+    //compile 'log4j:log4j:1.2.17'
+}
+
+processResources {
+    from('profile/'+profile) {
+        include '**/*'
+    }
+}
+
+war{
+    baseName "dvp-pay"
+}
+
+eclipse {
+    wtp {
+        facet {
+            facet name: 'java', version: '1.8'
+            facet name: 'jst.web', version: '3.0'
+            facet name: 'wst.jsdt.web', version: '1.0'
+        }
+    }
+}

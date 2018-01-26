@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ifudata.smsrest.db.interfaces.SubsUserMapper" >
+  <resultMap id="BaseResultMap" type="com.ifudata.smsrest.db.mapper.bo.SubsUser" >
+    <id column="subs_unique_id" property="subsUniqueId" jdbcType="BIGINT" />
+    <result column="subs_id" property="subsId" jdbcType="BIGINT" />
+    <result column="cust_id" property="custId" jdbcType="BIGINT" />
+    <result column="acct_id" property="acctId" jdbcType="BIGINT" />
+    <result column="acct_type" property="acctType" jdbcType="VARCHAR" />
+    <result column="user_cust_id" property="userCustId" jdbcType="BIGINT" />
+    <result column="service_num" property="serviceNum" jdbcType="VARCHAR" />
+    <result column="imsi" property="imsi" jdbcType="VARCHAR" />
+    <result column="sim_type" property="simType" jdbcType="VARCHAR" />
+    <result column="sim" property="sim" jdbcType="VARCHAR" />
+    <result column="basic_org_id" property="basicOrgId" jdbcType="VARCHAR" />
+    <result column="svc_pwd" property="svcPwd" jdbcType="VARCHAR" />
+    <result column="svc_type" property="svcType" jdbcType="VARCHAR" />
+    <result column="user_type" property="userType" jdbcType="VARCHAR" />
+    <result column="subs_status" property="subsStatus" jdbcType="VARCHAR" />
+    <result column="join_time" property="joinTime" jdbcType="TIMESTAMP" />
+    <result column="normalize_time" property="normalizeTime" jdbcType="TIMESTAMP" />
+    <result column="service_status" property="serviceStatus" jdbcType="VARCHAR" />
+    <result column="status_chg_type" property="statusChgType" jdbcType="VARCHAR" />
+    <result column="status_chg_time" property="statusChgTime" jdbcType="TIMESTAMP" />
+    <result column="last_service_status" property="lastServiceStatus" jdbcType="VARCHAR" />
+    <result column="last_status_chg_time" property="lastStatusChgTime" jdbcType="TIMESTAMP" />
+    <result column="last_status_chg_type" property="lastStatusChgType" jdbcType="VARCHAR" />
+    <result column="province_code" property="provinceCode" jdbcType="VARCHAR" />
+    <result column="city_code" property="cityCode" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="opt_chl_id" property="optChlId" jdbcType="VARCHAR" />
+    <result column="opt_oper_id" property="optOperId" jdbcType="BIGINT" />
+    <result column="chl_id" property="chlId" jdbcType="VARCHAR" />
+    <result column="dev_id" property="devId" jdbcType="BIGINT" />
+    <result column="active_time" property="activeTime" jdbcType="TIMESTAMP" />
+    <result column="inactive_time" property="inactiveTime" jdbcType="TIMESTAMP" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="acct_name" property="acctName" jdbcType="VARCHAR" />
+    <result column="SVC_PRODUCT_TYPE" property="svcProductType" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    subs_unique_id, subs_id, cust_id, acct_id, acct_type, user_cust_id, service_num, 
+    imsi, sim_type, sim, basic_org_id, svc_pwd, svc_type, user_type, subs_status, join_time, 
+    normalize_time, service_status, status_chg_type, status_chg_time, last_service_status, 
+    last_status_chg_time, last_status_chg_type, province_code, city_code, create_time, 
+    opt_chl_id, opt_oper_id, chl_id, dev_id, active_time, inactive_time, remark, acct_name, 
+    SVC_PRODUCT_TYPE
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ifudata.smsrest.db.mapper.bo.SubsUserCriteria" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from subs_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    <if test="limitStart != null and limitStart>=0" >
+      limit #{limitStart} , #{limitEnd}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from subs_user
+    where subs_unique_id = #{subsUniqueId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="Long" >
+    delete from subs_user
+    where subs_unique_id = #{subsUniqueId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ifudata.smsrest.db.mapper.bo.SubsUserCriteria" >
+    delete from subs_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ifudata.smsrest.db.mapper.bo.SubsUser" >
+    insert into subs_user (subs_unique_id, subs_id, cust_id, 
+      acct_id, acct_type, user_cust_id, 
+      service_num, imsi, sim_type, 
+      sim, basic_org_id, svc_pwd, 
+      svc_type, user_type, subs_status, 
+      join_time, normalize_time, service_status, 
+      status_chg_type, status_chg_time, last_service_status, 
+      last_status_chg_time, last_status_chg_type, 
+      province_code, city_code, create_time, 
+      opt_chl_id, opt_oper_id, chl_id, 
+      dev_id, active_time, inactive_time, 
+      remark, acct_name, SVC_PRODUCT_TYPE
+      )
+    values (#{subsUniqueId,jdbcType=BIGINT}, #{subsId,jdbcType=BIGINT}, #{custId,jdbcType=BIGINT}, 
+      #{acctId,jdbcType=BIGINT}, #{acctType,jdbcType=VARCHAR}, #{userCustId,jdbcType=BIGINT}, 
+      #{serviceNum,jdbcType=VARCHAR}, #{imsi,jdbcType=VARCHAR}, #{simType,jdbcType=VARCHAR}, 
+      #{sim,jdbcType=VARCHAR}, #{basicOrgId,jdbcType=VARCHAR}, #{svcPwd,jdbcType=VARCHAR}, 
+      #{svcType,jdbcType=VARCHAR}, #{userType,jdbcType=VARCHAR}, #{subsStatus,jdbcType=VARCHAR}, 
+      #{joinTime,jdbcType=TIMESTAMP}, #{normalizeTime,jdbcType=TIMESTAMP}, #{serviceStatus,jdbcType=VARCHAR}, 
+      #{statusChgType,jdbcType=VARCHAR}, #{statusChgTime,jdbcType=TIMESTAMP}, #{lastServiceStatus,jdbcType=VARCHAR}, 
+      #{lastStatusChgTime,jdbcType=TIMESTAMP}, #{lastStatusChgType,jdbcType=VARCHAR}, 
+      #{provinceCode,jdbcType=VARCHAR}, #{cityCode,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{optChlId,jdbcType=VARCHAR}, #{optOperId,jdbcType=BIGINT}, #{chlId,jdbcType=VARCHAR}, 
+      #{devId,jdbcType=BIGINT}, #{activeTime,jdbcType=TIMESTAMP}, #{inactiveTime,jdbcType=TIMESTAMP}, 
+      #{remark,jdbcType=VARCHAR}, #{acctName,jdbcType=VARCHAR}, #{svcProductType,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ifudata.smsrest.db.mapper.bo.SubsUser" >
+    insert into subs_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="subsUniqueId != null" >
+        subs_unique_id,
+      </if>
+      <if test="subsId != null" >
+        subs_id,
+      </if>
+      <if test="custId != null" >
+        cust_id,
+      </if>
+      <if test="acctId != null" >
+        acct_id,
+      </if>
+      <if test="acctType != null" >
+        acct_type,
+      </if>
+      <if test="userCustId != null" >
+        user_cust_id,
+      </if>
+      <if test="serviceNum != null" >
+        service_num,
+      </if>
+      <if test="imsi != null" >
+        imsi,
+      </if>
+      <if test="simType != null" >
+        sim_type,
+      </if>
+      <if test="sim != null" >
+        sim,
+      </if>
+      <if test="basicOrgId != null" >
+        basic_org_id,
+      </if>
+      <if test="svcPwd != null" >
+        svc_pwd,
+      </if>
+      <if test="svcType != null" >
+        svc_type,
+      </if>
+      <if test="userType != null" >
+        user_type,
+      </if>
+      <if test="subsStatus != null" >
+        subs_status,
+      </if>
+      <if test="joinTime != null" >
+        join_time,
+      </if>
+      <if test="normalizeTime != null" >
+        normalize_time,
+      </if>
+      <if test="serviceStatus != null" >
+        service_status,
+      </if>
+      <if test="statusChgType != null" >
+        status_chg_type,
+      </if>
+      <if test="statusChgTime != null" >
+        status_chg_time,
+      </if>
+      <if test="lastServiceStatus != null" >
+        last_service_status,
+      </if>
+      <if test="lastStatusChgTime != null" >
+        last_status_chg_time,
+      </if>
+      <if test="lastStatusChgType != null" >
+        last_status_chg_type,
+      </if>
+      <if test="provinceCode != null" >
+        province_code,
+      </if>
+      <if test="cityCode != null" >
+        city_code,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="optChlId != null" >
+        opt_chl_id,
+      </if>
+      <if test="optOperId != null" >
+        opt_oper_id,
+      </if>
+      <if test="chlId != null" >
+        chl_id,
+      </if>
+      <if test="devId != null" >
+        dev_id,
+      </if>
+      <if test="activeTime != null" >
+        active_time,
+      </if>
+      <if test="inactiveTime != null" >
+        inactive_time,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="acctName != null" >
+        acct_name,
+      </if>
+      <if test="svcProductType != null" >
+        SVC_PRODUCT_TYPE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="subsUniqueId != null" >
+        #{subsUniqueId,jdbcType=BIGINT},
+      </if>
+      <if test="subsId != null" >
+        #{subsId,jdbcType=BIGINT},
+      </if>
+      <if test="custId != null" >
+        #{custId,jdbcType=BIGINT},
+      </if>
+      <if test="acctId != null" >
+        #{acctId,jdbcType=BIGINT},
+      </if>
+      <if test="acctType != null" >
+        #{acctType,jdbcType=VARCHAR},
+      </if>
+      <if test="userCustId != null" >
+        #{userCustId,jdbcType=BIGINT},
+      </if>
+      <if test="serviceNum != null" >
+        #{serviceNum,jdbcType=VARCHAR},
+      </if>
+      <if test="imsi != null" >
+        #{imsi,jdbcType=VARCHAR},
+      </if>
+      <if test="simType != null" >
+        #{simType,jdbcType=VARCHAR},
+      </if>
+      <if test="sim != null" >
+        #{sim,jdbcType=VARCHAR},
+      </if>
+      <if test="basicOrgId != null" >
+        #{basicOrgId,jdbcType=VARCHAR},
+      </if>
+      <if test="svcPwd != null" >
+        #{svcPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="svcType != null" >
+        #{svcType,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null" >
+        #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="subsStatus != null" >
+        #{subsStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="joinTime != null" >
+        #{joinTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="normalizeTime != null" >
+        #{normalizeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="serviceStatus != null" >
+        #{serviceStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="statusChgType != null" >
+        #{statusChgType,jdbcType=VARCHAR},
+      </if>
+      <if test="statusChgTime != null" >
+        #{statusChgTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastServiceStatus != null" >
+        #{lastServiceStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="lastStatusChgTime != null" >
+        #{lastStatusChgTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastStatusChgType != null" >
+        #{lastStatusChgType,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceCode != null" >
+        #{provinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null" >
+        #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="optChlId != null" >
+        #{optChlId,jdbcType=VARCHAR},
+      </if>
+      <if test="optOperId != null" >
+        #{optOperId,jdbcType=BIGINT},
+      </if>
+      <if test="chlId != null" >
+        #{chlId,jdbcType=VARCHAR},
+      </if>
+      <if test="devId != null" >
+        #{devId,jdbcType=BIGINT},
+      </if>
+      <if test="activeTime != null" >
+        #{activeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inactiveTime != null" >
+        #{inactiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="acctName != null" >
+        #{acctName,jdbcType=VARCHAR},
+      </if>
+      <if test="svcProductType != null" >
+        #{svcProductType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ifudata.smsrest.db.mapper.bo.SubsUserCriteria" resultType="java.lang.Integer" >
+    select count(*) from subs_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update subs_user
+    <set >
+      <if test="record.subsUniqueId != null" >
+        subs_unique_id = #{record.subsUniqueId,jdbcType=BIGINT},
+      </if>
+      <if test="record.subsId != null" >
+        subs_id = #{record.subsId,jdbcType=BIGINT},
+      </if>
+      <if test="record.custId != null" >
+        cust_id = #{record.custId,jdbcType=BIGINT},
+      </if>
+      <if test="record.acctId != null" >
+        acct_id = #{record.acctId,jdbcType=BIGINT},
+      </if>
+      <if test="record.acctType != null" >
+        acct_type = #{record.acctType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userCustId != null" >
+        user_cust_id = #{record.userCustId,jdbcType=BIGINT},
+      </if>
+      <if test="record.serviceNum != null" >
+        service_num = #{record.serviceNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.imsi != null" >
+        imsi = #{record.imsi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.simType != null" >
+        sim_type = #{record.simType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sim != null" >
+        sim = #{record.sim,jdbcType=VARCHAR},
+      </if>
+      <if test="record.basicOrgId != null" >
+        basic_org_id = #{record.basicOrgId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.svcPwd != null" >
+        svc_pwd = #{record.svcPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="record.svcType != null" >
+        svc_type = #{record.svcType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userType != null" >
+        user_type = #{record.userType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subsStatus != null" >
+        subs_status = #{record.subsStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.joinTime != null" >
+        join_time = #{record.joinTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.normalizeTime != null" >
+        normalize_time = #{record.normalizeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.serviceStatus != null" >
+        service_status = #{record.serviceStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.statusChgType != null" >
+        status_chg_type = #{record.statusChgType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.statusChgTime != null" >
+        status_chg_time = #{record.statusChgTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lastServiceStatus != null" >
+        last_service_status = #{record.lastServiceStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lastStatusChgTime != null" >
+        last_status_chg_time = #{record.lastStatusChgTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lastStatusChgType != null" >
+        last_status_chg_type = #{record.lastStatusChgType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.provinceCode != null" >
+        province_code = #{record.provinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cityCode != null" >
+        city_code = #{record.cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.optChlId != null" >
+        opt_chl_id = #{record.optChlId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.optOperId != null" >
+        opt_oper_id = #{record.optOperId,jdbcType=BIGINT},
+      </if>
+      <if test="record.chlId != null" >
+        chl_id = #{record.chlId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.devId != null" >
+        dev_id = #{record.devId,jdbcType=BIGINT},
+      </if>
+      <if test="record.activeTime != null" >
+        active_time = #{record.activeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.inactiveTime != null" >
+        inactive_time = #{record.inactiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.remark != null" >
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.acctName != null" >
+        acct_name = #{record.acctName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.svcProductType != null" >
+        SVC_PRODUCT_TYPE = #{record.svcProductType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update subs_user
+    set subs_unique_id = #{record.subsUniqueId,jdbcType=BIGINT},
+      subs_id = #{record.subsId,jdbcType=BIGINT},
+      cust_id = #{record.custId,jdbcType=BIGINT},
+      acct_id = #{record.acctId,jdbcType=BIGINT},
+      acct_type = #{record.acctType,jdbcType=VARCHAR},
+      user_cust_id = #{record.userCustId,jdbcType=BIGINT},
+      service_num = #{record.serviceNum,jdbcType=VARCHAR},
+      imsi = #{record.imsi,jdbcType=VARCHAR},
+      sim_type = #{record.simType,jdbcType=VARCHAR},
+      sim = #{record.sim,jdbcType=VARCHAR},
+      basic_org_id = #{record.basicOrgId,jdbcType=VARCHAR},
+      svc_pwd = #{record.svcPwd,jdbcType=VARCHAR},
+      svc_type = #{record.svcType,jdbcType=VARCHAR},
+      user_type = #{record.userType,jdbcType=VARCHAR},
+      subs_status = #{record.subsStatus,jdbcType=VARCHAR},
+      join_time = #{record.joinTime,jdbcType=TIMESTAMP},
+      normalize_time = #{record.normalizeTime,jdbcType=TIMESTAMP},
+      service_status = #{record.serviceStatus,jdbcType=VARCHAR},
+      status_chg_type = #{record.statusChgType,jdbcType=VARCHAR},
+      status_chg_time = #{record.statusChgTime,jdbcType=TIMESTAMP},
+      last_service_status = #{record.lastServiceStatus,jdbcType=VARCHAR},
+      last_status_chg_time = #{record.lastStatusChgTime,jdbcType=TIMESTAMP},
+      last_status_chg_type = #{record.lastStatusChgType,jdbcType=VARCHAR},
+      province_code = #{record.provinceCode,jdbcType=VARCHAR},
+      city_code = #{record.cityCode,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      opt_chl_id = #{record.optChlId,jdbcType=VARCHAR},
+      opt_oper_id = #{record.optOperId,jdbcType=BIGINT},
+      chl_id = #{record.chlId,jdbcType=VARCHAR},
+      dev_id = #{record.devId,jdbcType=BIGINT},
+      active_time = #{record.activeTime,jdbcType=TIMESTAMP},
+      inactive_time = #{record.inactiveTime,jdbcType=TIMESTAMP},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      acct_name = #{record.acctName,jdbcType=VARCHAR},
+      SVC_PRODUCT_TYPE = #{record.svcProductType,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ifudata.smsrest.db.mapper.bo.SubsUser" >
+    update subs_user
+    <set >
+      <if test="subsId != null" >
+        subs_id = #{subsId,jdbcType=BIGINT},
+      </if>
+      <if test="custId != null" >
+        cust_id = #{custId,jdbcType=BIGINT},
+      </if>
+      <if test="acctId != null" >
+        acct_id = #{acctId,jdbcType=BIGINT},
+      </if>
+      <if test="acctType != null" >
+        acct_type = #{acctType,jdbcType=VARCHAR},
+      </if>
+      <if test="userCustId != null" >
+        user_cust_id = #{userCustId,jdbcType=BIGINT},
+      </if>
+      <if test="serviceNum != null" >
+        service_num = #{serviceNum,jdbcType=VARCHAR},
+      </if>
+      <if test="imsi != null" >
+        imsi = #{imsi,jdbcType=VARCHAR},
+      </if>
+      <if test="simType != null" >
+        sim_type = #{simType,jdbcType=VARCHAR},
+      </if>
+      <if test="sim != null" >
+        sim = #{sim,jdbcType=VARCHAR},
+      </if>
+      <if test="basicOrgId != null" >
+        basic_org_id = #{basicOrgId,jdbcType=VARCHAR},
+      </if>
+      <if test="svcPwd != null" >
+        svc_pwd = #{svcPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="svcType != null" >
+        svc_type = #{svcType,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null" >
+        user_type = #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="subsStatus != null" >
+        subs_status = #{subsStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="joinTime != null" >
+        join_time = #{joinTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="normalizeTime != null" >
+        normalize_time = #{normalizeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="serviceStatus != null" >
+        service_status = #{serviceStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="statusChgType != null" >
+        status_chg_type = #{statusChgType,jdbcType=VARCHAR},
+      </if>
+      <if test="statusChgTime != null" >
+        status_chg_time = #{statusChgTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastServiceStatus != null" >
+        last_service_status = #{lastServiceStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="lastStatusChgTime != null" >
+        last_status_chg_time = #{lastStatusChgTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastStatusChgType != null" >
+        last_status_chg_type = #{lastStatusChgType,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceCode != null" >
+        province_code = #{provinceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null" >
+        city_code = #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="optChlId != null" >
+        opt_chl_id = #{optChlId,jdbcType=VARCHAR},
+      </if>
+      <if test="optOperId != null" >
+        opt_oper_id = #{optOperId,jdbcType=BIGINT},
+      </if>
+      <if test="chlId != null" >
+        chl_id = #{chlId,jdbcType=VARCHAR},
+      </if>
+      <if test="devId != null" >
+        dev_id = #{devId,jdbcType=BIGINT},
+      </if>
+      <if test="activeTime != null" >
+        active_time = #{activeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inactiveTime != null" >
+        inactive_time = #{inactiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="acctName != null" >
+        acct_name = #{acctName,jdbcType=VARCHAR},
+      </if>
+      <if test="svcProductType != null" >
+        SVC_PRODUCT_TYPE = #{svcProductType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where subs_unique_id = #{subsUniqueId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ifudata.smsrest.db.mapper.bo.SubsUser" >
+    update subs_user
+    set subs_id = #{subsId,jdbcType=BIGINT},
+      cust_id = #{custId,jdbcType=BIGINT},
+      acct_id = #{acctId,jdbcType=BIGINT},
+      acct_type = #{acctType,jdbcType=VARCHAR},
+      user_cust_id = #{userCustId,jdbcType=BIGINT},
+      service_num = #{serviceNum,jdbcType=VARCHAR},
+      imsi = #{imsi,jdbcType=VARCHAR},
+      sim_type = #{simType,jdbcType=VARCHAR},
+      sim = #{sim,jdbcType=VARCHAR},
+      basic_org_id = #{basicOrgId,jdbcType=VARCHAR},
+      svc_pwd = #{svcPwd,jdbcType=VARCHAR},
+      svc_type = #{svcType,jdbcType=VARCHAR},
+      user_type = #{userType,jdbcType=VARCHAR},
+      subs_status = #{subsStatus,jdbcType=VARCHAR},
+      join_time = #{joinTime,jdbcType=TIMESTAMP},
+      normalize_time = #{normalizeTime,jdbcType=TIMESTAMP},
+      service_status = #{serviceStatus,jdbcType=VARCHAR},
+      status_chg_type = #{statusChgType,jdbcType=VARCHAR},
+      status_chg_time = #{statusChgTime,jdbcType=TIMESTAMP},
+      last_service_status = #{lastServiceStatus,jdbcType=VARCHAR},
+      last_status_chg_time = #{lastStatusChgTime,jdbcType=TIMESTAMP},
+      last_status_chg_type = #{lastStatusChgType,jdbcType=VARCHAR},
+      province_code = #{provinceCode,jdbcType=VARCHAR},
+      city_code = #{cityCode,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      opt_chl_id = #{optChlId,jdbcType=VARCHAR},
+      opt_oper_id = #{optOperId,jdbcType=BIGINT},
+      chl_id = #{chlId,jdbcType=VARCHAR},
+      dev_id = #{devId,jdbcType=BIGINT},
+      active_time = #{activeTime,jdbcType=TIMESTAMP},
+      inactive_time = #{inactiveTime,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR},
+      acct_name = #{acctName,jdbcType=VARCHAR},
+      SVC_PRODUCT_TYPE = #{svcProductType,jdbcType=VARCHAR}
+    where subs_unique_id = #{subsUniqueId,jdbcType=BIGINT}
+  </update>
+</mapper>
